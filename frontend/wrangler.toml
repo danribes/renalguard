@@ -8,6 +8,6 @@ compatibility_date = "2026-01-11"
 # command = "npm run build"
 # output = "dist"
 
-# Environment variables are set in Cloudflare Dashboard/API:
-# - VITE_API_URL = https://renalguard-backend.pages.dev
+# Environment variables (embedded at build time with Vite):
+# - VITE_API_URL = https://renalguard-ai.fly.dev (Fly.io backend)
 # - NODE_VERSION = 20

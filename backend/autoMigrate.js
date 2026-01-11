@@ -25,14 +25,13 @@ async function getAppliedMigrations(client) {
   // Create migrations tracking table if it doesn't exist (matching existing structure)
   await client.query(`
     CREATE TABLE IF NOT EXISTS schema_migrations (
-      id SERIAL PRIMARY KEY,
-      migration_name VARCHAR(255) UNIQUE NOT NULL,
+      version VARCHAR(255) PRIMARY KEY,
       applied_at TIMESTAMP DEFAULT NOW()
     );
   `);
 
-  const result = await client.query('SELECT migration_name FROM schema_migrations ORDER BY migration_name');
-  return new Set(result.rows.map(row => row.migration_name));
+  const result = await client.query('SELECT version FROM schema_migrations ORDER BY version');
+  return new Set(result.rows.map(row => row.version));
 }
 
 async function runPendingMigrations() {
@@ -62,9 +61,10 @@ async function runPendingMigrations() {
     let pendingCount = 0;
 
     for (const file of files) {
-      const migrationName = file.replace('.sql', '');
+      // Check both with and without .sql extension (for backwards compatibility)
+      const migrationNameNoExt = file.replace('.sql', '');
 
-      if (appliedMigrations.has(migrationName)) {
+      if (appliedMigrations.has(file) || appliedMigrations.has(migrationNameNoExt)) {
         continue; // Skip already applied
       }
 
@@ -78,8 +78,8 @@ async function runPendingMigrations() {
         await client.query('BEGIN');
         await client.query(sql);
         await client.query(
-          'INSERT INTO schema_migrations (migration_name) VALUES ($1)',
-          [migrationName]
+          'INSERT INTO schema_migrations (version) VALUES ($1)',
+          [file]  // Use full filename with .sql extension
         );
         await client.query('COMMIT');
         console.log(`✅ Migration ${file} completed successfully`);
