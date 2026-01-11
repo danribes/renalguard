@@ -638,10 +638,11 @@ Step-by-step deployment guide including:
 - [ ] 4.8 Test database connectivity from containers (user action required)
 
 ### Phase 5: CI/CD Pipeline
-- [ ] 5.1 Create `.github/workflows/cloudflare-deploy.yml`
-- [ ] 5.2 Configure GitHub secrets
-- [ ] 5.3 Test deployment pipeline
-- [ ] 5.4 Configure branch previews
+- [x] 5.1 Create `.github/workflows/cloudflare-deploy.yml`
+- [x] 5.2 Create CI/CD setup documentation (`docs/CICD_SETUP.md`)
+- [x] 5.3 Configure branch previews (included in workflow)
+- [ ] 5.4 Configure GitHub secrets (user action required)
+- [ ] 5.5 Test deployment pipeline (user action required)
 
 ### Phase 6: Documentation
 - [ ] 6.1 Update `README.md` with Cloudflare info
