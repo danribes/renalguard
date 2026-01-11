@@ -37,7 +37,29 @@ This application is designed to be deployed on **Cloudflare** infrastructure:
 | **MCP Server** | Cloudflare Containers | Clinical decision support tools |
 | **Database** | Neon/Supabase + Hyperdrive | PostgreSQL with connection pooling |
 
-See [CLOUDFLARE_MIGRATION_PLAN.md](./CLOUDFLARE_MIGRATION_PLAN.md) for deployment instructions.
+### Quick Deploy
+
+```bash
+# Install Wrangler CLI
+npm install -g wrangler
+
+# Login to Cloudflare
+wrangler login
+
+# Deploy frontend
+cd frontend && npm run build
+wrangler pages deploy dist --project-name=renalguard-frontend
+
+# Set up secrets
+./scripts/setup-cloudflare-secrets.sh
+```
+
+### Documentation
+
+- **[CLOUDFLARE_DEPLOYMENT.md](./docs/CLOUDFLARE_DEPLOYMENT.md)** - Complete step-by-step deployment guide
+- **[CLOUDFLARE_MIGRATION_PLAN.md](./CLOUDFLARE_MIGRATION_PLAN.md)** - Migration architecture and planning
+- **[DATABASE_SETUP.md](./docs/DATABASE_SETUP.md)** - Neon/Supabase database configuration
+- **[CICD_SETUP.md](./docs/CICD_SETUP.md)** - GitHub Actions CI/CD pipeline setup
 
 ---
 
