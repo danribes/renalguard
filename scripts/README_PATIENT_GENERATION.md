@@ -189,7 +189,7 @@ WARNING:    - Females with male names: 1
 **Cause**: Database connection timeout for long-running operations
 **Solution**:
 - Increase psql timeout: `psql "$DATABASE_URL" --set ON_ERROR_STOP=on -f script.sql`
-- Run on a machine with better connectivity to Render
+- Run on a machine with better connectivity to your database server
 
 ## Technical Details
 
@@ -252,4 +252,4 @@ This ensures **guaranteed uniqueness** even with limited name arrays.
 
 ## Questions?
 
-See `DATABASE_SETUP_RENDER_ONLY.md` for complete setup instructions.
+See the main README.md and CLOUDFLARE_MIGRATION_PLAN.md for complete setup instructions.

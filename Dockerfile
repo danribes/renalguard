@@ -1,6 +1,6 @@
 # Root Dockerfile - Healthcare AI Backend + MCP Server
 # This Dockerfile builds both the backend API and MCP server together
-# Use this for Render deployment to include MCP server functionality
+# Use this for production deployment to include MCP server functionality
 
 # Stage 1: Build both backend and MCP server
 FROM node:20-alpine AS builder

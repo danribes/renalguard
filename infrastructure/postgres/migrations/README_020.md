@@ -25,17 +25,17 @@ This migration:
 
 ## How to Run
 
-### For Render Deployment (Recommended)
+### Using the Node.js Migration Runner
 
-**Step 1:** Get your DATABASE_URL from Render
-1. Go to https://dashboard.render.com
-2. Click on your database (e.g., `ckd-analyzer-db`)
-3. Copy the **External Database URL** (starts with `postgresql://`)
+**Step 1:** Set your DATABASE_URL environment variable
+```bash
+export DATABASE_URL='postgresql://user:pass@host:5432/dbname'
+```
 
 **Step 2:** Run the migration script
 ```bash
-cd /home/user/hack_BI
-./scripts/run_migration_020_render.sh 'postgresql://your-database-url'
+cd /home/user/renalguard
+node scripts/run_migration_020.js
 ```
 
 The script will:
@@ -48,7 +48,7 @@ The script will:
 ### For Local Docker Development
 
 ```bash
-cd /home/user/hack_BI
+cd /home/user/renalguard
 ./scripts/run_migration_020.sh
 ```
 

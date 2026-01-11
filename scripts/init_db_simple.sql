@@ -1,21 +1,14 @@
 -- ============================================
 -- CONSOLIDATED DATABASE INITIALIZATION SCRIPT
--- FOR RENDER.COM SHELL ACCESS
 -- ============================================
 --
 -- QUICK SETUP INSTRUCTIONS:
--- 1. Go to: https://dashboard.render.com
--- 2. Click: ckd-analyzer-db-ejsm
--- 3. Click: "Info" or "Connect" section
--- 4. Look for: "Connection String" or "External Connection"
--- 5. Copy the connection string
--- 6. Use any PostgreSQL client (DBeaver, TablePlus, or online tool)
--- 7. Paste this ENTIRE script and execute
+-- 1. Set DATABASE_URL environment variable
+-- 2. Use any PostgreSQL client (DBeaver, TablePlus, psql)
+-- 3. Paste this ENTIRE script and execute
 --
--- ALTERNATIVE: If you find the Shell tab
--- 1. Click: Shell tab (might be under Connect dropdown)
--- 2. Paste this entire script
--- 3. Press Enter
+-- Example with psql:
+--   psql $DATABASE_URL -f scripts/init_db_simple.sql
 --
 -- Run time: 30-60 seconds
 -- ============================================

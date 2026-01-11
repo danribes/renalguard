@@ -217,7 +217,6 @@ SELECT COUNT(*) as total_observations FROM observations;
 SELECT COUNT(*) as total_conditions FROM conditions;
 
 \echo ''
-\echo 'You can now access:'
-\echo '- https://ckd-analyzer-backend-ejsm.onrender.com/api/patients'
-\echo '- https://ckd-analyzer-frontend-ejsm.onrender.com'
+\echo 'Database initialization complete!'
+\echo 'Access your API at: /api/patients'
 \echo ''
