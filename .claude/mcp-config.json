@@ -23,6 +23,31 @@
         "./mcp-server"
       ],
       "description": "Filesystem MCP Server - Allows reading and writing files in the project directories"
+    },
+    "neon": {
+      "command": "npx",
+      "args": ["-y", "@neondatabase/mcp-server-neon"],
+      "env": {
+        "NEON_API_KEY": "YOUR_NEON_API_KEY_HERE"
+      },
+      "description": "Neon MCP Server - Manage Neon PostgreSQL projects, branches, databases, and run SQL queries"
+    },
+    "supabase": {
+      "command": "npx",
+      "args": ["-y", "@supabase/mcp-server"],
+      "env": {
+        "SUPABASE_ACCESS_TOKEN": "YOUR_SUPABASE_ACCESS_TOKEN_HERE"
+      },
+      "description": "Supabase MCP Server - Manage Supabase projects, databases, tables, and run SQL queries"
+    },
+    "cloudflare": {
+      "command": "npx",
+      "args": ["-y", "@cloudflare/mcp-server-cloudflare"],
+      "env": {
+        "CLOUDFLARE_API_TOKEN": "YOUR_CLOUDFLARE_API_TOKEN_HERE",
+        "CLOUDFLARE_ACCOUNT_ID": "YOUR_CLOUDFLARE_ACCOUNT_ID_HERE"
+      },
+      "description": "Cloudflare MCP Server - Manage Workers, Pages, D1, R2, KV, Hyperdrive, and other Cloudflare services"
     }
   }
 }
