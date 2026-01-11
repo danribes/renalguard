@@ -619,13 +619,13 @@ Step-by-step deployment guide including:
 - [ ] 2.8 Test local Docker Compose deployment
 
 ### Phase 3: Cloudflare Configuration
-- [ ] 3.1 Create `frontend/wrangler.toml`
-- [ ] 3.2 Create `frontend/public/_headers`
-- [ ] 3.3 Create `frontend/public/_redirects`
-- [ ] 3.4 Create `backend/cloudflare-container.toml`
-- [ ] 3.5 Create `mcp-server/cloudflare-container.toml`
-- [ ] 3.6 Create `infrastructure/cloudflare/hyperdrive.toml`
-- [ ] 3.7 Document environment variables
+- [x] 3.1 Create `frontend/wrangler.toml`
+- [x] 3.2 Create `frontend/public/_headers`
+- [x] 3.3 Create `frontend/public/_redirects`
+- [x] 3.4 Create `backend/cloudflare-container.toml`
+- [x] 3.5 Create `mcp-server/cloudflare-container.toml`
+- [x] 3.6 Create `infrastructure/cloudflare/hyperdrive.toml`
+- [x] 3.7 Document environment variables (updated .env.example)
 
 ### Phase 4: Database Migration
 - [ ] 4.1 Create Neon account and project

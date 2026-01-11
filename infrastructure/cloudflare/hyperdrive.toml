@@ -1,0 +1,85 @@
+# Cloudflare Hyperdrive Configuration for RENALGUARD
+# Documentation: https://developers.cloudflare.com/hyperdrive/
+
+# Hyperdrive provides connection pooling and caching for PostgreSQL databases
+# This significantly reduces latency for database connections from Cloudflare edge
+
+# =============================================================================
+# SETUP INSTRUCTIONS
+# =============================================================================
+#
+# 1. Install Wrangler CLI:
+#    npm install -g wrangler
+#
+# 2. Login to Cloudflare:
+#    wrangler login
+#
+# 3. Create the Hyperdrive configuration:
+#    wrangler hyperdrive create renalguard-db \
+#      --connection-string="postgresql://USER:PASSWORD@HOST:PORT/DATABASE?sslmode=require"
+#
+# 4. Note the Hyperdrive ID returned (e.g., "abc123...")
+#
+# 5. Use the Hyperdrive connection string in your application:
+#    - Format: hyperdrive://HYPERDRIVE_ID
+#    - Or use the binding in Workers/Containers
+#
+# =============================================================================
+
+[hyperdrive]
+# Name of the Hyperdrive configuration
+name = "renalguard-db"
+
+# Caching configuration
+[hyperdrive.caching]
+# Enable query caching (recommended for read-heavy workloads)
+enabled = true
+# Maximum age for cached queries (in seconds)
+max_age = 60
+# Stale-while-revalidate period
+stale_while_revalidate = 15
+
+# Connection pool settings
+[hyperdrive.pool]
+# Maximum number of connections in the pool
+max_connections = 10
+# Idle connection timeout (in seconds)
+idle_timeout = 60
+
+# =============================================================================
+# DATABASE PROVIDER EXAMPLES
+# =============================================================================
+#
+# Neon (Recommended):
+#   postgresql://USER:PASSWORD@ep-xxx-xxx-xxx.us-east-2.aws.neon.tech/neondb?sslmode=require
+#
+# Supabase:
+#   postgresql://postgres.PROJECT_REF:PASSWORD@aws-0-us-east-1.pooler.supabase.com:6543/postgres
+#
+# Railway:
+#   postgresql://postgres:PASSWORD@containers-us-west-xxx.railway.app:PORT/railway
+#
+# =============================================================================
+
+# =============================================================================
+# USAGE IN APPLICATION
+# =============================================================================
+#
+# In your backend code, use the Hyperdrive connection string:
+#
+# const pool = new Pool({
+#   connectionString: process.env.DATABASE_URL, // Set to hyperdrive://HYPERDRIVE_ID
+#   // No SSL configuration needed - Hyperdrive handles it
+# });
+#
+# Or with individual environment variables pointing to Hyperdrive:
+#
+# const pool = new Pool({
+#   host: process.env.HYPERDRIVE_HOST,
+#   port: process.env.HYPERDRIVE_PORT,
+#   database: process.env.DB_NAME,
+#   user: process.env.DB_USER,
+#   password: process.env.DB_PASSWORD,
+# });
+#
+# =============================================================================
