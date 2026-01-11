@@ -2,6 +2,13 @@
 
 ![RENALGUARD AI](https://img.shields.io/badge/AI-Powered-blue) ![Status](https://img.shields.io/badge/Status-Production-green) ![KDIGO](https://img.shields.io/badge/KDIGO-2024-orange)
 
+## 🚀 Live Demo
+
+| Service | URL |
+|---------|-----|
+| **Frontend** | [https://renalguard-frontend.pages.dev](https://renalguard-frontend.pages.dev) |
+| **Backend API** | [https://renalguard-ai.fly.dev](https://renalguard-ai.fly.dev) |
+
 ## What is RENALGUARD AI?
 
 **RENALGUARD AI** is an advanced artificial intelligence-powered clinical decision support system designed specifically for primary care physicians to manage chronic kidney disease (CKD) patients. The platform combines real-time patient monitoring, evidence-based risk assessment, and AI-driven treatment recommendations to help doctors identify kidney disease early, track progression accurately, and optimize treatment strategies.
@@ -28,14 +35,14 @@ RENALGUARD AI acts as an **intelligent co-pilot** for primary care physicians, e
 
 ## Deployment
 
-This application is designed to be deployed on **Cloudflare** infrastructure:
+This application is deployed on **Cloudflare Pages** and **Fly.io** infrastructure:
 
 | Service | Platform | Description |
 |---------|----------|-------------|
 | **Frontend** | Cloudflare Pages | React SPA with global CDN |
-| **Backend** | Cloudflare Containers | Express API server |
-| **MCP Server** | Cloudflare Containers | Clinical decision support tools |
-| **Database** | Neon/Supabase + Hyperdrive | PostgreSQL with connection pooling |
+| **Backend** | Fly.io | Express API server (Docker container) |
+| **MCP Server** | Fly.io | Clinical decision support tools |
+| **Database** | Neon PostgreSQL | Serverless PostgreSQL database |
 
 ### Quick Deploy
 
