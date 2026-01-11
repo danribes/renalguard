@@ -1,0 +1,33 @@
+# Cloudflare Pages Configuration for RENALGUARD Backend
+# Deploy with: wrangler pages deploy dist --project-name=renalguard-backend
+
+name = "renalguard-backend"
+compatibility_date = "2026-01-11"
+
+# For Cloudflare Containers (when available), use Docker deployment
+# For now, this serves as documentation of the configuration
+
+# Environment variables set in Cloudflare Dashboard/API:
+# Production:
+#   - NODE_ENV = production (plain_text)
+#   - PORT = 3000 (plain_text)
+#   - DATABASE_URL = <neon-connection-string> (secret)
+#   - ANTHROPIC_API_KEY = <api-key> (secret)
+#   - CORS_ORIGIN = https://renalguard-frontend.pages.dev (plain_text)
+#
+# Preview:
+#   - NODE_ENV = development (plain_text)
+#   - PORT = 3000 (plain_text)
+#   - DATABASE_URL = <neon-connection-string> (secret)
+#   - ANTHROPIC_API_KEY = <api-key> (secret)
+#   - CORS_ORIGIN = https://renalguard-frontend.pages.dev (plain_text)
+
+# Hyperdrive Configuration (for accelerated database connections)
+# Created: 2026-01-11
+[[hyperdrive]]
+binding = "HYPERDRIVE"
+id = "e28132a8b8b349aabcebbd80cc648308"
+
+# To use Hyperdrive in your Worker/Pages Function:
+# const db = env.HYPERDRIVE.connectionString;
+# Then connect using this connection string instead of DATABASE_URL
