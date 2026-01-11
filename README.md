@@ -26,15 +26,18 @@ RENALGUARD AI acts as an **intelligent co-pilot** for primary care physicians, e
 
 ---
 
-## Live Demo
+## Deployment
 
-| Service | Status | URL |
-|---------|--------|-----|
-| **Database** | ✅ Live | PostgreSQL (Internal) |
-| **Backend** | ✅ Live | https://ckd-analyzer-backend.onrender.com |
-| **Frontend** | ✅ Live | https://ckd-analyzer-frontend.onrender.com |
+This application is designed to be deployed on **Cloudflare** infrastructure:
 
-**Try it now:** https://ckd-analyzer-frontend.onrender.com
+| Service | Platform | Description |
+|---------|----------|-------------|
+| **Frontend** | Cloudflare Pages | React SPA with global CDN |
+| **Backend** | Cloudflare Containers | Express API server |
+| **MCP Server** | Cloudflare Containers | Clinical decision support tools |
+| **Database** | Neon/Supabase + Hyperdrive | PostgreSQL with connection pooling |
+
+See [CLOUDFLARE_MIGRATION_PLAN.md](./CLOUDFLARE_MIGRATION_PLAN.md) for deployment instructions.
 
 ---
 
@@ -1420,12 +1423,11 @@ AI: PATIENT SUMMARY:
 │
 ├── infrastructure/
 │   └── postgres/
-│       ├── migrations/                # 31 ordered migrations
-│       │   ├── 001-009                # Core patient data
-│       │   ├── 014-020                # Communication & tracking
-│       │   ├── 021-029                # Doctor management
-│       │   └── 030-031                # GCUA assessment
-│       └── RENDER_DATABASE_INIT.sql   # Full schema initialization
+│       └── migrations/                # 32 ordered migrations
+│           ├── 001-009                # Core patient data
+│           ├── 014-020                # Communication & tracking
+│           ├── 021-029                # Doctor management
+│           └── 030-032                # GCUA assessment
 │
 ├── data/                              # Mock data & seed files
 ├── docs/                              # 40+ documentation files

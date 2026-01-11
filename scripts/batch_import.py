@@ -3,8 +3,16 @@ import json
 import psycopg2
 from datetime import datetime, timedelta
 import uuid
+import os
 
-DB_URL = "postgresql://ckd_analyzer_db_td6o_user:icbyXt0nalV0ui8N5d6kjoxK1Xy1mSL3@dpg-d48cnrqli9vc739811v0-a.oregon-postgres.render.com/ckd_analyzer_db_td6o"
+# Database connection - requires DATABASE_URL environment variable
+DB_URL = os.environ.get('DATABASE_URL')
+
+if not DB_URL:
+    print("ERROR: DATABASE_URL environment variable is required")
+    print("Example: DATABASE_URL=postgresql://user:pass@host:5432/dbname python batch_import.py")
+    exit(1)
+
 BATCH_SIZE = 10
 
 def map_gender(gender):

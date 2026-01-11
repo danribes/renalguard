@@ -43,13 +43,11 @@ async function main() {
   if (!databaseUrl) {
     console.error('Usage: node scripts/run_migrations_021_022.js <DATABASE_URL>');
     console.error('');
-    console.error('Get your DATABASE_URL from Render:');
-    console.error('1. Go to https://dashboard.render.com');
-    console.error('2. Click on your database');
-    console.error('3. Copy the "External Database URL"');
+    console.error('Set DATABASE_URL environment variable or pass as argument:');
     console.error('');
     console.error('Example:');
     console.error('  node scripts/run_migrations_021_022.js "postgresql://user:pass@host/db"');
+    console.error('  DATABASE_URL="postgresql://user:pass@host/db" node scripts/run_migrations_021_022.js');
     process.exit(1);
   }
 
@@ -59,7 +57,7 @@ async function main() {
   const pool = new Pool({
     connectionString: databaseUrl,
     ssl: {
-      rejectUnauthorized: false // Required for Render
+      rejectUnauthorized: false // Required for cloud PostgreSQL providers
     }
   });
 
@@ -204,7 +202,7 @@ async function main() {
     console.log('3. Configure email notifications:');
     console.log('   POST /api/settings/email');
     console.log('');
-    console.log('4. Restart your backend service on Render to activate:');
+    console.log('4. Restart your backend service to activate:');
     console.log('   - Alert reminder service (runs every 30 minutes)');
     console.log('   - Doctor lookup for all notifications');
     console.log('');

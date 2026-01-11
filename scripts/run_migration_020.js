@@ -43,17 +43,11 @@ async function main() {
   if (!databaseUrl) {
     console.error('Usage: node scripts/run_migration_020.js <DATABASE_URL>');
     console.error('');
-    console.error('Get your DATABASE_URL from Render:');
-    console.error('1. Go to https://dashboard.render.com');
-    console.error('2. Click on your database (e.g., "ckd-analyzer-db")');
-    console.error('3. Copy the "External Database URL"');
+    console.error('Set DATABASE_URL environment variable or pass as argument:');
     console.error('');
     console.error('Example:');
     console.error('  node scripts/run_migration_020.js "postgresql://user:pass@host/db"');
-    console.error('');
-    console.error('Or set it as an environment variable:');
-    console.error('  export DATABASE_URL="postgresql://..."');
-    console.error('  node scripts/run_migration_020.js');
+    console.error('  DATABASE_URL="postgresql://user:pass@host/db" node scripts/run_migration_020.js');
     process.exit(1);
   }
 
@@ -63,7 +57,7 @@ async function main() {
   const pool = new Pool({
     connectionString: databaseUrl,
     ssl: {
-      rejectUnauthorized: false // Required for Render
+      rejectUnauthorized: false // Required for cloud PostgreSQL providers
     }
   });
 

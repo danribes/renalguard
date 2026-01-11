@@ -3,7 +3,14 @@ const { Client } = require('pg');
 const fs = require('fs');
 const path = require('path');
 
-const DATABASE_URL = 'postgresql://healthcare_user:2IDoqcoj1ERr9SAJgfEk6GQyDBUXhCpJ@dpg-d4c4tuadbo4c73d1s0p0-a.oregon-postgres.render.com:5432/healthcare_ai_db_fo2v';
+// Requires DATABASE_URL environment variable
+const DATABASE_URL = process.env.DATABASE_URL;
+
+if (!DATABASE_URL) {
+  console.error('ERROR: DATABASE_URL environment variable is required');
+  console.error('Example: DATABASE_URL=postgresql://user:pass@host:5432/dbname node run-init.js');
+  process.exit(1);
+}
 
 async function initializeDatabase() {
   const client = new Client({ connectionString: DATABASE_URL });

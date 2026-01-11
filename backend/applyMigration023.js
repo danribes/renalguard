@@ -2,12 +2,18 @@
 
 /**
  * Apply migration 023 - Email Templates
- * This script can be run directly in the Render shell
+ * This script requires DATABASE_URL environment variable
  */
 
 const { Pool } = require('pg');
 
-const DATABASE_URL = process.env.DATABASE_URL || 'postgresql://healthcare_user:2IDoqcoj1ERr9SAJgfEk6GQyDBUXhCpJ@dpg-d4c4tuadbo4c73d1s0p0-a.oregon-postgres.render.com/healthcare_ai_db_fo2v';
+const DATABASE_URL = process.env.DATABASE_URL;
+
+if (!DATABASE_URL) {
+  console.error('ERROR: DATABASE_URL environment variable is required');
+  console.error('Example: DATABASE_URL=postgresql://user:pass@host:5432/dbname node applyMigration023.js');
+  process.exit(1);
+}
 
 const pool = new Pool({
   connectionString: DATABASE_URL,

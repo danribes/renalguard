@@ -1,12 +1,12 @@
 import pkg from 'pg';
 const { Pool } = pkg;
 
-// Support both DATABASE_URL (Render) and individual env vars (Docker Compose)
+// Support both DATABASE_URL (cloud providers) and individual env vars (Docker Compose)
 const poolConfig = process.env.DATABASE_URL
   ? {
       connectionString: process.env.DATABASE_URL,
       ssl: {
-        rejectUnauthorized: false // Required for Render
+        rejectUnauthorized: false // Required for cloud PostgreSQL providers
       },
       max: 10,
       idleTimeoutMillis: 30000,
