@@ -21,6 +21,7 @@ claude-task-master/
 .env.local
 .env.production
 .env.*.local
+.dev.vars
 *.key
 *.pem
 secrets/
