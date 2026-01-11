@@ -1,0 +1,48 @@
+{
+  "name": "healthcare-ai-backend",
+  "version": "1.0.0",
+  "description": "Healthcare AI Clinical Data Analyzer - Backend API",
+  "main": "dist/index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "dev": "nodemon --exec ts-node src/index.ts",
+    "build": "npm run build:backend && npm run build:mcp",
+    "build:backend": "tsc",
+    "build:mcp": "cd ../mcp-server && npm install --prefer-offline --no-audit && npm run build",
+    "start": "node autoMigrate.js && node dist/index.js",
+    "start:no-migrate": "node dist/index.js",
+    "test": "echo \"Tests will be added\" && exit 0",
+    "migrate": "node runMigration.js",
+    "migrate:023": "node runMigration.js 023",
+    "migrate:auto": "node autoMigrate.js"
+  },
+  "keywords": [
+    "healthcare",
+    "ai",
+    "clinical",
+    "risk-assessment"
+  ],
+  "author": "Hackathon Team",
+  "license": "MIT",
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.68.0",
+    "@modelcontextprotocol/sdk": "^1.0.4",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "nodemailer": "^6.9.7",
+    "pg": "^8.16.3"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.5",
+    "@types/node": "^24.10.1",
+    "@types/nodemailer": "^6.4.14",
+    "@types/pg": "^8.15.6",
+    "nodemon": "^3.1.10",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
+  }
+}

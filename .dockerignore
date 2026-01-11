@@ -1,0 +1,66 @@
+# Git
+.git
+.gitignore
+.gitattributes
+
+# Documentation
+*.md
+!README.md
+docs/
+
+# CI/CD
+.github/
+.gitlab-ci.yml
+.travis.yml
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Node
+**/node_modules/
+**/npm-debug.log
+**/yarn-error.log
+**/.npm
+**/.yarn
+
+# Build artifacts
+**/dist/
+**/build/
+**/.next/
+**/out/
+
+# Test
+**/test/
+**/tests/
+**/__tests__/
+**/*.test.ts
+**/*.test.js
+**/*.spec.ts
+**/*.spec.js
+**/coverage/
+**/.nyc_output/
+
+# Environment
+**/.env
+**/.env.*
+!**/.env.example
+
+# Frontend (not needed in backend image)
+frontend/
+
+# Logs
+**/logs/
+**/*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Misc
+**/tmp/
+**/temp/
+**/.cache/

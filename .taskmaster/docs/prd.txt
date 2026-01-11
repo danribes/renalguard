@@ -1,0 +1,807 @@
+<context>
+# Overview
+Healthcare AI Clinical Data Analyzer is an AI-powered clinical decision support tool designed exclusively for primary care physicians in the European Union. The application analyzes patient clinical data from Electronic Health Records (EHR) and national clinical databases to generate actionable insights, risk assessments, and treatment recommendations—all while maintaining strict GDPR compliance and medical data protection standards.
+
+The application operates under the "Clinician-in-the-Loop" model, where doctors retain full control and the AI serves as a support tool embedded within their existing clinical workflow. The system accesses only the data that physicians are already legally authorized to view, eliminating the need for separate patient consent while maintaining full audit trails and compliance with EU health regulations.
+
+**Target Users:** Primary care physicians (PCPs) in EU healthcare systems
+**Legal Basis:** GDPR Article 9(2)(h) - Processing necessary for medical diagnosis and healthcare provision
+**Deployment Model:** Integrated with existing EHR/clinical systems via FHIR APIs
+
+# Core Features
+
+## 1. FHIR-Based Clinical Data Integration
+- **SMART on FHIR App**: Runs embedded within EHR systems (Epic, Cerner, national systems)
+- **OAuth2 Authentication**: Leverages existing EHR authentication systems
+- **Selective Data Retrieval**: Accesses only required FHIR R4 resources (Patient, Observation, Condition, MedicationRequest, DiagnosticReport)
+- **Data Minimization**: Fetches only the specific fields needed for analysis, adhering to GDPR principles
+- **Real-time Integration**: Sub-second response times for clinical workflow efficiency
+
+## 2. AI-Powered Risk Analysis with Automatic Recalculation
+- **Chronic Disease Risk Scoring**: Identifies high-risk patients for conditions like diabetes complications, cardiovascular disease, CKD progression
+- **Automatic Risk Recalculation**: Triggered automatically when new clinical data enters the EHR database (new lab results, diagnoses, medications)
+- **Event-Driven Processing**: Database change detection monitors for new Observations, Conditions, or MedicationRequests and recalculates risk scores in real-time
+- **Manual Batch Scanning**: "Scan All Patients" button allows doctors to trigger analysis of entire patient panel on-demand
+- **Early Warning Alerts**: Flags patients requiring immediate attention or preventive interventions, with notifications when risk levels change
+- **Treatment Recommendations**: Evidence-based suggestions for diagnostic tests, specialist referrals, or medication adjustments
+- **Explainable AI**: Clear reasoning for all insights provided to clinicians
+- **Multi-Model Support**: Configurable AI models (Claude, OpenAI, local models) based on deployment requirements
+
+## 3. Security & Privacy Controls
+- **Pseudonymization Engine**: Strips direct patient identifiers before AI processing
+- **End-to-End Encryption**: TLS 1.3 in transit, AES-256 at rest
+- **No Persistent Storage**: Patient data deleted within 24-72 hours post-analysis (configurable)
+- **Role-Based Access Control (RBAC)**: Only assigned PCPs can trigger AI analysis for their patients
+- **Audit Trail**: Immutable logs recording who accessed what, when, and for which patient (pseudonymized ID)
+
+## 4. Clinical Workflow Integration
+- **Embedded UI**: Displays insights directly within patient chart view
+- **Visual Risk Indicators**: Color-coded risk levels, trend graphs, historical comparisons with risk change notifications
+- **Smart Alerts Dashboard**: Real-time notifications when patient risk scores change due to new data
+- **Manual Scan Button**: One-click "Scan All My Patients" button to trigger batch risk analysis across entire patient panel
+- **Actionable Recommendations**: One-click actions like "Schedule HbA1c test" or "Flag for cardiology consult"
+- **Doctor Review & Approval**: All AI outputs require explicit clinician acknowledgment before being saved to patient record
+- **Fast Performance**: Results in <2 seconds for individual analysis, background processing for automatic scans
+
+## 5. Compliance & Audit Features
+- **DPIA (Data Protection Impact Assessment) Documentation**: Built-in templates and automated compliance reporting
+- **Automatic Logging**: Every AI analysis logged with timestamp, user, patient token, and result
+- **Data Retention Policies**: Configurable retention based on local regulations
+- **Transparency Notices**: Clear labeling of all AI-generated insights in the EHR
+- **CE Marking Support**: Documentation for medical device classification (Class I decision support)
+
+## 6. Country-Specific Integrations
+- **Germany**: Telematikinfrastruktur (TI) compliant, eHBA authentication, gematik-certified connectors
+- **France**: DMP API integration, SecNumCloud hosting, ASIP Santé compliance
+- **Sweden**: NPÖ/Inera API integration, Patient Data Act (2008:355) compliance
+- **Estonia**: X-Road integration, eID authentication, national eHealth Record access
+- **Extensible Architecture**: Framework for adding additional country-specific modules
+
+# User Experience
+
+## User Personas
+
+### Primary Persona: Dr. Maria Svensson (Primary Care Physician, Sweden)
+- **Background**: 15 years experience, sees 25-30 patients daily
+- **Tech Comfort**: Moderate; uses EHR daily but prefers simple interfaces
+- **Pain Points**: Difficulty tracking chronic disease progression across fragmented patient records
+- **Goals**: Catch early warning signs, reduce preventable complications, spend less time on administrative tasks
+- **AI Expectations**: Fast, actionable insights without disrupting workflow
+
+### Secondary Persona: Dr. Hans Mueller (Family Doctor, Germany)
+- **Background**: 8 years experience, rural practice with elderly population
+- **Tech Comfort**: Low to moderate; skeptical of new technology
+- **Pain Points**: High workload, limited specialist access in rural area
+- **Goals**: Identify patients needing specialist referrals, evidence-based treatment guidance
+- **AI Expectations**: Clear explanations, ability to override AI suggestions
+
+## Key User Flows
+
+### Flow 1: AI Risk Assessment During Patient Consultation
+1. Doctor opens patient chart in EHR
+2. Clicks "AI Risk Analysis" button (embedded in EHR interface)
+3. System fetches relevant patient data via FHIR API (in background, <1 second)
+4. AI processes pseudonymized data and returns risk assessment
+5. Results displayed in sidebar:
+   - Risk score with color-coded indicator
+   - Key contributing factors
+   - Recommended actions
+6. Doctor reviews, confirms relevance, and optionally adds note
+7. Doctor can accept recommendation (adds to patient plan) or dismiss
+8. Action logged in audit trail
+
+### Flow 2: Manual Patient Population Scanning
+1. Doctor navigates to "Population Health Dashboard"
+2. Clicks "Scan All My Patients" button
+3. System queues batch analysis job (background processing)
+4. Progress indicator shows "Analyzing 150 of 500 patients..."
+5. Returns prioritized list of high-risk patients (sortable by risk score, condition type)
+6. Doctor reviews list and flags patients for follow-up appointments
+7. Audit log records batch analysis request and results
+
+### Flow 2b: Automatic Risk Recalculation (Background Process)
+1. New lab result (e.g., eGFR = 42) enters EHR database for patient with diabetes
+2. FHIR server triggers webhook or system detects change via polling
+3. Event processor identifies patient and affected risk models (CKD progression)
+4. System fetches updated patient data via FHIR API
+5. AI recalculates CKD risk score (was moderate, now HIGH)
+6. Notification sent to doctor: "Patient John Doe: CKD risk increased to HIGH (new eGFR: 42)"
+7. Doctor reviews notification in dashboard, opens patient chart
+8. Updated risk assessment displayed with "UPDATED" badge
+9. All actions logged in audit trail
+
+### Flow 3: Clinical Decision Support for Treatment Planning
+1. Doctor reviewing patient with declining kidney function
+2. Activates AI assistant for "CKD management recommendations"
+3. AI analyzes:
+   - Recent lab results (eGFR trends, proteinuria)
+   - Medication history (RAAS inhibitors, diuretics)
+   - Comorbidities (diabetes, hypertension)
+4. Returns evidence-based recommendations:
+   - Medication adjustments
+   - Dietary counseling points
+   - Timeline for next nephrology referral
+5. Doctor reviews, adapts to patient context, and implements
+
+## UI/UX Considerations
+- **Minimalist Design**: No visual clutter; focus on actionable insights
+- **Fast Loading**: All interactions <2 seconds for individual queries, background processing for batch scans
+- **Color-Coded Alerts**: Green (low risk), Yellow (moderate), Red (high)
+- **Alert Badge**: Unread notification count displayed prominently in header
+- **"Scan All Patients" Button**: Prominent button in dashboard with progress indicator during scan
+- **Real-Time Updates**: WebSocket-powered live updates when new alerts arrive (no page refresh needed)
+- **Risk Change Indicators**: "↑ UPDATED" badge on patient cards when risk has recently changed
+- **Contextual Help**: Inline explanations for all metrics and recommendations
+- **Accessibility**: WCAG 2.1 AA compliant (for doctor-facing interface)
+- **Mobile-Friendly**: Responsive design for tablet use during ward rounds, push notifications for mobile app (future)
+- **Clear AI Labeling**: All AI-generated content marked with AI icon and disclaimer
+
+</context>
+
+<PRD>
+# Technical Architecture
+
+## System Components
+
+### 1. Frontend Layer (EHR-Embedded UI)
+- **Technology**: React/TypeScript SPA
+- **Deployment**: SMART on FHIR app (can be launched from any FHIR-compliant EHR)
+- **Authentication**: OAuth2 via FHIR authorization endpoint
+- **State Management**: React Query for API caching
+- **UI Framework**: Tailwind CSS for rapid, consistent styling
+- **Visualization**: Recharts for trend graphs and risk visualizations
+
+### 2. Backend API Layer
+- **Technology**: Node.js (Express) or Python (FastAPI)
+- **Hosting**: EU-based cloud (AWS eu-central-1, Azure westeurope, or Google Cloud europe-west1)
+  - Alternative: On-premise deployment for high-security environments
+- **API Gateway**: Kong or AWS API Gateway for rate limiting, authentication
+- **Endpoints**:
+  - `POST /api/analyze` - Trigger risk analysis for a single patient (manual)
+  - `GET /api/insights/:patientToken` - Retrieve latest risk assessment with history
+  - `POST /api/scan-all-patients` - **NEW** Trigger batch scan for all patients in doctor's panel
+  - `GET /api/scan-status/:jobId` - **NEW** Check progress of batch scan job
+  - `GET /api/alerts` - **NEW** Retrieve unread alerts/notifications for doctor
+  - `GET /api/alerts/:alertId` - **NEW** Get specific alert details
+  - `POST /api/alerts/:alertId/acknowledge` - **NEW** Mark alert as read/acknowledged
+  - `GET /api/risk-history/:patientToken` - **NEW** Get historical risk scores and trends
+  - `GET /api/audit-logs` - Audit trail access (admin only)
+  - `POST /api/feedback` - Clinician feedback on AI recommendations
+  - `POST /api/webhook/fhir-changes` - **NEW** Webhook endpoint for FHIR server change notifications
+
+### 3. AI Processing Engine
+- **Primary Model**: Claude 3.5 Sonnet (via Anthropic API) or GPT-4 (via Azure OpenAI)
+- **Fallback Model**: Local LLaMA 3.1 (70B) for high-security/air-gapped deployments
+- **Prompt Engineering**: Structured prompts with medical reasoning templates
+- **Output Format**: Structured JSON with risk scores, explanations, and recommendations
+- **Processing Pipeline**:
+  1. Receive pseudonymized FHIR data
+  2. Extract relevant clinical features
+  3. Generate risk assessment via LLM
+  4. Validate output against medical guidelines (rule-based checks)
+  5. Return structured result
+
+### 4. Data Processing & Pseudonymization Service
+- **Technology**: Python (cryptography library)
+- **Functions**:
+  - Hash patient identifiers (name, DOB, national ID) → generate patient token
+  - Strip direct identifiers from FHIR resources before AI processing
+  - Re-identify results when returning to EHR (for doctor's view)
+- **Hashing Algorithm**: SHA-256 with per-deployment salt (stored in secure key vault)
+
+### 5. FHIR Integration Service
+- **Technology**: HAPI FHIR client library (Java or TypeScript)
+- **Supported FHIR Version**: R4
+- **Key Resources**:
+  - `Patient` - Demographics, age, gender
+  - `Observation` - Lab results (HbA1c, eGFR, blood pressure, etc.)
+  - `Condition` - Diagnoses (ICD-10 codes)
+  - `MedicationRequest` - Current medications
+  - `DiagnosticReport` - Imaging and test results
+- **Search Parameters**: Optimized queries to minimize data transfer
+- **Caching Strategy**: Cache FHIR responses for 5 minutes (patient data during active consultation)
+
+### 6. Audit & Logging Service
+- **Technology**: ELK Stack (Elasticsearch, Logstash, Kibana) or AWS CloudWatch Logs
+- **Log Structure**:
+  ```json
+  {
+    "timestamp": "2025-11-07T10:23:45Z",
+    "userId": "dr_maria_svensson_12345",
+    "patientToken": "sha256_abc123...",
+    "action": "AI_RISK_ANALYSIS",
+    "resultCode": "HIGH_RISK_CKD_PROGRESSION",
+    "ipAddress": "10.0.1.45",
+    "sessionId": "sess_xyz789"
+  }
+  ```
+- **Retention**: 7 years (to comply with medical record retention laws)
+- **Access Control**: Only authorized compliance officers can access raw logs
+
+### 7. Event-Driven Processing System (NEW - Automatic Recalculation)
+- **Technology**: Redis Queue (Bull/BullMQ) or AWS SQS + Lambda
+- **Components**:
+  - **Change Detection Service**: Monitors FHIR server for new/updated data
+  - **Event Processor**: Identifies which patients need risk recalculation
+  - **Background Worker Pool**: Processes risk analysis jobs asynchronously
+  - **Job Queue**: Redis-based queue for pending analysis jobs
+- **Detection Methods**:
+  - **Webhook Subscription** (preferred): FHIR server sends webhook when Observation/Condition/MedicationRequest created
+  - **Polling Fallback**: Query FHIR server every 5 minutes for changes if webhooks not supported
+  - **Change Feed** (advanced): Subscribe to EHR's change data capture stream
+- **Processing Flow**:
+  1. Detect new clinical data entry (e.g., new lab result)
+  2. Identify patient and relevant risk models
+  3. Queue risk recalculation job with priority (HIGH if critical lab value)
+  4. Background worker picks up job, fetches data via FHIR
+  5. AI recalculates risk score
+  6. Compare to previous score → if significant change, trigger notification
+  7. Store updated risk assessment with "UPDATED" flag
+- **Rate Limiting**: Maximum 10 analyses per minute per patient (prevent spam from duplicate entries)
+- **Deduplication**: If multiple lab results arrive simultaneously, batch into single analysis
+
+### 8. Notification & Alert Service
+- **Technology**: WebSocket (Socket.io) for real-time alerts + Email (SendGrid) for offline notifications
+- **Alert Types**:
+  - **Real-Time Dashboard Alert**: Push notification to doctor's dashboard when risk changes
+  - **Email Digest**: Daily summary of all patients with significant risk changes
+  - **In-App Badge**: Unread alert count displayed in EHR integration
+- **Alert Conditions**:
+  - Risk level increased from LOW/MODERATE to HIGH
+  - New critical lab value (e.g., eGFR < 30, HbA1c > 10%)
+  - Patient missed recommended follow-up appointment
+- **Alert Format**:
+  ```json
+  {
+    "alertId": "alert_xyz789",
+    "patientToken": "sha256_abc123",
+    "patientName": "John Doe" (re-identified for doctor's view),
+    "timestamp": "2025-11-07T14:23:00Z",
+    "alertType": "RISK_INCREASE",
+    "oldRiskLevel": "MODERATE",
+    "newRiskLevel": "HIGH",
+    "trigger": "New eGFR result: 42 mL/min/1.73m²",
+    "recommendation": "Consider nephrology referral within 2 weeks"
+  }
+  ```
+- **Delivery Preferences**: Doctor can configure alert thresholds (notify only for HIGH risk, daily digest vs real-time, etc.)
+
+### 9. Risk History & Tracking Database
+- **Technology**: PostgreSQL (separate schema from audit logs)
+- **Purpose**: Store historical risk scores for trend analysis and change detection
+- **Schema**:
+  ```sql
+  CREATE TABLE risk_assessments (
+    id UUID PRIMARY KEY,
+    patient_token VARCHAR(255) NOT NULL,
+    risk_model VARCHAR(50) NOT NULL, -- 'diabetes_complications', 'ckd_progression', 'cvd_risk'
+    risk_score DECIMAL(3,2) NOT NULL, -- 0.00 to 1.00
+    risk_level VARCHAR(20) NOT NULL, -- 'LOW', 'MODERATE', 'HIGH'
+    calculated_at TIMESTAMP NOT NULL,
+    triggered_by VARCHAR(50), -- 'manual', 'automatic_new_data', 'batch_scan'
+    data_snapshot JSONB, -- Store pseudonymized patient data used for calculation
+    ai_response JSONB, -- Full AI output (recommendations, explanations)
+    doctor_viewed BOOLEAN DEFAULT FALSE,
+    doctor_acknowledged BOOLEAN DEFAULT FALSE,
+    INDEX idx_patient_model (patient_token, risk_model),
+    INDEX idx_calculated_at (calculated_at DESC)
+  );
+  ```
+- **Retention**: Keep risk assessments for 2 years (configurable), then archive to cold storage
+- **Query Patterns**:
+  - Get latest risk score for patient: `SELECT * FROM risk_assessments WHERE patient_token = ? AND risk_model = ? ORDER BY calculated_at DESC LIMIT 1`
+  - Detect significant change: Compare current score to previous score, trigger alert if delta > 0.15 or level changed
+
+### 10. Security & Compliance Layer
+- **Infrastructure**: VPC with private subnets, no direct internet access
+- **Secret Management**: AWS Secrets Manager or HashiCorp Vault
+- **API Keys**: Stored encrypted, rotated every 90 days
+- **Penetration Testing**: Annual third-party security audits
+- **GDPR Compliance Automation**:
+  - Data subject access requests (DSAR) - export patient's AI analysis history
+  - Right to erasure - purge all data for a given patient token
+  - Data breach notification - automated alerts if unauthorized access detected
+
+### 11. Urine Analysis Data Integration (NEW - Minuteful Kidney Protocol)
+- **Technology**: Integration with Healthy.io Minuteful Kidney smartphone-based uACR testing system
+- **Database**: PostgreSQL 14 table for urine test results (urine_tests table with UUID primary key)
+- **API Integration**:
+  - **Healthy.io API**: Base URL https://api.minuteful.com/v2
+  - **Authentication**: OAuth 2.0 + JWT tokens with refresh token rotation
+  - **Endpoints**: Patient management, test result retrieval, webhook subscriptions
+- **FHIR R4 Resources**:
+  - **Observation**: uACR (LOINC 9318-7), urine albumin (LOINC 14958-3), urine creatinine (LOINC 2161-8)
+  - **DiagnosticReport**: Complete test reports with test strip images
+  - **Device**: Test kit and mobile device information
+- **Data Transfer Protocols**:
+  - **Real-time**: HTTPS/TLS 1.3 for primary transmission, WebSocket Secure (WSS) for live monitoring
+  - **Batch**: NDJSON bulk export format, daily import at 02:00 UTC, GPG encryption
+  - **Offline**: Local AES-256 encryption, automatic sync with conflict resolution
+- **Processing Pipeline**:
+  - **Real-time Processing**: <60 second latency from test capture to database storage
+  - **Stream Processing**: Apache Kafka topics (urine-test-raw, urine-test-validated, urine-test-alerts)
+  - **Validation**: AI confidence score minimum 0.80, quality control flags for lighting/positioning
+  - **uACR Ranges**: Normal (<30 mg/g), Microalbuminuria (30-300 mg/g), Macroalbuminuria (>300 mg/g)
+- **Database Schema**:
+  ```sql
+  CREATE TABLE urine_tests (
+    test_id UUID PRIMARY KEY,
+    patient_token VARCHAR(255) NOT NULL,
+    session_id UUID,
+    test_datetime TIMESTAMP NOT NULL,
+    uacr_value NUMERIC(6,2),
+    albumin_mg_l NUMERIC(6,2),
+    creatinine_mg_dl NUMERIC(6,2),
+    kit_batch_number VARCHAR(50),
+    device_type VARCHAR(100),
+    app_version VARCHAR(20),
+    processing_status VARCHAR(20),
+    ai_confidence_score NUMERIC(3,2),
+    quality_score JSONB,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    INDEX idx_patient_urine (patient_token, test_datetime DESC),
+    FOREIGN KEY (patient_token) REFERENCES patients(patient_token)
+  );
+  ```
+- **Security Measures**:
+  - AES-256-GCM encryption for data at rest
+  - Column-level encryption for sensitive fields
+  - Digital signature validation (SHA-256) for all incoming data
+  - Certificate pinning for mobile app communications
+- **Integration with CKD Protocol**:
+  - Automatic trigger of abnormal result detection (Task 28.1) when uACR > 30 mg/g
+  - Link to 3-month confirmation tracker for persistent microalbuminuria
+  - Feed into CKD staging calculator (KDIGO classification)
+  - Trigger automatic nephrology referral for uACR > 300 mg/g
+- **Notification System**:
+  - Real-time WebSocket alerts to providers for abnormal uACR results
+  - Email digest for offline providers
+  - Integration with Smart Alerts Dashboard
+  - Audit trail logging for all notifications
+- **Audit & Compliance**:
+  - 10-year audit trail retention (HIPAA requirement)
+  - Immutable log storage for all data access
+  - HIPAA-compliant audit reports generation
+  - Data retention: Active data (7 years), De-identified research data (indefinite with consent)
+
+## Data Models
+
+### Patient Analysis Request
+```json
+{
+  "patientToken": "sha256_hashed_patient_id",
+  "fhirData": {
+    "patient": { "resourceType": "Patient", "age": 67, "gender": "male" },
+    "observations": [ /* HbA1c, eGFR, BP, etc. */ ],
+    "conditions": [ /* ICD-10 diagnoses */ ],
+    "medications": [ /* Current meds */ ]
+  },
+  "analysisType": "diabetes_complications_risk",
+  "requestedBy": "dr_maria_svensson_12345",
+  "timestamp": "2025-11-07T10:23:45Z"
+}
+```
+
+### AI Insight Response
+```json
+{
+  "patientToken": "sha256_hashed_patient_id",
+  "riskScore": 0.87,
+  "riskLevel": "HIGH",
+  "primaryConcern": "Diabetic nephropathy progression",
+  "contributingFactors": [
+    { "factor": "Declining eGFR", "trend": "↓ 15% in 6 months", "weight": 0.4 },
+    { "factor": "Elevated HbA1c", "value": "9.2%", "weight": 0.3 },
+    { "factor": "No nephrology follow-up", "gap": "18 months", "weight": 0.17 }
+  ],
+  "recommendations": [
+    { "action": "Schedule nephrology consult", "priority": "high", "timeframe": "2 weeks" },
+    { "action": "Order urine albumin/creatinine ratio", "priority": "medium", "timeframe": "1 week" },
+    { "action": "Review RAAS inhibitor dosage", "priority": "medium", "timeframe": "this visit" }
+  ],
+  "explanation": "Patient shows accelerated kidney function decline...",
+  "confidence": 0.82,
+  "modelVersion": "claude-3.5-sonnet-20250101",
+  "generatedAt": "2025-11-07T10:23:47Z"
+}
+```
+
+### Audit Log Entry
+```json
+{
+  "logId": "log_20251107_102347_xyz",
+  "timestamp": "2025-11-07T10:23:47Z",
+  "userId": "dr_maria_svensson_12345",
+  "userRole": "PRIMARY_CARE_PHYSICIAN",
+  "patientToken": "sha256_abc123",
+  "action": "VIEW_AI_INSIGHT",
+  "ipAddress": "10.0.1.45",
+  "sessionId": "sess_xyz789",
+  "deviceInfo": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)",
+  "resultCode": "SUCCESS",
+  "dataAccessed": ["Patient demographics", "Lab results (last 12 months)", "Current medications"]
+}
+```
+
+## APIs and Integrations
+
+### External APIs
+1. **FHIR Server (EHR)**: OAuth2 + FHIR R4 REST API
+2. **Anthropic API / Azure OpenAI**: For AI model inference
+3. **National Health Registries** (country-specific):
+   - Germany: gematik TI APIs
+   - France: DMP APIs via ASIP Santé
+   - Sweden: NPÖ APIs via Inera
+   - Estonia: X-Road APIs
+
+### Internal APIs
+1. **AI Analysis API**: Handles risk assessment requests (manual and automatic)
+2. **Audit API**: Records and retrieves audit logs
+3. **Configuration API**: Manages AI model settings, thresholds, clinical guidelines
+4. **Event Processing API** (NEW): Handles FHIR change webhooks, queues risk recalculation jobs
+5. **Notification API** (NEW): Manages alerts, WebSocket connections, email notifications
+6. **Risk History API** (NEW): Retrieves historical risk scores, detects significant changes
+
+## Infrastructure Requirements
+
+### Production Environment (EU Cloud Deployment)
+- **Compute**:
+  - Backend API: 4 vCPU, 16GB RAM (auto-scaling 2-10 instances)
+  - **Background Workers** (NEW): 2 vCPU, 8GB RAM (auto-scaling 3-20 instances for event processing)
+  - **WebSocket Server** (NEW): 2 vCPU, 4GB RAM (for real-time notifications)
+  - AI Processing: GPU instances (NVIDIA T4 or A10) if using local models
+- **Storage**:
+  - PostgreSQL 14+ (for audit logs, user sessions, **risk assessments**): 1TB SSD
+  - Redis (for caching FHIR data + **job queue**): 32GB (increased for queue storage)
+- **Message Queue** (NEW):
+  - Redis Queue (Bull/BullMQ) or AWS SQS for job processing
+  - Handles 100-1000 jobs per minute (risk recalculations)
+- **Networking**:
+  - Load balancer with SSL/TLS termination
+  - WebSocket load balancer (AWS ALB or NGINX)
+  - VPN or private link to hospital EHR networks
+- **Monitoring** (NEW):
+  - CloudWatch or Prometheus for queue depth, worker performance, alert delivery rate
+  - Alert if queue backlog exceeds 1000 jobs or worker latency > 30 seconds
+- **Compliance**:
+  - ISO 27001 certified data center
+  - GDPR-compliant cloud provider (AWS, Azure, GCP EU regions)
+
+### On-Premise Deployment (High-Security Hospitals)
+- **Hardware**:
+  - Server: 24 vCPU, 128GB RAM, 4TB NVMe SSD (increased for background workers)
+  - GPU: NVIDIA A100 (40GB) for local LLM inference
+- **OS**: Ubuntu Server 22.04 LTS (hardened)
+- **Containerization**: Docker + Kubernetes (K3s for smaller deployments)
+- **Services**:
+  - API server, background worker pool (5 workers), WebSocket server, Redis, PostgreSQL
+- **Backup**: Daily encrypted backups to on-site NAS
+
+# Development Roadmap
+
+## Phase 1: MVP - Single-Country Pilot (Months 1-4)
+**Goal**: Functional SMART on FHIR app with basic risk analysis for one condition (diabetes complications) in one country (Sweden or Estonia, for ease of digital integration).
+
+### MVP Features:
+1. **SMART on FHIR Integration**
+   - OAuth2 authentication flow
+   - Launch from EHR (Epic/Cerner or national system)
+   - Fetch Patient, Observation, Condition resources
+2. **Basic AI Risk Analysis**
+   - Diabetes complication risk scoring (nephropathy, retinopathy, neuropathy)
+   - Prompt engineering for Claude 3.5 Sonnet
+   - Structured JSON output (risk score, top 3 recommendations)
+3. **Manual Batch Scanning** (NEW)
+   - "Scan All My Patients" button in dashboard
+   - Background job processing with progress indicator
+   - Prioritized list of high-risk patients
+4. **Automatic Risk Recalculation** (NEW - Simplified for MVP)
+   - Polling-based change detection (every 5 minutes)
+   - Automatic recalculation when new Observation resources detected
+   - Simple in-app notification badge for risk changes
+5. **Minimal UI**
+   - Single-page app displaying risk score and recommendations
+   - Color-coded risk indicator (Red/Yellow/Green)
+   - Alert badge showing unread notifications count
+   - "↑ UPDATED" badge on recently recalculated patients
+6. **Pseudonymization**
+   - Hash patient ID before sending to AI
+   - No storage of raw patient data
+7. **Basic Audit Trail**
+   - Log analysis requests to PostgreSQL
+   - Include: timestamp, doctor ID, patient token, result, trigger type (manual/automatic)
+8. **Risk History Tracking** (NEW)
+   - Store risk assessments in PostgreSQL
+   - Track previous scores to detect significant changes
+9. **Deployment**
+   - Dockerized app deployed on AWS eu-north-1 (Stockholm)
+   - Redis queue for background jobs
+   - Background worker service (3 instances)
+
+### Success Criteria:
+- 5-10 pilot doctors can successfully launch app from their EHR
+- <2 second response time for risk analysis
+- Zero GDPR violations or data breaches
+- Positive feedback from at least 70% of pilot users
+
+## Phase 2: Enhanced Features & Second Country (Months 5-7)
+**Goal**: Add more clinical conditions, improve UI/UX, expand to second country (Germany).
+
+### New Features:
+1. **Additional Risk Models**
+   - CKD progression risk
+   - Cardiovascular disease risk (ASCVD score + AI-enhanced factors)
+   - Hypertension control assessment
+2. **Advanced Automatic Recalculation** (Upgrade from MVP)
+   - **Webhook-based change detection** (replace polling): FHIR server sends webhooks for new data
+   - **Real-time WebSocket notifications**: Push alerts to doctor's browser immediately
+   - **Email digest notifications**: Daily summary of patients with significant risk changes
+   - **Smart deduplication**: Batch multiple lab results into single analysis
+   - **Priority queue**: Critical lab values (eGFR < 30) processed first
+3. **Enhanced Population Health Dashboard**
+   - Batch analysis with progress tracking
+   - Sortable table by risk score, last update time, condition type
+   - Filter by risk level (HIGH only), condition (CKD, diabetes, CVD)
+   - Export to CSV for reporting
+4. **Improved UI**
+   - Trend graphs (eGFR over time, HbA1c trends)
+   - Drill-down into contributing factors
+   - Mobile-responsive design
+   - Real-time alert sidebar with WebSocket updates
+5. **Germany-Specific Integration**
+   - gematik TI connector integration
+   - eHBA authentication
+   - German EHR vendor partnerships (CompuGroup Medical, etc.)
+6. **Advanced Audit Features**
+   - DPIA report generation
+   - Data subject access request (DSAR) API
+   - Real-time compliance dashboard
+
+### Success Criteria:
+- Support 50+ doctors across 2 countries
+- 3 distinct clinical risk models operational
+- <3 second response time for population analysis (up to 500 patients)
+- CE marking submission prepared
+
+## Phase 3: Multi-Country Expansion & Advanced AI (Months 8-12)
+**Goal**: Scale to 5 EU countries, add explainable AI features, local model support.
+
+### New Features:
+1. **Country Expansions**
+   - France: DMP integration, SecNumCloud hosting
+   - Netherlands: VZVZ/LSP integration
+   - Denmark: National Sundhedsplatform integration
+2. **Explainable AI**
+   - SHAP/LIME-style feature importance visualization
+   - "Why this recommendation?" explanations
+   - Counterfactual analysis ("If HbA1c improved by 1%, risk would drop by X%")
+3. **Local Model Deployment**
+   - Fine-tuned LLaMA 3.1 70B for air-gapped hospitals
+   - On-premise inference with <5 second latency
+4. **Clinical Validation**
+   - Retrospective study with 1000+ patients
+   - Compare AI predictions vs actual outcomes
+   - Publish results in peer-reviewed journal
+5. **Advanced Integrations**
+   - HL7 v2 support (for legacy EHRs)
+   - DICOM integration (for imaging-based risk factors)
+
+### Success Criteria:
+- Active in 5 EU countries
+- 500+ doctors using platform
+- Published clinical validation study
+- CE marking obtained
+
+## Phase 4: Enterprise & Research Features (Month 13+)
+**Goal**: Enterprise-grade platform, research collaboration tools, AI model fine-tuning.
+
+### New Features:
+1. **Enterprise Management**
+   - Multi-tenant architecture (hospital-level isolation)
+   - Centralized admin console for hospital IT teams
+   - Usage analytics and ROI dashboards
+2. **Research Collaboration Tools**
+   - Export anonymized datasets for research (with ethics approval)
+   - Federated learning support (train models across hospitals without sharing data)
+3. **Custom Model Fine-Tuning**
+   - Hospital-specific fine-tuning on local patient data
+   - Specialty-specific models (cardiology, endocrinology, etc.)
+4. **Interoperability**
+   - MyHealth@EU integration (cross-border patient data access)
+   - OpenEHR support
+
+# Logical Dependency Chain
+
+## Foundation Layer (Must Build First)
+1. **FHIR Integration Service**: Without this, no data access
+2. **Pseudonymization Engine**: Required before any AI processing (GDPR)
+3. **Basic Audit Logging**: Must log all data access from day 1
+
+## Core Functionality Layer (Build Next)
+4. **OAuth2 Authentication Flow**: Needed for SMART on FHIR launch
+5. **AI Risk Analysis Engine**: Core value proposition
+6. **Backend API (Express/FastAPI)**: Connects frontend to AI and FHIR services
+
+## User-Facing Layer (Make It Usable)
+7. **React Frontend**: Minimal UI to display AI insights
+8. **SMART App Launcher**: Allow launch from EHR patient chart
+
+## Compliance & Security Layer (Harden the System)
+9. **Enhanced Audit Trails**: Detailed logging with retention policies
+10. **DPIA Documentation Generator**: Automated compliance reporting
+11. **Security Hardening**: Rate limiting, input validation, encryption at rest
+
+## Scale & Expand Layer (After MVP)
+12. **Population Health Dashboard**: Batch analysis feature
+13. **Additional Risk Models**: CKD, CVD, etc.
+14. **Country-Specific Modules**: Germany, France, etc.
+15. **Explainable AI Features**: SHAP visualizations, counterfactuals
+
+## Enterprise Layer (Post-Launch Enhancements)
+16. **Multi-Tenant Architecture**: Hospital-level isolation
+17. **Admin Console**: Enterprise management tools
+18. **Research Collaboration APIs**: Federated learning, dataset export
+
+# Risks and Mitigations
+
+## Risk 1: GDPR Compliance Violations
+**Impact**: High - Could result in fines, legal action, reputational damage
+**Likelihood**: Medium (if not careful with data handling)
+**Mitigation**:
+- Conduct DPIA before any data processing
+- Hire GDPR compliance consultant
+- Implement privacy-by-design principles (pseudonymization, data minimization)
+- Regular third-party audits
+- No storage of raw patient data beyond 24-72 hours
+
+## Risk 2: EHR Integration Complexity
+**Impact**: High - Could block MVP launch
+**Likelihood**: Medium-High (EHR vendors often have complex APIs, slow approval processes)
+**Mitigation**:
+- Start with FHIR-compliant EHRs only (Epic, Cerner, national systems)
+- Partner with one EHR vendor for pilot (exclusive collaboration agreement)
+- Use SMART on FHIR standard (widely supported)
+- Budget 2-3 months for integration testing
+- Hire integration specialists with EHR vendor experience
+
+## Risk 3: AI Model Accuracy / Clinical Safety
+**Impact**: Critical - Incorrect recommendations could harm patients
+**Likelihood**: Low-Medium (AI models can hallucinate or miss edge cases)
+**Mitigation**:
+- Always position as "decision support" not "decision-making"
+- Require doctor review and approval for all AI outputs
+- Implement rule-based validation (flag absurd recommendations)
+- Conduct clinical validation study before scaling
+- Maintain feedback loop (doctors can report inaccurate predictions)
+- Obtain medical device certification (CE marking)
+
+## Risk 4: Slow Adoption by Doctors
+**Impact**: Medium - Could delay revenue, make scaling difficult
+**Likelihood**: Medium (doctors are often resistant to new tools)
+**Mitigation**:
+- Design for minimal workflow disruption (<2 second load times)
+- Emphasize time savings and better patient outcomes in marketing
+- Partner with medical associations for endorsements
+- Offer free pilot period with extensive training and support
+- Collect and showcase success stories (improved outcomes, time saved)
+
+## Risk 5: National Health System Bureaucracy
+**Impact**: High - Could block market access in some countries
+**Likelihood**: High (healthcare is heavily regulated)
+**Mitigation**:
+- Start in digitally advanced countries (Estonia, Sweden, Denmark)
+- Engage early with national digital health agencies (e.g., ASIP Santé in France)
+- Apply for regulatory sandboxes where available
+- Hire local experts familiar with each country's healthcare system
+- Budget 6-12 months for regulatory approvals in each new country
+
+## Risk 6: Data Breach / Cyberattack
+**Impact**: Critical - Could expose sensitive health data, destroy company
+**Likelihood**: Low (with proper security) to Medium (if targeted by sophisticated attackers)
+**Mitigation**:
+- ISO 27001 certification
+- Annual penetration testing
+- Bug bounty program
+- End-to-end encryption (TLS 1.3, AES-256)
+- No storage of raw patient data (ephemeral processing only)
+- Intrusion detection systems (IDS)
+- 24/7 security monitoring
+- Cyber insurance policy
+
+## Risk 7: AI Model API Costs & Availability
+**Impact**: Medium - Could make product unprofitable or unavailable
+**Likelihood**: Medium (Anthropic/OpenAI APIs can be expensive, have rate limits)
+**Mitigation**:
+- Negotiate enterprise pricing with API providers
+- Implement caching to reduce API calls (cache FHIR data for 5 min, cache AI insights for 1 hour)
+- Develop fallback to local LLM (LLaMA 3.1) for on-premise deployments
+- Monitor API costs daily, set budget alerts
+- Pricing model: charge per analysis or subscription per doctor (cover API costs + margin)
+
+## Risk 8: Unclear MVP Scope
+**Impact**: Medium - Could lead to scope creep, delayed launch
+**Likelihood**: High (healthcare projects often expand in scope)
+**Mitigation**:
+- Strict MVP definition: 1 country, 1 condition (diabetes), 1 EHR vendor
+- Time-box MVP to 4 months
+- Defer all "nice-to-have" features to Phase 2
+- Weekly sprint reviews to catch scope creep early
+- Founder/PM has final say on scope changes
+
+# Appendix
+
+## Research Findings
+
+### Market Size
+- **EU Primary Care Physicians**: ~500,000
+- **Target Market (Year 1)**: Sweden (15,000 GPs), Estonia (2,000 GPs), Germany (60,000 GPs)
+- **Addressable Market**: 77,000 doctors × €50/month = €46M ARR potential
+
+### Competitor Analysis
+1. **IBM Watson Health**: Enterprise-focused, expensive, complex integration
+2. **Babylon Health**: Patient-facing, not clinician-focused
+3. **Ada Health**: Symptom checker, not decision support for doctors
+4. **Infermedica**: API-based, not integrated into EHR workflow
+5. **Opportunity**: No dominant FHIR-integrated, GDPR-compliant clinical AI for EU PCPs
+
+### Clinical Evidence
+- AI-assisted decision support can reduce diagnostic errors by 20-30% (JAMA 2023)
+- CKD early detection can prevent 40% of dialysis cases (Lancet 2022)
+- Diabetes complication risk models have 0.75-0.85 AUC (area under curve) accuracy
+
+## Technical Specifications
+
+### FHIR Resources (Priority Order)
+1. **Patient**: id, name (for pseudonymization only), birthDate, gender
+2. **Observation**: code (LOINC), value, effectiveDateTime
+   - Priority codes: HbA1c (4548-4), eGFR (33914-3), BP (85354-9), BMI (39156-5)
+3. **Condition**: code (ICD-10), onsetDateTime, clinicalStatus
+   - Priority: E11 (Type 2 diabetes), I10 (Hypertension), N18 (CKD)
+4. **MedicationRequest**: medicationCodeableConcept (RxNorm), dosageInstruction
+
+### AI Prompt Template (Example for Diabetes Risk)
+```
+You are a clinical decision support AI assisting a primary care physician.
+
+Patient Summary (pseudonymized):
+- Age: {age}, Gender: {gender}
+- Diagnoses: {ICD10_codes}
+- Recent Labs:
+  - HbA1c: {value}% ({date})
+  - eGFR: {value} mL/min/1.73m² ({date})
+  - Blood Pressure: {systolic}/{diastolic} mmHg ({date})
+- Current Medications: {medication_list}
+
+Task: Assess the risk of diabetic complications (nephropathy, retinopathy, neuropathy) over the next 12 months.
+
+Output Format (JSON only):
+{
+  "riskScore": 0.0-1.0,
+  "riskLevel": "LOW|MODERATE|HIGH",
+  "primaryConcern": "string",
+  "contributingFactors": [{"factor": "string", "weight": 0.0-1.0}],
+  "recommendations": [{"action": "string", "priority": "low|medium|high", "timeframe": "string"}],
+  "explanation": "string",
+  "confidence": 0.0-1.0
+}
+```
+
+### Deployment Checklist (MVP)
+- [ ] AWS account (eu-north-1 region)
+- [ ] Domain name + SSL certificate
+- [ ] PostgreSQL RDS instance
+- [ ] Redis ElastiCache instance
+- [ ] EC2 instances (or ECS Fargate)
+- [ ] S3 bucket for logs
+- [ ] Anthropic API key (or Azure OpenAI)
+- [ ] SMART on FHIR app registration with EHR vendor
+- [ ] OAuth2 credentials from EHR
+- [ ] DPIA document approved by legal team
+- [ ] DPA signed with pilot hospital
+- [ ] Penetration test completed
+- [ ] Load testing (100 concurrent users)
+- [ ] User acceptance testing (5-10 doctors)
+- [ ] Go-live approval from hospital IT security
+
+</PRD>

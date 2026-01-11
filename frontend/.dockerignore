@@ -1,0 +1,47 @@
+# Node modules (will be installed in container)
+node_modules
+npm-debug.log
+
+# Build output (will be built in container)
+dist
+
+# Environment files (use Docker secrets/env vars)
+.env
+.env.local
+.env.*.local
+
+# Git
+.git
+.gitignore
+
+# IDE
+.vscode
+.idea
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Test files
+*.test.ts
+*.test.tsx
+*.spec.ts
+*.spec.tsx
+__tests__
+coverage
+
+# Documentation
+*.md
+!README.md
+
+# Logs
+*.log
+logs
+
+# TypeScript build info
+*.tsbuildinfo
+
+# Vite cache
+.vite

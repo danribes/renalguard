@@ -1,0 +1,1638 @@
+{
+  "projectName": "Healthcare AI Clinical Data Analyzer",
+  "lastUpdated": "2025-11-07",
+  "tasks": [
+    {
+      "id": "1",
+      "title": "Set up project infrastructure and development environment",
+      "description": "Initialize the project repository, set up development tools, configure CI/CD pipeline, and establish coding standards for the healthcare AI platform.",
+      "status": "pending",
+      "priority": "high",
+      "tags": ["infrastructure", "setup", "foundation"],
+      "dependencies": [],
+      "subtasks": [
+        {
+          "id": "1.1",
+          "title": "Initialize Git repository and project structure",
+          "description": "Create repository with proper .gitignore, README, and folder structure (frontend/, backend/, infrastructure/, docs/)",
+          "status": "pending"
+        },
+        {
+          "id": "1.2",
+          "title": "Set up Node.js/TypeScript backend skeleton",
+          "description": "Initialize Express.js or FastAPI backend with TypeScript configuration, ESLint, Prettier",
+          "status": "pending"
+        },
+        {
+          "id": "1.3",
+          "title": "Set up React frontend skeleton",
+          "description": "Initialize React app with TypeScript, Tailwind CSS, and React Query",
+          "status": "pending"
+        },
+        {
+          "id": "1.4",
+          "title": "Configure Docker and docker-compose",
+          "description": "Create Dockerfiles for frontend and backend, docker-compose for local development",
+          "status": "pending"
+        },
+        {
+          "id": "1.5",
+          "title": "Set up environment variable management",
+          "description": "Create .env.example with all required variables (API keys, database URLs, FHIR endpoints)",
+          "status": "pending"
+        }
+      ],
+      "testStrategy": "Verify all services start successfully with docker-compose up"
+    },
+    {
+      "id": "2",
+      "title": "Implement FHIR integration service",
+      "description": "Build the core service that connects to FHIR-compliant EHR systems to fetch patient data using FHIR R4 standard.",
+      "status": "pending",
+      "priority": "high",
+      "tags": ["backend", "fhir", "integration", "foundation"],
+      "dependencies": ["1"],
+      "subtasks": [
+        {
+          "id": "2.1",
+          "title": "Install FHIR client library",
+          "description": "Add HAPI FHIR client or fhir.js library to project, configure for FHIR R4",
+          "status": "pending"
+        },
+        {
+          "id": "2.2",
+          "title": "Implement FHIR connection configuration",
+          "description": "Create configuration module to store FHIR server endpoints, support multiple EHR systems",
+          "status": "pending"
+        },
+        {
+          "id": "2.3",
+          "title": "Build Patient resource fetcher",
+          "description": "Implement function to fetch Patient resource by ID, extract demographics (age, gender)",
+          "status": "pending"
+        },
+        {
+          "id": "2.4",
+          "title": "Build Observation resource fetcher",
+          "description": "Implement function to fetch lab results (HbA1c, eGFR, blood pressure) using LOINC codes",
+          "status": "pending"
+        },
+        {
+          "id": "2.5",
+          "title": "Build Condition resource fetcher",
+          "description": "Implement function to fetch diagnoses using ICD-10 codes (diabetes, CKD, hypertension)",
+          "status": "pending"
+        },
+        {
+          "id": "2.6",
+          "title": "Build MedicationRequest resource fetcher",
+          "description": "Implement function to fetch current medications using RxNorm codes",
+          "status": "pending"
+        },
+        {
+          "id": "2.7",
+          "title": "Implement FHIR data aggregator",
+          "description": "Create service that fetches all required resources for a patient and aggregates into single object",
+          "status": "pending"
+        },
+        {
+          "id": "2.8",
+          "title": "Add error handling and retry logic",
+          "description": "Handle network failures, FHIR server errors, implement exponential backoff retry",
+          "status": "pending"
+        },
+        {
+          "id": "2.9",
+          "title": "Implement response caching",
+          "description": "Add Redis caching layer for FHIR responses (5-minute TTL) to reduce API calls",
+          "status": "pending"
+        }
+      ],
+      "testStrategy": "Integration tests with FHIR test server (hapi.fhir.org), verify all resources fetched correctly"
+    },
+    {
+      "id": "3",
+      "title": "Implement pseudonymization engine",
+      "description": "Build the data processing service that strips patient identifiers and generates pseudonymous tokens before AI processing, ensuring GDPR compliance.",
+      "status": "pending",
+      "priority": "high",
+      "tags": ["backend", "security", "gdpr", "foundation"],
+      "dependencies": ["2"],
+      "subtasks": [
+        {
+          "id": "3.1",
+          "title": "Design pseudonymization strategy",
+          "description": "Define which fields to hash (patient ID, name, DOB), which to keep (age, gender), document approach",
+          "status": "pending"
+        },
+        {
+          "id": "3.2",
+          "title": "Implement patient identifier hashing",
+          "description": "Use SHA-256 with per-deployment salt to generate consistent patient tokens",
+          "status": "pending"
+        },
+        {
+          "id": "3.3",
+          "title": "Implement secret key management",
+          "description": "Store hashing salt in AWS Secrets Manager or HashiCorp Vault, not in code",
+          "status": "pending"
+        },
+        {
+          "id": "3.4",
+          "title": "Build PII stripping function",
+          "description": "Remove direct identifiers (name, address, phone, email) from FHIR data",
+          "status": "pending"
+        },
+        {
+          "id": "3.5",
+          "title": "Build re-identification function",
+          "description": "Map patient tokens back to real IDs (for displaying results to doctor in EHR)",
+          "status": "pending"
+        },
+        {
+          "id": "3.6",
+          "title": "Add data validation",
+          "description": "Ensure no PII leaks through in pseudonymized data, write validation tests",
+          "status": "pending"
+        }
+      ],
+      "testStrategy": "Unit tests verifying PII removal, integration tests confirming no identifiable data in output"
+    },
+    {
+      "id": "4",
+      "title": "Implement basic audit logging system",
+      "description": "Create comprehensive audit trail system to log all data access, AI analysis requests, and user actions for GDPR compliance.",
+      "status": "pending",
+      "priority": "high",
+      "tags": ["backend", "compliance", "foundation"],
+      "dependencies": ["1"],
+      "subtasks": [
+        {
+          "id": "4.1",
+          "title": "Set up PostgreSQL database",
+          "description": "Deploy PostgreSQL instance (RDS or local), create audit_logs table schema",
+          "status": "pending"
+        },
+        {
+          "id": "4.2",
+          "title": "Design audit log schema",
+          "description": "Define fields: timestamp, userId, patientToken, action, resultCode, ipAddress, sessionId",
+          "status": "pending"
+        },
+        {
+          "id": "4.3",
+          "title": "Implement log writing service",
+          "description": "Create async function to write audit logs without blocking main application flow",
+          "status": "pending"
+        },
+        {
+          "id": "4.4",
+          "title": "Add log retention policy",
+          "description": "Implement automatic cleanup of logs older than 7 years (configurable)",
+          "status": "pending"
+        },
+        {
+          "id": "4.5",
+          "title": "Implement log query API",
+          "description": "Create admin-only endpoint to retrieve audit logs with filtering (by user, date, action)",
+          "status": "pending"
+        },
+        {
+          "id": "4.6",
+          "title": "Add log integrity verification",
+          "description": "Implement log signing or blockchain-style integrity checks to prevent tampering",
+          "status": "pending"
+        }
+      ],
+      "testStrategy": "Unit tests for log writing, integration tests for log retrieval, verify logs survive server restarts"
+    },
+    {
+      "id": "5",
+      "title": "Implement OAuth2 authentication flow for SMART on FHIR",
+      "description": "Build authentication system that integrates with EHR OAuth2 providers, enabling secure app launch from within EHR interface.",
+      "status": "pending",
+      "priority": "high",
+      "tags": ["backend", "auth", "fhir"],
+      "dependencies": ["2"],
+      "subtasks": [
+        {
+          "id": "5.1",
+          "title": "Research SMART on FHIR OAuth2 spec",
+          "description": "Study SMART App Launch Framework, understand authorization code flow with PKCE",
+          "status": "pending"
+        },
+        {
+          "id": "5.2",
+          "title": "Implement OAuth2 client configuration",
+          "description": "Set up OAuth2 client credentials (client_id, redirect_uri) for EHR authorization server",
+          "status": "pending"
+        },
+        {
+          "id": "5.3",
+          "title": "Implement authorization redirect endpoint",
+          "description": "Create /auth/launch endpoint that redirects to EHR's authorization page",
+          "status": "pending"
+        },
+        {
+          "id": "5.4",
+          "title": "Implement callback handler",
+          "description": "Create /auth/callback endpoint to receive authorization code and exchange for access token",
+          "status": "pending"
+        },
+        {
+          "id": "5.5",
+          "title": "Implement token storage and refresh",
+          "description": "Store access token securely (encrypted), implement token refresh before expiry",
+          "status": "pending"
+        },
+        {
+          "id": "5.6",
+          "title": "Add session management",
+          "description": "Create user sessions tied to OAuth2 tokens, implement logout functionality",
+          "status": "pending"
+        },
+        {
+          "id": "5.7",
+          "title": "Implement FHIR context retrieval",
+          "description": "Extract patient ID from SMART launch context, use for subsequent FHIR queries",
+          "status": "pending"
+        }
+      ],
+      "testStrategy": "Integration test with SMART sandbox (sandbox.smarthealthit.org), verify full auth flow"
+    },
+    {
+      "id": "6",
+      "title": "Implement AI risk analysis engine",
+      "description": "Build the core AI-powered analysis engine that processes pseudonymized clinical data and generates risk assessments using Claude or GPT-4.",
+      "status": "pending",
+      "priority": "high",
+      "tags": ["backend", "ai", "core-feature"],
+      "dependencies": ["3"],
+      "subtasks": [
+        {
+          "id": "6.1",
+          "title": "Set up AI API client",
+          "description": "Initialize Anthropic (Claude) or OpenAI SDK, configure API keys",
+          "status": "pending"
+        },
+        {
+          "id": "6.2",
+          "title": "Design AI prompt template",
+          "description": "Create structured prompt for diabetes complication risk assessment, define JSON output format",
+          "status": "pending"
+        },
+        {
+          "id": "6.3",
+          "title": "Implement prompt builder",
+          "description": "Function to inject patient data into prompt template, handle missing data gracefully",
+          "status": "pending"
+        },
+        {
+          "id": "6.4",
+          "title": "Implement AI API call wrapper",
+          "description": "Send prompt to Claude/GPT-4, handle rate limits, timeouts, parse JSON response",
+          "status": "pending"
+        },
+        {
+          "id": "6.5",
+          "title": "Implement output validation",
+          "description": "Validate AI response against schema, ensure all required fields present, reject invalid outputs",
+          "status": "pending"
+        },
+        {
+          "id": "6.6",
+          "title": "Implement rule-based safety checks",
+          "description": "Add sanity checks (e.g., reject if recommends dangerous medication interactions)",
+          "status": "pending"
+        },
+        {
+          "id": "6.7",
+          "title": "Add AI response caching",
+          "description": "Cache AI responses for 1 hour (if same patient data), reduce API costs",
+          "status": "pending"
+        },
+        {
+          "id": "6.8",
+          "title": "Implement fallback model support",
+          "description": "If primary model fails, automatically retry with fallback model (e.g., GPT-4 if Claude fails)",
+          "status": "pending"
+        }
+      ],
+      "testStrategy": "Unit tests with mock patient data, integration tests with real API, validate output quality with medical expert"
+    },
+    {
+      "id": "7",
+      "title": "Build backend API endpoints",
+      "description": "Create RESTful API endpoints that connect frontend to backend services (FHIR, AI, audit logs).",
+      "status": "pending",
+      "priority": "high",
+      "tags": ["backend", "api"],
+      "dependencies": ["2", "3", "4", "6"],
+      "subtasks": [
+        {
+          "id": "7.1",
+          "title": "Design API specification",
+          "description": "Document all endpoints with OpenAPI/Swagger spec (POST /api/analyze, GET /api/insights, etc.)",
+          "status": "pending"
+        },
+        {
+          "id": "7.2",
+          "title": "Implement POST /api/analyze endpoint",
+          "description": "Trigger risk analysis for a patient, orchestrate FHIR fetch → pseudonymization → AI → response",
+          "status": "pending"
+        },
+        {
+          "id": "7.3",
+          "title": "Implement GET /api/insights/:patientToken endpoint",
+          "description": "Retrieve cached AI insights for a patient",
+          "status": "pending"
+        },
+        {
+          "id": "7.4",
+          "title": "Implement POST /api/feedback endpoint",
+          "description": "Allow doctors to submit feedback on AI recommendations (accurate/inaccurate)",
+          "status": "pending"
+        },
+        {
+          "id": "7.5",
+          "title": "Add request validation middleware",
+          "description": "Validate all incoming requests (schema validation, auth checks)",
+          "status": "pending"
+        },
+        {
+          "id": "7.6",
+          "title": "Add rate limiting",
+          "description": "Implement rate limiting (10 requests/minute per user) to prevent abuse",
+          "status": "pending"
+        },
+        {
+          "id": "7.7",
+          "title": "Add error handling middleware",
+          "description": "Centralized error handling, return consistent error responses",
+          "status": "pending"
+        },
+        {
+          "id": "7.8",
+          "title": "Implement API logging",
+          "description": "Log all API requests (except sensitive data) for debugging and monitoring",
+          "status": "pending"
+        }
+      ],
+      "testStrategy": "API integration tests with Postman/Jest, load testing with 100 concurrent requests"
+    },
+    {
+      "id": "8",
+      "title": "Build React frontend - Minimal UI for AI insights",
+      "description": "Create single-page React app that displays AI-generated risk assessments and recommendations within a doctor-friendly interface.",
+      "status": "pending",
+      "priority": "high",
+      "tags": ["frontend", "ui", "core-feature"],
+      "dependencies": ["7"],
+      "subtasks": [
+        {
+          "id": "8.1",
+          "title": "Set up React Router",
+          "description": "Configure routing for /launch, /analysis, /dashboard pages",
+          "status": "pending"
+        },
+        {
+          "id": "8.2",
+          "title": "Create authentication context",
+          "description": "React context for managing OAuth2 tokens and user session",
+          "status": "pending"
+        },
+        {
+          "id": "8.3",
+          "title": "Build launch page component",
+          "description": "Landing page for SMART app launch, handle OAuth redirect",
+          "status": "pending"
+        },
+        {
+          "id": "8.4",
+          "title": "Build risk analysis display component",
+          "description": "Show risk score (color-coded), primary concern, contributing factors",
+          "status": "pending"
+        },
+        {
+          "id": "8.5",
+          "title": "Build recommendations list component",
+          "description": "Display AI recommendations with priority badges, action timeframes",
+          "status": "pending"
+        },
+        {
+          "id": "8.6",
+          "title": "Build loading and error states",
+          "description": "Skeleton loaders while fetching data, user-friendly error messages",
+          "status": "pending"
+        },
+        {
+          "id": "8.7",
+          "title": "Implement 'Run Analysis' button",
+          "description": "Trigger POST /api/analyze when doctor clicks, show progress indicator",
+          "status": "pending"
+        },
+        {
+          "id": "8.8",
+          "title": "Add AI disclaimer notice",
+          "description": "Prominent disclaimer: 'AI support tool - verify clinically before acting'",
+          "status": "pending"
+        },
+        {
+          "id": "8.9",
+          "title": "Implement feedback buttons",
+          "description": "Allow doctor to rate AI recommendation (helpful/not helpful), send to backend",
+          "status": "pending"
+        }
+      ],
+      "testStrategy": "Component tests with React Testing Library, E2E tests with Playwright"
+    },
+    {
+      "id": "9",
+      "title": "Implement SMART App Launcher integration",
+      "description": "Configure the frontend to be launchable from within EHR patient chart view using SMART on FHIR launch protocol.",
+      "status": "pending",
+      "priority": "high",
+      "tags": ["frontend", "fhir", "integration"],
+      "dependencies": ["5", "8"],
+      "subtasks": [
+        {
+          "id": "9.1",
+          "title": "Create SMART App manifest",
+          "description": "Generate manifest.json with app metadata (name, icon, launch URL, scopes required)",
+          "status": "pending"
+        },
+        {
+          "id": "9.2",
+          "title": "Implement launch parameter handling",
+          "description": "Parse launch URL parameters (iss, launch token) from EHR",
+          "status": "pending"
+        },
+        {
+          "id": "9.3",
+          "title": "Implement standalone launch support",
+          "description": "Allow app to be launched standalone (for testing) or from EHR",
+          "status": "pending"
+        },
+        {
+          "id": "9.4",
+          "title": "Register app with SMART sandbox",
+          "description": "Register app on sandbox.smarthealthit.org for testing",
+          "status": "pending"
+        },
+        {
+          "id": "9.5",
+          "title": "Test launch from multiple EHRs",
+          "description": "Test with Epic sandbox, Cerner sandbox, ensure compatibility",
+          "status": "pending"
+        }
+      ],
+      "testStrategy": "Manual testing with SMART sandbox, verify app launches in iframe within EHR"
+    },
+    {
+      "id": "10",
+      "title": "Implement data retention and cleanup policies",
+      "description": "Automate deletion of pseudonymized patient data after 24-72 hours to minimize GDPR risk.",
+      "status": "pending",
+      "priority": "medium",
+      "tags": ["backend", "gdpr", "compliance"],
+      "dependencies": ["4"],
+      "subtasks": [
+        {
+          "id": "10.1",
+          "title": "Design data retention policy",
+          "description": "Define retention periods: FHIR cache (5 min), AI insights (72 hours), audit logs (7 years)",
+          "status": "pending"
+        },
+        {
+          "id": "10.2",
+          "title": "Implement TTL for Redis cache",
+          "description": "Set automatic expiry on cached FHIR responses (5 minutes)",
+          "status": "pending"
+        },
+        {
+          "id": "10.3",
+          "title": "Implement scheduled cleanup job",
+          "description": "Cron job to delete AI insights older than 72 hours from database",
+          "status": "pending"
+        },
+        {
+          "id": "10.4",
+          "title": "Add manual data purge endpoint",
+          "description": "Admin API to manually delete all data for a specific patient (right to erasure)",
+          "status": "pending"
+        }
+      ],
+      "testStrategy": "Verify data is automatically deleted after TTL, test manual purge API"
+    },
+    {
+      "id": "11",
+      "title": "Implement DPIA documentation generator",
+      "description": "Create automated tool to generate Data Protection Impact Assessment reports for GDPR compliance.",
+      "status": "pending",
+      "priority": "medium",
+      "tags": ["compliance", "gdpr", "documentation"],
+      "dependencies": ["4"],
+      "subtasks": [
+        {
+          "id": "11.1",
+          "title": "Research DPIA requirements",
+          "description": "Study GDPR Article 35, identify required sections for DPIA",
+          "status": "pending"
+        },
+        {
+          "id": "11.2",
+          "title": "Create DPIA template",
+          "description": "Design template with sections: purpose, data flows, risks, mitigations",
+          "status": "pending"
+        },
+        {
+          "id": "11.3",
+          "title": "Implement automated data flow mapping",
+          "description": "Generate diagram of data flows (EHR → Backend → AI → Doctor)",
+          "status": "pending"
+        },
+        {
+          "id": "11.4",
+          "title": "Implement risk assessment module",
+          "description": "List technical and organizational measures (encryption, pseudonymization, audit logs)",
+          "status": "pending"
+        },
+        {
+          "id": "11.5",
+          "title": "Generate PDF report",
+          "description": "Export completed DPIA as PDF for submission to hospital DPO",
+          "status": "pending"
+        }
+      ],
+      "testStrategy": "Review generated DPIA with GDPR compliance expert, verify completeness"
+    },
+    {
+      "id": "12",
+      "title": "Implement security hardening measures",
+      "description": "Apply comprehensive security best practices including input validation, encryption, secure headers, and penetration testing.",
+      "status": "pending",
+      "priority": "high",
+      "tags": ["backend", "security"],
+      "dependencies": ["7"],
+      "subtasks": [
+        {
+          "id": "12.1",
+          "title": "Add input validation and sanitization",
+          "description": "Validate all user inputs, prevent SQL injection, XSS, command injection",
+          "status": "pending"
+        },
+        {
+          "id": "12.2",
+          "title": "Implement encryption at rest",
+          "description": "Encrypt database (PostgreSQL TDE), encrypt Redis data",
+          "status": "pending"
+        },
+        {
+          "id": "12.3",
+          "title": "Configure secure HTTP headers",
+          "description": "Add CSP, HSTS, X-Frame-Options, X-Content-Type-Options headers",
+          "status": "pending"
+        },
+        {
+          "id": "12.4",
+          "title": "Implement CSRF protection",
+          "description": "Add CSRF tokens to all state-changing requests",
+          "status": "pending"
+        },
+        {
+          "id": "12.5",
+          "title": "Set up WAF (Web Application Firewall)",
+          "description": "Deploy AWS WAF or Cloudflare WAF to block common attacks",
+          "status": "pending"
+        },
+        {
+          "id": "12.6",
+          "title": "Conduct penetration testing",
+          "description": "Hire third-party security firm to pen test application, fix all findings",
+          "status": "pending"
+        },
+        {
+          "id": "12.7",
+          "title": "Implement intrusion detection",
+          "description": "Set up AWS GuardDuty or similar IDS, alert on suspicious activity",
+          "status": "pending"
+        }
+      ],
+      "testStrategy": "Security audit with OWASP ZAP, penetration test report with zero critical findings"
+    },
+    {
+      "id": "13",
+      "title": "Deploy MVP to AWS eu-north-1 (Stockholm)",
+      "description": "Deploy production-ready MVP to EU-based cloud infrastructure with SSL, monitoring, and backups.",
+      "status": "pending",
+      "priority": "high",
+      "tags": ["infrastructure", "deployment", "mvp"],
+      "dependencies": ["9", "10", "12"],
+      "subtasks": [
+        {
+          "id": "13.1",
+          "title": "Set up AWS VPC and subnets",
+          "description": "Create VPC with public and private subnets in eu-north-1 (Stockholm)",
+          "status": "pending"
+        },
+        {
+          "id": "13.2",
+          "title": "Deploy PostgreSQL RDS instance",
+          "description": "Create RDS PostgreSQL 14, enable encryption, automated backups",
+          "status": "pending"
+        },
+        {
+          "id": "13.3",
+          "title": "Deploy Redis ElastiCache",
+          "description": "Create ElastiCache Redis cluster for caching",
+          "status": "pending"
+        },
+        {
+          "id": "13.4",
+          "title": "Deploy backend to ECS Fargate",
+          "description": "Containerize backend, deploy to ECS with auto-scaling (2-10 instances)",
+          "status": "pending"
+        },
+        {
+          "id": "13.5",
+          "title": "Deploy frontend to S3 + CloudFront",
+          "description": "Build React app, upload to S3, configure CloudFront CDN with HTTPS",
+          "status": "pending"
+        },
+        {
+          "id": "13.6",
+          "title": "Configure Application Load Balancer",
+          "description": "Set up ALB with SSL/TLS certificate from ACM",
+          "status": "pending"
+        },
+        {
+          "id": "13.7",
+          "title": "Set up CloudWatch monitoring",
+          "description": "Configure alarms for CPU usage, error rates, API latency",
+          "status": "pending"
+        },
+        {
+          "id": "13.8",
+          "title": "Configure automated backups",
+          "description": "Daily RDS snapshots, backup retention 30 days",
+          "status": "pending"
+        },
+        {
+          "id": "13.9",
+          "title": "Set up CI/CD pipeline",
+          "description": "GitHub Actions to auto-deploy on merge to main branch",
+          "status": "pending"
+        }
+      ],
+      "testStrategy": "Load test with 100 concurrent users, verify <2 second response time, test disaster recovery"
+    },
+    {
+      "id": "14",
+      "title": "Conduct MVP pilot with 5-10 doctors in Sweden",
+      "description": "Onboard pilot users, collect feedback, monitor usage, iterate based on real-world usage.",
+      "status": "pending",
+      "priority": "high",
+      "tags": ["mvp", "pilot", "user-testing"],
+      "dependencies": ["13"],
+      "subtasks": [
+        {
+          "id": "14.1",
+          "title": "Recruit pilot doctors",
+          "description": "Partner with Swedish primary care clinic, recruit 5-10 volunteer doctors",
+          "status": "pending"
+        },
+        {
+          "id": "14.2",
+          "title": "Conduct onboarding training",
+          "description": "1-hour training session on how to use app, when to trust AI, when to override",
+          "status": "pending"
+        },
+        {
+          "id": "14.3",
+          "title": "Deploy to pilot environment",
+          "description": "Separate pilot deployment connected to test FHIR server",
+          "status": "pending"
+        },
+        {
+          "id": "14.4",
+          "title": "Monitor usage and errors",
+          "description": "Daily monitoring of logs, API errors, user feedback",
+          "status": "pending"
+        },
+        {
+          "id": "14.5",
+          "title": "Collect structured feedback",
+          "description": "Weekly survey: accuracy of predictions, ease of use, feature requests",
+          "status": "pending"
+        },
+        {
+          "id": "14.6",
+          "title": "Analyze feedback and iterate",
+          "description": "Fix bugs, improve UI based on feedback, deploy updates",
+          "status": "pending"
+        },
+        {
+          "id": "14.7",
+          "title": "Conduct post-pilot interviews",
+          "description": "1:1 interviews with each pilot doctor, gather qualitative insights",
+          "status": "pending"
+        }
+      ],
+      "testStrategy": "Success criteria: 70%+ doctors rate app as useful, zero GDPR violations, <5 critical bugs"
+    },
+    {
+      "id": "15",
+      "title": "Build population health dashboard",
+      "description": "Create batch analysis feature allowing doctors to screen all patients in their panel for high-risk individuals.",
+      "status": "pending",
+      "priority": "medium",
+      "tags": ["frontend", "backend", "feature", "phase2"],
+      "dependencies": ["14"],
+      "subtasks": [
+        {
+          "id": "15.1",
+          "title": "Design population health API",
+          "description": "POST /api/batch-analyze endpoint that accepts list of patient IDs",
+          "status": "pending"
+        },
+        {
+          "id": "15.2",
+          "title": "Implement batch processing queue",
+          "description": "Use Redis queue or AWS SQS to process patients asynchronously",
+          "status": "pending"
+        },
+        {
+          "id": "15.3",
+          "title": "Implement batch analysis orchestrator",
+          "description": "Fetch FHIR data for all patients, run AI analysis, aggregate results",
+          "status": "pending"
+        },
+        {
+          "id": "15.4",
+          "title": "Build dashboard UI component",
+          "description": "Table showing all patients with risk scores, sortable by risk level",
+          "status": "pending"
+        },
+        {
+          "id": "15.5",
+          "title": "Add filtering and search",
+          "description": "Filter by condition (diabetes, CKD), search by patient name",
+          "status": "pending"
+        },
+        {
+          "id": "15.6",
+          "title": "Implement progress indicator",
+          "description": "Show progress bar while batch analysis runs (X of Y patients analyzed)",
+          "status": "pending"
+        }
+      ],
+      "testStrategy": "Test with 500 patients, verify <3 second response time, check for memory leaks"
+    },
+    {
+      "id": "16",
+      "title": "Add CKD progression risk model",
+      "description": "Implement additional AI risk model for chronic kidney disease progression analysis.",
+      "status": "pending",
+      "priority": "medium",
+      "tags": ["backend", "ai", "feature", "phase2"],
+      "dependencies": ["14"],
+      "subtasks": [
+        {
+          "id": "16.1",
+          "title": "Research CKD risk factors",
+          "description": "Study clinical literature on CKD progression (eGFR trends, proteinuria, comorbidities)",
+          "status": "pending"
+        },
+        {
+          "id": "16.2",
+          "title": "Design CKD-specific prompt template",
+          "description": "Create prompt for AI model focused on kidney function analysis",
+          "status": "pending"
+        },
+        {
+          "id": "16.3",
+          "title": "Implement CKD feature extraction",
+          "description": "Extract eGFR trends (last 12 months), urine albumin/creatinine ratio, RAAS inhibitor usage",
+          "status": "pending"
+        },
+        {
+          "id": "16.4",
+          "title": "Implement CKD risk scoring",
+          "description": "Call AI model with CKD-specific prompt, validate output",
+          "status": "pending"
+        },
+        {
+          "id": "16.5",
+          "title": "Add CKD to frontend UI",
+          "description": "Add toggle to switch between diabetes and CKD analysis",
+          "status": "pending"
+        }
+      ],
+      "testStrategy": "Clinical validation with nephrologist, test with 100 CKD patient records"
+    },
+    {
+      "id": "17",
+      "title": "Add cardiovascular disease risk model",
+      "description": "Implement AI-enhanced cardiovascular disease risk assessment (ASCVD score + additional factors).",
+      "status": "pending",
+      "priority": "medium",
+      "tags": ["backend", "ai", "feature", "phase2"],
+      "dependencies": ["16"],
+      "subtasks": [
+        {
+          "id": "17.1",
+          "title": "Research CVD risk factors",
+          "description": "Study ASCVD score calculation, identify AI-enhanceable factors",
+          "status": "pending"
+        },
+        {
+          "id": "17.2",
+          "title": "Implement ASCVD score calculator",
+          "description": "Traditional risk calculation (age, BP, cholesterol, smoking status)",
+          "status": "pending"
+        },
+        {
+          "id": "17.3",
+          "title": "Design CVD AI enhancement prompt",
+          "description": "Prompt AI to identify additional risk factors beyond ASCVD score",
+          "status": "pending"
+        },
+        {
+          "id": "17.4",
+          "title": "Implement CVD risk analysis",
+          "description": "Combine ASCVD score with AI insights, generate recommendations",
+          "status": "pending"
+        },
+        {
+          "id": "17.5",
+          "title": "Add CVD to frontend",
+          "description": "Add CVD option to risk model selector",
+          "status": "pending"
+        }
+      ],
+      "testStrategy": "Compare AI predictions to actual cardiovascular events (retrospective study)"
+    },
+    {
+      "id": "18",
+      "title": "Implement trend visualization (graphs)",
+      "description": "Add interactive graphs showing patient trends over time (eGFR decline, HbA1c history, BP trends).",
+      "status": "pending",
+      "priority": "medium",
+      "tags": ["frontend", "visualization", "phase2"],
+      "dependencies": ["14"],
+      "subtasks": [
+        {
+          "id": "18.1",
+          "title": "Install charting library",
+          "description": "Add Recharts or Chart.js to project",
+          "status": "pending"
+        },
+        {
+          "id": "18.2",
+          "title": "Implement eGFR trend graph",
+          "description": "Line chart showing eGFR over last 12 months, highlight declining trend",
+          "status": "pending"
+        },
+        {
+          "id": "18.3",
+          "title": "Implement HbA1c trend graph",
+          "description": "Line chart with target range (7%), color-code above-target values",
+          "status": "pending"
+        },
+        {
+          "id": "18.4",
+          "title": "Implement blood pressure trend graph",
+          "description": "Line chart with systolic and diastolic, show hypertension thresholds",
+          "status": "pending"
+        },
+        {
+          "id": "18.5",
+          "title": "Add responsive design",
+          "description": "Ensure graphs work on tablet/mobile screens",
+          "status": "pending"
+        }
+      ],
+      "testStrategy": "Visual testing with various data ranges, verify accessibility (screen readers)"
+    },
+    {
+      "id": "19",
+      "title": "Implement Germany-specific integration (TI)",
+      "description": "Add support for German Telematikinfrastruktur, gematik certification, eHBA authentication.",
+      "status": "pending",
+      "priority": "high",
+      "tags": ["integration", "germany", "compliance", "phase2"],
+      "dependencies": ["14"],
+      "subtasks": [
+        {
+          "id": "19.1",
+          "title": "Research gematik requirements",
+          "description": "Study TI specification, understand connector requirements",
+          "status": "pending"
+        },
+        {
+          "id": "19.2",
+          "title": "Partner with TI connector provider",
+          "description": "Negotiate partnership with CompuGroup Medical or similar",
+          "status": "pending"
+        },
+        {
+          "id": "19.3",
+          "title": "Implement eHBA authentication",
+          "description": "Integrate with electronic Health Professional Card for doctor auth",
+          "status": "pending"
+        },
+        {
+          "id": "19.4",
+          "title": "Deploy to German cloud provider",
+          "description": "Set up infrastructure on T-Systems or Telekom Health Cloud",
+          "status": "pending"
+        },
+        {
+          "id": "19.5",
+          "title": "Submit for gematik certification",
+          "description": "Prepare documentation, submit app for certification",
+          "status": "pending"
+        },
+        {
+          "id": "19.6",
+          "title": "Pilot with German clinic",
+          "description": "Partner with German Hausarzt practice for pilot",
+          "status": "pending"
+        }
+      ],
+      "testStrategy": "Full certification from gematik, successful pilot with 5 German doctors"
+    },
+    {
+      "id": "20",
+      "title": "Implement explainable AI features",
+      "description": "Add feature importance visualization and counterfactual analysis to help doctors understand AI reasoning.",
+      "status": "pending",
+      "priority": "medium",
+      "tags": ["ai", "frontend", "feature", "phase3"],
+      "dependencies": ["18"],
+      "subtasks": [
+        {
+          "id": "20.1",
+          "title": "Research XAI techniques",
+          "description": "Study SHAP, LIME, counterfactual explanations for LLMs",
+          "status": "pending"
+        },
+        {
+          "id": "20.2",
+          "title": "Implement feature importance extraction",
+          "description": "Parse AI response to extract factor weights, visualize as bar chart",
+          "status": "pending"
+        },
+        {
+          "id": "20.3",
+          "title": "Implement 'Why this recommendation?' dialog",
+          "description": "Pop-up explaining clinical reasoning behind each recommendation",
+          "status": "pending"
+        },
+        {
+          "id": "20.4",
+          "title": "Implement counterfactual analysis",
+          "description": "Show 'If HbA1c improved by 1%, risk would drop by X%'",
+          "status": "pending"
+        },
+        {
+          "id": "20.5",
+          "title": "Add clinical guideline references",
+          "description": "Link recommendations to specific clinical guidelines (ADA, KDIGO, etc.)",
+          "status": "pending"
+        }
+      ],
+      "testStrategy": "User testing with doctors, verify explanations increase trust in AI"
+    },
+    {
+      "id": "21",
+      "title": "Implement local model deployment (LLaMA 3.1)",
+      "description": "Add support for on-premise deployment using fine-tuned LLaMA 3.1 70B for air-gapped hospitals.",
+      "status": "pending",
+      "priority": "medium",
+      "tags": ["ai", "infrastructure", "phase3"],
+      "dependencies": ["19"],
+      "subtasks": [
+        {
+          "id": "21.1",
+          "title": "Research LLaMA 3.1 fine-tuning",
+          "description": "Study fine-tuning process, compute requirements (NVIDIA A100)",
+          "status": "pending"
+        },
+        {
+          "id": "21.2",
+          "title": "Create synthetic training dataset",
+          "description": "Generate synthetic patient scenarios for fine-tuning (no real patient data)",
+          "status": "pending"
+        },
+        {
+          "id": "21.3",
+          "title": "Fine-tune LLaMA 3.1 70B",
+          "description": "Train model on clinical risk assessment tasks, validate accuracy",
+          "status": "pending"
+        },
+        {
+          "id": "21.4",
+          "title": "Implement local inference engine",
+          "description": "Deploy model on GPU server, create API endpoint",
+          "status": "pending"
+        },
+        {
+          "id": "21.5",
+          "title": "Optimize inference latency",
+          "description": "Target <5 second response time, implement batching, quantization",
+          "status": "pending"
+        },
+        {
+          "id": "21.6",
+          "title": "Create on-premise deployment guide",
+          "description": "Document hardware requirements, installation steps",
+          "status": "pending"
+        }
+      ],
+      "testStrategy": "Compare local model accuracy to Claude/GPT-4, benchmark latency"
+    },
+    {
+      "id": "22",
+      "title": "Conduct clinical validation study",
+      "description": "Retrospective study with 1000+ patients to validate AI predictions against actual outcomes, publish results.",
+      "status": "pending",
+      "priority": "high",
+      "tags": ["research", "validation", "phase3"],
+      "dependencies": ["17"],
+      "subtasks": [
+        {
+          "id": "22.1",
+          "title": "Design study protocol",
+          "description": "Define research question, inclusion criteria, outcome measures",
+          "status": "pending"
+        },
+        {
+          "id": "22.2",
+          "title": "Obtain ethics approval",
+          "description": "Submit protocol to hospital ethics committee, obtain approval",
+          "status": "pending"
+        },
+        {
+          "id": "22.3",
+          "title": "Collect retrospective data",
+          "description": "Extract 1000 patient records (with hospital permission), anonymize",
+          "status": "pending"
+        },
+        {
+          "id": "22.4",
+          "title": "Run AI predictions on historical data",
+          "description": "Apply current AI model to historical patient data",
+          "status": "pending"
+        },
+        {
+          "id": "22.5",
+          "title": "Compare predictions to actual outcomes",
+          "description": "Check if AI predicted complications that actually occurred",
+          "status": "pending"
+        },
+        {
+          "id": "22.6",
+          "title": "Statistical analysis",
+          "description": "Calculate AUC, sensitivity, specificity, positive predictive value",
+          "status": "pending"
+        },
+        {
+          "id": "22.7",
+          "title": "Write manuscript",
+          "description": "Draft paper for submission to JAMA, NEJM, or Lancet",
+          "status": "pending"
+        },
+        {
+          "id": "22.8",
+          "title": "Submit for peer review",
+          "description": "Submit to journal, respond to reviewer comments",
+          "status": "pending"
+        }
+      ],
+      "testStrategy": "Publication in peer-reviewed journal, AUC >0.75 for primary outcome"
+    },
+    {
+      "id": "23",
+      "title": "Obtain CE marking (medical device certification)",
+      "description": "Submit application for CE marking as Class I medical device (decision support software).",
+      "status": "pending",
+      "priority": "high",
+      "tags": ["compliance", "certification", "phase3"],
+      "dependencies": ["22"],
+      "subtasks": [
+        {
+          "id": "23.1",
+          "title": "Determine device classification",
+          "description": "Confirm Class I or IIa classification with notified body",
+          "status": "pending"
+        },
+        {
+          "id": "23.2",
+          "title": "Prepare technical documentation",
+          "description": "Compile device description, risk analysis, clinical evaluation",
+          "status": "pending"
+        },
+        {
+          "id": "23.3",
+          "title": "Conduct risk analysis (ISO 14971)",
+          "description": "Identify all potential harms, mitigation measures",
+          "status": "pending"
+        },
+        {
+          "id": "23.4",
+          "title": "Create post-market surveillance plan",
+          "description": "Define how adverse events will be monitored and reported",
+          "status": "pending"
+        },
+        {
+          "id": "23.5",
+          "title": "Submit to notified body",
+          "description": "Submit documentation for review (if Class IIa) or self-certify (if Class I)",
+          "status": "pending"
+        },
+        {
+          "id": "23.6",
+          "title": "Obtain CE marking certificate",
+          "description": "Receive approval to affix CE mark to product",
+          "status": "pending"
+        }
+      ],
+      "testStrategy": "CE marking certificate obtained, product legally marketable in EU"
+    },
+    {
+      "id": "24",
+      "title": "Expand to 5 EU countries",
+      "description": "Deploy in France, Netherlands, Denmark in addition to Sweden and Germany.",
+      "status": "pending",
+      "priority": "medium",
+      "tags": ["expansion", "integration", "phase3"],
+      "dependencies": ["23"],
+      "subtasks": [
+        {
+          "id": "24.1",
+          "title": "France: DMP API integration",
+          "description": "Integrate with French Dossier Médical Partagé system",
+          "status": "pending"
+        },
+        {
+          "id": "24.2",
+          "title": "France: SecNumCloud hosting",
+          "description": "Deploy on OVHcloud santé or similar certified provider",
+          "status": "pending"
+        },
+        {
+          "id": "24.3",
+          "title": "Netherlands: VZVZ integration",
+          "description": "Connect to Dutch national EHR exchange (VZVZ)",
+          "status": "pending"
+        },
+        {
+          "id": "24.4",
+          "title": "Denmark: Sundhedsplatform integration",
+          "description": "Integrate with Danish national health platform",
+          "status": "pending"
+        },
+        {
+          "id": "24.5",
+          "title": "Multi-language support",
+          "description": "Translate UI to French, Dutch, Danish (in addition to English, Swedish, German)",
+          "status": "pending"
+        },
+        {
+          "id": "24.6",
+          "title": "Country-specific compliance reviews",
+          "description": "Review each country's data protection laws, adapt as needed",
+          "status": "pending"
+        }
+      ],
+      "testStrategy": "Successful pilot in each country with 5+ doctors, zero compliance violations"
+    },
+    {
+      "id": "25",
+      "title": "Implement enterprise management console",
+      "description": "Build admin portal for hospital IT teams to manage multi-tenant deployments, view usage analytics.",
+      "status": "pending",
+      "priority": "medium",
+      "tags": ["enterprise", "admin", "phase4"],
+      "dependencies": ["24"],
+      "subtasks": [
+        {
+          "id": "25.1",
+          "title": "Design multi-tenant architecture",
+          "description": "Isolate data per hospital, ensure no cross-tenant data leaks",
+          "status": "pending"
+        },
+        {
+          "id": "25.2",
+          "title": "Build admin authentication",
+          "description": "Separate auth for hospital admins vs doctors",
+          "status": "pending"
+        },
+        {
+          "id": "25.3",
+          "title": "Build user management UI",
+          "description": "Admin can add/remove doctors, assign roles",
+          "status": "pending"
+        },
+        {
+          "id": "25.4",
+          "title": "Build usage analytics dashboard",
+          "description": "Show number of analyses run, average response time, user adoption rate",
+          "status": "pending"
+        },
+        {
+          "id": "25.5",
+          "title": "Build configuration management",
+          "description": "Admin can customize risk thresholds, AI model selection",
+          "status": "pending"
+        },
+        {
+          "id": "25.6",
+          "title": "Build billing integration",
+          "description": "Track usage per hospital for invoicing",
+          "status": "pending"
+        }
+      ],
+      "testStrategy": "UAT with 3 hospital IT departments, verify all admin functions work"
+    },
+    {
+      "id": "26",
+      "title": "Implement three-tier CKD risk stratification algorithm (Population Triage)",
+      "description": "Build automated population-wide risk stratification system that classifies all patients into Low Risk (Tier 1), Moderate Risk (Tier 2), and High Risk (Tier 3) based on clinical history, diagnoses, medications, and demographics.",
+      "status": "pending",
+      "priority": "high",
+      "tags": ["ckd", "risk-stratification", "phase2", "core-feature"],
+      "dependencies": ["15", "16"],
+      "subtasks": [
+        {
+          "id": "26.1",
+          "title": "Design risk tier classification rules",
+          "description": "Document criteria for each tier: Tier 1 (no risk factors), Tier 2 (age >60, BMI >30, smoker, NSAID use, kidney stones, UTIs), Tier 3 (diabetes, hypertension, CVD, kidney history)",
+          "status": "pending"
+        },
+        {
+          "id": "26.2",
+          "title": "Implement Tier 3 (High Risk) detection algorithm",
+          "description": "Query FHIR Condition resources for ICD-10 codes: diabetes (E11), hypertension (I10), CVD (I50, I21, I63), AKI history, autoimmune diseases",
+          "status": "pending"
+        },
+        {
+          "id": "26.3",
+          "title": "Implement Tier 2 (Moderate Risk) detection algorithm",
+          "description": "Query for: age >60 (Patient.birthDate), BMI >30 (Observation LOINC 39156-5), smoking status (Observation LOINC 72166-2), long-term NSAID use (MedicationRequest), kidney stones (N20), UTI history (N39.0)",
+          "status": "pending"
+        },
+        {
+          "id": "26.4",
+          "title": "Implement population-wide triage batch job",
+          "description": "Create scheduled job (weekly/monthly) to classify entire patient population, store tier assignments in database",
+          "status": "pending"
+        },
+        {
+          "id": "26.5",
+          "title": "Create risk tier assignment database table",
+          "description": "CREATE TABLE patient_risk_tiers (patient_token VARCHAR, tier INT, assigned_at TIMESTAMP, risk_factors JSONB, next_action VARCHAR)",
+          "status": "pending"
+        },
+        {
+          "id": "26.6",
+          "title": "Build tier visualization dashboard",
+          "description": "Admin dashboard showing population distribution: X% Tier 1, Y% Tier 2, Z% Tier 3, with drill-down to patient lists",
+          "status": "pending"
+        },
+        {
+          "id": "26.7",
+          "title": "Implement tier change detection",
+          "description": "Detect when patients move between tiers (e.g., Tier 2 → Tier 3 after diabetes diagnosis), trigger automatic protocol enrollment",
+          "status": "pending"
+        }
+      ],
+      "testStrategy": "Test with synthetic patient population (1000 patients), verify correct tier assignment, compare to manual chart review by nephrologist"
+    },
+    {
+      "id": "27",
+      "title": "Implement active CKD screening and monitoring protocol",
+      "description": "Build automated system to order baseline tests (eGFR, uACR), schedule follow-up tests, and track monitoring compliance for Tier 2 and Tier 3 patients.",
+      "status": "pending",
+      "priority": "high",
+      "tags": ["ckd", "monitoring", "phase2", "clinical-workflow"],
+      "dependencies": ["26"],
+      "subtasks": [
+        {
+          "id": "27.1",
+          "title": "Design monitoring protocol rules",
+          "description": "Define test ordering rules: Tier 3 → eGFR + uACR yearly (or every 6 months if uncontrolled diabetes/hypertension), Tier 2 → eGFR yearly, add uACR if eGFR declining",
+          "status": "pending"
+        },
+        {
+          "id": "27.2",
+          "title": "Implement baseline test order generator",
+          "description": "When patient assigned to Tier 3, automatically flag for eGFR + uACR order at next visit, generate reminder for doctor",
+          "status": "pending"
+        },
+        {
+          "id": "27.3",
+          "title": "Build monitoring schedule tracker",
+          "description": "Track last test dates, calculate next due date based on tier and risk factors, send reminders 30 days before due",
+          "status": "pending"
+        },
+        {
+          "id": "27.4",
+          "title": "Implement test result monitoring",
+          "description": "Automatically fetch new eGFR and uACR results from FHIR Observation resources, link to monitoring protocol",
+          "status": "pending"
+        },
+        {
+          "id": "27.5",
+          "title": "Build monitoring compliance dashboard",
+          "description": "Show which Tier 2/3 patients are overdue for screening, percentage compliance, drill-down to individual patient tracking",
+          "status": "pending"
+        },
+        {
+          "id": "27.6",
+          "title": "Implement eGFR trend detection",
+          "description": "For Tier 2 patients, detect declining eGFR trend (>5% drop in 6 months), automatically flag for uACR test addition",
+          "status": "pending"
+        },
+        {
+          "id": "27.7",
+          "title": "Build doctor notification system for overdue tests",
+          "description": "Alert doctors when patients miss scheduled monitoring tests, include reason (e.g., 'Patient due for annual eGFR - last test 14 months ago')",
+          "status": "pending"
+        }
+      ],
+      "testStrategy": "Pilot with 50 high-risk patients, verify test orders generated correctly, track compliance over 6 months"
+    },
+    {
+      "id": "28",
+      "title": "Implement CKD diagnostic confirmation workflow (3-month rule)",
+      "description": "Build automated system to detect abnormal kidney function test results, trigger 3-month confirmation testing, and formally diagnose CKD when persistence is confirmed.",
+      "status": "pending",
+      "priority": "high",
+      "tags": ["ckd", "diagnosis", "phase2", "clinical-workflow"],
+      "dependencies": ["27"],
+      "subtasks": [
+        {
+          "id": "28.1",
+          "title": "Implement abnormal result detection",
+          "description": "Automatically flag when eGFR < 60 mL/min/1.73m² OR uACR > 30 mg/g, trigger diagnostic confirmation workflow",
+          "status": "pending"
+        },
+        {
+          "id": "28.2",
+          "title": "Build 3-month confirmation tracker",
+          "description": "Create tracking table for patients with initial abnormal results, calculate 3-month confirmation date, schedule repeat test",
+          "status": "pending"
+        },
+        {
+          "id": "28.3",
+          "title": "Implement confirmation test reminder system",
+          "description": "Send reminders to doctor and patient 2 weeks before 3-month confirmation test due, escalate if test not completed",
+          "status": "pending"
+        },
+        {
+          "id": "28.4",
+          "title": "Build diagnostic decision algorithm",
+          "description": "Compare initial and 3-month test results: if both abnormal → confirm CKD diagnosis, if normalized → continue monitoring, if improved but still abnormal → extend observation",
+          "status": "pending"
+        },
+        {
+          "id": "28.5",
+          "title": "Implement CKD staging calculator",
+          "description": "Calculate CKD stage (1-5) based on eGFR and uACR using KDIGO classification, update patient record with formal diagnosis",
+          "status": "pending"
+        },
+        {
+          "id": "28.6",
+          "title": "Build diagnostic notification workflow",
+          "description": "When CKD confirmed, send comprehensive alert to doctor with stage, trend analysis, and recommended next steps",
+          "status": "pending"
+        },
+        {
+          "id": "28.7",
+          "title": "Implement false positive tracking",
+          "description": "Track patients whose initial abnormal results normalized (no CKD diagnosis), analyze reasons (AKI, dehydration, etc.)",
+          "status": "pending"
+        }
+      ],
+      "testStrategy": "Test with retrospective data: 100 patients with abnormal results, verify correct diagnosis confirmation and staging"
+    },
+    {
+      "id": "29",
+      "title": "Implement post-diagnosis CKD management and referral system",
+      "description": "Build automated care coordination system that triggers intensified monitoring schedules, medication reviews, lifestyle intervention plans, and nephrology referrals based on CKD stage.",
+      "status": "pending",
+      "priority": "high",
+      "tags": ["ckd", "management", "phase2", "clinical-workflow"],
+      "dependencies": ["28"],
+      "subtasks": [
+        {
+          "id": "29.1",
+          "title": "Design stage-based care protocols",
+          "description": "Define care plans for each CKD stage: Stage 1-2 (annual monitoring, lifestyle counseling), Stage 3 (every 6 months, medication review), Stage 4-5 (quarterly monitoring, nephrologist required)",
+          "status": "pending"
+        },
+        {
+          "id": "29.2",
+          "title": "Implement intensified monitoring schedule",
+          "description": "After CKD diagnosis, automatically update monitoring frequency based on stage: Stage 1-2 (yearly), Stage 3 (every 6 months), Stage 4-5 (quarterly)",
+          "status": "pending"
+        },
+        {
+          "id": "29.3",
+          "title": "Build medication review alert system",
+          "description": "Flag nephrotoxic medications (NSAIDs, certain antibiotics, contrast dye), alert doctor to review/adjust, suggest kidney-safe alternatives",
+          "status": "pending"
+        },
+        {
+          "id": "29.4",
+          "title": "Implement blood pressure control tracker",
+          "description": "For CKD patients, track BP readings with stricter targets (130/80), alert if consistently above target, suggest treatment intensification",
+          "status": "pending"
+        },
+        {
+          "id": "29.5",
+          "title": "Build automatic nephrology referral trigger",
+          "description": "Automatically flag for nephrology referral when: eGFR < 30 (Stage 4), rapidly declining eGFR (>5 mL/min/year), or uACR > 300 mg/g",
+          "status": "pending"
+        },
+        {
+          "id": "29.6",
+          "title": "Implement lifestyle intervention plan generator",
+          "description": "Generate personalized education materials: low-sodium diet for Stage 3+, protein restriction for Stage 4+, smoking cessation, diabetes control",
+          "status": "pending"
+        },
+        {
+          "id": "29.7",
+          "title": "Build CKD progression tracker",
+          "description": "Track eGFR slope over time, predict time to Stage 5 (dialysis), generate visual progression graphs for doctor and patient",
+          "status": "pending"
+        },
+        {
+          "id": "29.8",
+          "title": "Implement outcomes reporting dashboard",
+          "description": "Show CKD management outcomes: % with controlled BP, % on RAAS inhibitors, % referred to nephrologist, progression rates",
+          "status": "pending"
+        }
+      ],
+      "testStrategy": "Pilot with 30 newly diagnosed CKD patients across different stages, track adherence to care protocols, measure time to nephrology referral for Stage 4"
+    },
+    {
+      "id": "30",
+      "title": "Integrate three-phase CKD protocol with automatic risk recalculation system",
+      "description": "Connect the CKD identification pipeline (triage → monitoring → diagnosis → management) with the event-driven risk recalculation system, enabling seamless patient flow through all phases.",
+      "status": "pending",
+      "priority": "high",
+      "tags": ["ckd", "integration", "phase2", "automation"],
+      "dependencies": ["15", "26", "27", "28", "29"],
+      "subtasks": [
+        {
+          "id": "30.1",
+          "title": "Implement tier re-evaluation triggers",
+          "description": "When automatic risk recalculation detects new diabetes/hypertension diagnosis, automatically re-run tier classification, upgrade patient from Tier 2 → Tier 3 if needed",
+          "status": "pending"
+        },
+        {
+          "id": "30.2",
+          "title": "Connect monitoring protocol to event system",
+          "description": "When new eGFR or uACR result arrives (detected by event system), automatically update monitoring tracker, check if diagnostic confirmation needed",
+          "status": "pending"
+        },
+        {
+          "id": "30.3",
+          "title": "Build unified CKD patient journey dashboard",
+          "description": "Single view showing patient's progression: Current tier → Test history → Monitoring compliance → Diagnostic status → Management plan",
+          "status": "pending"
+        },
+        {
+          "id": "30.4",
+          "title": "Implement smart alert prioritization",
+          "description": "Prioritize alerts: Critical (eGFR < 30, new CKD diagnosis) → High (overdue confirmation test) → Medium (monitoring due soon) → Low (tier reassignment)",
+          "status": "pending"
+        },
+        {
+          "id": "30.5",
+          "title": "Build automated workflow state machine",
+          "description": "State machine tracking patient status: Tier Assigned → Monitoring Active → Abnormal Result → Confirmation Pending → Diagnosed → Under Management",
+          "status": "pending"
+        },
+        {
+          "id": "30.6",
+          "title": "Implement population health analytics",
+          "description": "Aggregate metrics: % of high-risk patients under active monitoring, average time to diagnosis, % diagnosed CKD receiving nephrology care, progression rates by tier",
+          "status": "pending"
+        },
+        {
+          "id": "30.7",
+          "title": "Build quality improvement reports",
+          "description": "Generate monthly/quarterly reports for hospital administration: screening compliance, early detection rates, outcomes compared to national benchmarks",
+          "status": "pending"
+        }
+      ],
+      "testStrategy": "End-to-end testing with 200 patients through full pipeline, verify seamless transitions between phases, measure time from risk detection to diagnosis"
+    },
+    {
+      "id": "31",
+      "title": "Implement urine analysis data integration following Minuteful Kidney protocol",
+      "description": "Build comprehensive integration with home-based urine testing systems (Healthy.io Minuteful Kidney) to automatically ingest uACR, albumin, and creatinine test results from smartphone-based testing into the clinical database following HL7 FHIR R4 standards and real-time processing protocols.",
+      "status": "pending",
+      "priority": "high",
+      "tags": ["urine-analysis", "lab-integration", "minuteful-kidney", "phase2", "data-ingestion"],
+      "dependencies": ["2", "4", "15", "27"],
+      "subtasks": [
+        {
+          "id": "31.1",
+          "title": "Design urine analysis database schema",
+          "description": "CREATE TABLE urine_tests (test_id UUID PRIMARY KEY, patient_token VARCHAR(255), session_id UUID, test_datetime TIMESTAMP, uacr_value NUMERIC(6,2), albumin_mg_l NUMERIC(6,2), creatinine_mg_dl NUMERIC(6,2), kit_batch_number VARCHAR(50), device_type VARCHAR(100), app_version VARCHAR(20), processing_status VARCHAR(20), ai_confidence_score NUMERIC(3,2), quality_score JSONB, created_at TIMESTAMP, updated_at TIMESTAMP); CREATE INDEX idx_patient_urine ON urine_tests(patient_token, test_datetime DESC);",
+          "status": "pending"
+        },
+        {
+          "id": "31.2",
+          "title": "Implement Healthy.io Minuteful Kidney API client",
+          "description": "Build API client for Healthy.io integration: Base URL https://api.minuteful.com/v2, OAuth 2.0 + JWT authentication, implement endpoints for patient management (GET/POST /patients), test results (GET /patients/{id}/results, POST /results), and webhook subscription for real-time notifications",
+          "status": "pending"
+        },
+        {
+          "id": "31.3",
+          "title": "Build FHIR Observation resource parser for urine tests",
+          "description": "Implement parser to extract uACR data from FHIR Observation resources: LOINC codes for uACR (9318-7), urine albumin (14958-3), urine creatinine (2161-8), map to internal database schema, handle unit conversions (mg/g, mg/L, mg/dL)",
+          "status": "pending"
+        },
+        {
+          "id": "31.4",
+          "title": "Implement real-time urine test data ingestion pipeline",
+          "description": "Build real-time processing pipeline: Subscribe to FHIR server webhooks for new Observation resources, receive encrypted JSON payloads (AES-256-GCM), validate digital signatures (SHA-256), decrypt and parse test data, store in PostgreSQL with <60 second latency, trigger automatic risk recalculation",
+          "status": "pending"
+        },
+        {
+          "id": "31.5",
+          "title": "Implement batch urine test data ingestion",
+          "description": "Build batch processing for bulk data imports: Support NDJSON bulk export format, scheduled daily import at 02:00 UTC, GPG decryption with healthcare provider private key, bulk insert with transaction support, conflict resolution for duplicate tests",
+          "status": "pending"
+        },
+        {
+          "id": "31.6",
+          "title": "Build uACR data validation and quality control",
+          "description": "Implement validation rules: Check uACR range (0-5000 mg/g), validate albumin (0-500 mg/L) and creatinine (0-500 mg/dL) ranges, flag outliers for review, validate kit expiration dates, check AI confidence scores (minimum 0.80), implement quality control flags for lighting/positioning scores",
+          "status": "pending"
+        },
+        {
+          "id": "31.7",
+          "title": "Implement SMART on FHIR authorization for urine data access",
+          "description": "Build SMART on FHIR authorization flow: Client registration (POST /auth/register), authorization request with scopes (patient/Observation.read, patient/DiagnosticReport.read), token exchange (POST /auth/token), resource access with Bearer tokens, implement refresh token rotation",
+          "status": "pending"
+        },
+        {
+          "id": "31.8",
+          "title": "Build urine test result notification system",
+          "description": "Implement automatic notifications for abnormal uACR results: Trigger alerts when uACR > 30 mg/g (microalbuminuria threshold), send WebSocket notifications to providers in real-time, create email digest for offline providers, link to CKD diagnostic confirmation workflow (Task 28), log all notifications in audit trail",
+          "status": "pending"
+        },
+        {
+          "id": "31.9",
+          "title": "Implement urine test trend analysis and visualization",
+          "description": "Build trend analysis for serial uACR measurements: Calculate eGFR slope from serial creatinine values, detect worsening albuminuria trends (>20% increase in 3 months), generate visual graphs (time series for uACR, albumin, creatinine), compare to KDIGO thresholds, predict progression risk",
+          "status": "pending"
+        },
+        {
+          "id": "31.10",
+          "title": "Build data transfer security protocols",
+          "description": "Implement security measures following Minuteful Kidney protocol: HTTPS/TLS 1.3 for all API communications, WebSocket Secure (WSS) for live monitoring, AES-256-GCM encryption for data at rest, column-level encryption for sensitive fields (patient identifiers, test results), implement certificate pinning for mobile app",
+          "status": "pending"
+        },
+        {
+          "id": "31.11",
+          "title": "Implement offline capability and sync mechanism",
+          "description": "Build offline data handling: Local encryption (AES-256) for tests captured offline, secure storage on device until network available, automatic sync when connectivity restored, conflict resolution for duplicate submissions, progress tracking with user notifications, retry mechanism with exponential backoff",
+          "status": "pending"
+        },
+        {
+          "id": "31.12",
+          "title": "Build integration with primary healthcare system databases",
+          "description": "Implement bidirectional sync with primary care databases: PostgreSQL 14 connection with SSL/TLS client certificates, real-time replication + daily snapshots, support for multiple connection protocols (Direct API, HL7 FHIR R4, Batch NDJSON export), implement ETL pipeline for legacy database formats, maintain data consistency across systems",
+          "status": "pending"
+        },
+        {
+          "id": "31.13",
+          "title": "Implement Apache Kafka stream processing for urine tests",
+          "description": "Build stream processing pipeline: Set up Kafka topics (urine-test-raw, urine-test-validated, urine-test-alerts), implement producer for incoming test data, build consumer for validation and enrichment, implement dead letter queue for failed processing, configure retention policies, enable real-time analytics",
+          "status": "pending"
+        },
+        {
+          "id": "31.14",
+          "title": "Build urine test audit logging and compliance tracking",
+          "description": "Implement comprehensive audit trail: Log all data access (who, what, when), track data modifications with before/after snapshots, record API calls with request/response payloads, implement immutable audit log storage, generate HIPAA-compliant audit reports, maintain 10-year retention for audit trails",
+          "status": "pending"
+        },
+        {
+          "id": "31.15",
+          "title": "Create urine test data API endpoints for third-party access",
+          "description": "Build RESTful API endpoints: GET /api/urine-tests/{patient_token} (retrieve patient's test history), POST /api/urine-tests (submit new test results), GET /api/urine-tests/{test_id}/images (retrieve test strip images), GET /api/urine-tests/analytics (aggregate statistics), implement rate limiting (1000 requests/hour per client), OAuth 2.0 authentication",
+          "status": "pending"
+        }
+      ],
+      "testStrategy": "End-to-end testing with 100 synthetic urine test submissions via Minuteful Kidney API, verify real-time processing (<60s latency), validate FHIR Observation resource creation, test batch import with 1000 records, verify integration with CKD diagnostic confirmation workflow, validate security protocols and encryption, test offline sync with network interruptions"
+    }
+  ]
+}

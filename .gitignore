@@ -1,0 +1,144 @@
+# Healthcare AI Clinical Data Analyzer - Hackathon Demo
+# Git ignore file for development and production
+
+# ============================================
+# Dependencies
+# ============================================
+node_modules/
+npm-debug.log
+yarn-error.log
+package-lock.json.bak
+
+# ============================================
+# External repositories (can be re-cloned)
+# ============================================
+claude-task-master/
+
+# ============================================
+# Environment variables & Secrets
+# ============================================
+.env
+.env.local
+.env.production
+.env.*.local
+*.key
+*.pem
+secrets/
+.secrets
+
+# AWS & cloud credentials
+*.credentials
+aws-credentials.json
+gcp-credentials.json
+azure-credentials.json
+
+# ============================================
+# Build outputs
+# ============================================
+dist/
+build/
+*.log
+*.tsbuildinfo
+.cache/
+.temp/
+*.tmp
+
+# Frontend build artifacts
+frontend/dist/
+frontend/build/
+frontend/.vite/
+
+# Backend build artifacts
+backend/dist/
+backend/build/
+
+# ============================================
+# Testing & Coverage
+# ============================================
+coverage/
+.nyc_output/
+*.lcov
+test-results/
+junit.xml
+
+# ============================================
+# IDE & Editors
+# ============================================
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.classpath
+.settings/
+*.sublime-project
+*.sublime-workspace
+
+# ============================================
+# OS Files
+# ============================================
+.DS_Store
+Thumbs.db
+Desktop.ini
+._*
+
+# ============================================
+# Task Master temporary files
+# ============================================
+.taskmaster/reports/*.tmp
+*.zip
+
+# ============================================
+# Database Files
+# ============================================
+*.db
+*.sqlite
+*.sqlite3
+pgdata/
+postgres-data/
+
+# ============================================
+# Docker
+# ============================================
+*.pid
+.docker-data/
+docker-compose.override.yml
+.dockerignore.bak
+
+# ============================================
+# Logs
+# ============================================
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+pnpm-debug.log*
+
+# ============================================
+# Temporary files
+# ============================================
+*.tmp
+*.temp
+tmp/
+temp/
+
+# ============================================
+# Backup files
+# ============================================
+*.bak
+*.backup
+*.old
+*~
+
+# ============================================
+# Hackathon-specific
+# ============================================
+# Keep test scripts, logs, and documentation
+# These are part of the deliverables
+
+# Ignore local development notes (if any)
+NOTES.md
+TODO.local.md

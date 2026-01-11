@@ -1,0 +1,1464 @@
+================================================================================
+CKD HIGH-RISK PATIENT MONITORING REPORT
+================================================================================
+
+Scan Date: 2025-11-09T18:29:49.015826
+Total Patients Scanned: 205
+High-Risk Patients Identified: 121 (59.0%)
+
+PRIORITY DISTRIBUTION:
+--------------------------------------------------------------------------------
+  CRITICAL     :  52 patients ( 43.0%)
+  HIGH         :  23 patients ( 19.0%)
+  MODERATE     :  35 patients ( 28.9%)
+
+================================================================================
+TOP ALERT TYPES (Most Common Issues)
+================================================================================
+ 1. UNCONTROLLED_HTN          :  90 patients
+ 2. HYPERPHOSPHATEMIA         :  53 patients
+ 3. OBESITY                   :  51 patients
+ 4. PROGRESSIVE_CKD           :  47 patients
+ 5. NEPHROTIC_DECLINE         :  46 patients
+ 6. UNCONTROLLED_DM           :  46 patients
+ 7. RAPID_DECLINE             :  31 patients
+ 8. MODERATE_ANEMIA           :  31 patients
+ 9. NO_RAS_INHIBITOR          :  31 patients
+10. SEVERE_ANEMIA             :  23 patients
+
+================================================================================
+CRITICAL PRIORITY PATIENTS (Immediate Action Required)
+================================================================================
+
+
+Sara Hamilton (MRN181)
+  Age/Gender: 75yo Female
+  CKD Stage: 4, eGFR: 25.68 mL/min (trend: down, -16.2%)
+  Comorbidities: Diabetes
+  SEVERITY SCORE: 61 points
+  ALERTS (10):
+    [CRITICAL] Rapid eGFR decline (-16.2%)
+        → ACTION: Urgent nephrology referral, investigate reversible causes (AKI, medications, obstruction)
+    [CRITICAL] Severe hyperkalemia (K+ 6.7 mEq/L)
+        → ACTION: IMMEDIATE evaluation - cardiac monitoring, stop K+-sparing agents, consider dialysis
+    [CRITICAL] Severe anemia (Hb 8.4 g/dL)
+        → ACTION: Urgent investigation: iron studies, B12/folate, GI evaluation; consider ESA therapy
+    [CRITICAL] Nephrotic-range proteinuria (uACR 759.63 mg/g) with declining eGFR
+        → ACTION: Urgent nephrology referral - consider kidney biopsy, exclude glomerulonephritis
+    [HIGH] Uncontrolled hypertension (170/105 mmHg)
+        → ACTION: Intensify antihypertensive therapy - target <130/80 in CKD with proteinuria
+    [HIGH] Elevated phosphorus (7.0 mg/dL)
+        → ACTION: Dietary counseling (limit high-phosphate foods), initiate phosphate binders
+    [HIGH] Nephrotoxic medications with declining kidney function
+        → ACTION: URGENT medication review - discontinue/substitute NSAIDs, aminoglycosides, etc.
+    [MODERATE] Diabetic CKD without SGLT2 inhibitor
+        → ACTION: Consider SGLT2i (empagliflozin/dapagliflozin) - proven renoprotection
+    [MODERATE] Obesity (BMI 43.0 kg/m²)
+        → ACTION: Weight management program - target 5-10% weight loss, dietary counseling
+    [MODERATE] Progressive CKD (Stage 4, eGFR declining -16.2%)
+        → ACTION: Review medications, optimize BP/DM control, ensure nephrology follow-up
+
+--------------------------------------------------------------------------------
+
+Mark Clark (MRN023)
+  Age/Gender: 69yo Male
+  CKD Stage: 5, eGFR: 11.0 mL/min (trend: down, -17.5%)
+  Comorbidities: Diabetes, Hypertension, CHF
+  SEVERITY SCORE: 59 points
+  ALERTS (9):
+    [CRITICAL] Rapid eGFR decline (-17.5%)
+        → ACTION: Urgent nephrology referral, investigate reversible causes (AKI, medications, obstruction)
+    [CRITICAL] Severe hyperkalemia (K+ 6.4 mEq/L)
+        → ACTION: IMMEDIATE evaluation - cardiac monitoring, stop K+-sparing agents, consider dialysis
+    [CRITICAL] Severe anemia (Hb 8.3 g/dL)
+        → ACTION: Urgent investigation: iron studies, B12/folate, GI evaluation; consider ESA therapy
+    [CRITICAL] Nephrotic-range proteinuria (uACR 880.0 mg/g) with declining eGFR
+        → ACTION: Urgent nephrology referral - consider kidney biopsy, exclude glomerulonephritis
+    [HIGH] Uncontrolled hypertension (170/104 mmHg)
+        → ACTION: Intensify antihypertensive therapy - target <130/80 in CKD with proteinuria
+    [HIGH] Uncontrolled diabetes (HbA1c 9.0%)
+        → ACTION: Optimize glycemic control - target HbA1c <7%, strongly consider SGLT2i
+    [HIGH] Elevated phosphorus (7.0 mg/dL)
+        → ACTION: Dietary counseling (limit high-phosphate foods), initiate phosphate binders
+    [MODERATE] Active smoker - accelerates CKD progression
+        → ACTION: Smoking cessation counseling, pharmacotherapy (varenicline, bupropion)
+    [MODERATE] Progressive CKD (Stage 5, eGFR declining -17.5%)
+        → ACTION: Review medications, optimize BP/DM control, ensure nephrology follow-up
+
+--------------------------------------------------------------------------------
+
+Clara Hicks (MRN087)
+  Age/Gender: 65yo Female
+  CKD Stage: 5, eGFR: 6.2 mL/min (trend: down, -18.5%)
+  Comorbidities: Hypertension, Diabetes
+  SEVERITY SCORE: 59 points
+  ALERTS (10):
+    [CRITICAL] Rapid eGFR decline (-18.5%)
+        → ACTION: Urgent nephrology referral, investigate reversible causes (AKI, medications, obstruction)
+    [CRITICAL] Severe hyperkalemia (K+ 6.1 mEq/L)
+        → ACTION: IMMEDIATE evaluation - cardiac monitoring, stop K+-sparing agents, consider dialysis
+    [CRITICAL] Nephrotic-range proteinuria (uACR 927.76 mg/g) with declining eGFR
+        → ACTION: Urgent nephrology referral - consider kidney biopsy, exclude glomerulonephritis
+    [HIGH] Uncontrolled hypertension (157/105 mmHg)
+        → ACTION: Intensify antihypertensive therapy - target <130/80 in CKD with proteinuria
+    [HIGH] Uncontrolled diabetes (HbA1c 8.2%)
+        → ACTION: Optimize glycemic control - target HbA1c <7%, strongly consider SGLT2i
+    [HIGH] Elevated phosphorus (7.2 mg/dL)
+        → ACTION: Dietary counseling (limit high-phosphate foods), initiate phosphate binders
+    [HIGH] Nephrotoxic medications with declining kidney function
+        → ACTION: URGENT medication review - discontinue/substitute NSAIDs, aminoglycosides, etc.
+    [HIGH] Moderate anemia (Hb 10.8 g/dL)
+        → ACTION: Iron studies, address iron deficiency, monitor for progression
+    [MODERATE] Active smoker - accelerates CKD progression
+        → ACTION: Smoking cessation counseling, pharmacotherapy (varenicline, bupropion)
+    [MODERATE] Progressive CKD (Stage 5, eGFR declining -18.5%)
+        → ACTION: Review medications, optimize BP/DM control, ensure nephrology follow-up
+
+--------------------------------------------------------------------------------
+
+Robert Chen (MRN003)
+  Age/Gender: 73yo Male
+  CKD Stage: 5, eGFR: 12.0 mL/min (trend: down, -15.2%)
+  Comorbidities: Diabetes, Hypertension, CHF
+  SEVERITY SCORE: 57 points
+  ALERTS (8):
+    [CRITICAL] Rapid eGFR decline (-15.2%)
+        → ACTION: Urgent nephrology referral, investigate reversible causes (AKI, medications, obstruction)
+    [CRITICAL] Severe hyperkalemia (K+ 6.2 mEq/L)
+        → ACTION: IMMEDIATE evaluation - cardiac monitoring, stop K+-sparing agents, consider dialysis
+    [CRITICAL] Severe anemia (Hb 8.5 g/dL)
+        → ACTION: Urgent investigation: iron studies, B12/folate, GI evaluation; consider ESA therapy
+    [CRITICAL] Nephrotic-range proteinuria (uACR 850.0 mg/g) with declining eGFR
+        → ACTION: Urgent nephrology referral - consider kidney biopsy, exclude glomerulonephritis
+    [HIGH] Uncontrolled hypertension (168/102 mmHg)
+        → ACTION: Intensify antihypertensive therapy - target <130/80 in CKD with proteinuria
+    [HIGH] Uncontrolled diabetes (HbA1c 8.5%)
+        → ACTION: Optimize glycemic control - target HbA1c <7%, strongly consider SGLT2i
+    [HIGH] Elevated phosphorus (6.8 mg/dL)
+        → ACTION: Dietary counseling (limit high-phosphate foods), initiate phosphate binders
+    [MODERATE] Progressive CKD (Stage 5, eGFR declining -15.2%)
+        → ACTION: Review medications, optimize BP/DM control, ensure nephrology follow-up
+
+--------------------------------------------------------------------------------
+
+Thomas Brown (MRN011)
+  Age/Gender: 68yo Male
+  CKD Stage: 5, eGFR: 10.0 mL/min (trend: down, -18.5%)
+  Comorbidities: Diabetes, Hypertension, CHF
+  SEVERITY SCORE: 57 points
+  ALERTS (8):
+    [CRITICAL] Rapid eGFR decline (-18.5%)
+        → ACTION: Urgent nephrology referral, investigate reversible causes (AKI, medications, obstruction)
+    [CRITICAL] Severe hyperkalemia (K+ 6.5 mEq/L)
+        → ACTION: IMMEDIATE evaluation - cardiac monitoring, stop K+-sparing agents, consider dialysis
+    [CRITICAL] Severe anemia (Hb 8.2 g/dL)
+        → ACTION: Urgent investigation: iron studies, B12/folate, GI evaluation; consider ESA therapy
+    [CRITICAL] Nephrotic-range proteinuria (uACR 920.0 mg/g) with declining eGFR
+        → ACTION: Urgent nephrology referral - consider kidney biopsy, exclude glomerulonephritis
+    [HIGH] Uncontrolled hypertension (172/105 mmHg)
+        → ACTION: Intensify antihypertensive therapy - target <130/80 in CKD with proteinuria
+    [HIGH] Uncontrolled diabetes (HbA1c 9.1%)
+        → ACTION: Optimize glycemic control - target HbA1c <7%, strongly consider SGLT2i
+    [HIGH] Elevated phosphorus (7.2 mg/dL)
+        → ACTION: Dietary counseling (limit high-phosphate foods), initiate phosphate binders
+    [MODERATE] Progressive CKD (Stage 5, eGFR declining -18.5%)
+        → ACTION: Review medications, optimize BP/DM control, ensure nephrology follow-up
+
+--------------------------------------------------------------------------------
+
+Kenneth Young (MRN029)
+  Age/Gender: 72yo Male
+  CKD Stage: 5, eGFR: 13.0 mL/min (trend: down, -16.2%)
+  Comorbidities: Diabetes, Hypertension, CHF
+  SEVERITY SCORE: 57 points
+  ALERTS (8):
+    [CRITICAL] Rapid eGFR decline (-16.2%)
+        → ACTION: Urgent nephrology referral, investigate reversible causes (AKI, medications, obstruction)
+    [CRITICAL] Severe hyperkalemia (K+ 6.1 mEq/L)
+        → ACTION: IMMEDIATE evaluation - cardiac monitoring, stop K+-sparing agents, consider dialysis
+    [CRITICAL] Severe anemia (Hb 8.6 g/dL)
+        → ACTION: Urgent investigation: iron studies, B12/folate, GI evaluation; consider ESA therapy
+    [CRITICAL] Nephrotic-range proteinuria (uACR 820.0 mg/g) with declining eGFR
+        → ACTION: Urgent nephrology referral - consider kidney biopsy, exclude glomerulonephritis
+    [HIGH] Uncontrolled hypertension (167/101 mmHg)
+        → ACTION: Intensify antihypertensive therapy - target <130/80 in CKD with proteinuria
+    [HIGH] Uncontrolled diabetes (HbA1c 8.8%)
+        → ACTION: Optimize glycemic control - target HbA1c <7%, strongly consider SGLT2i
+    [HIGH] Elevated phosphorus (6.7 mg/dL)
+        → ACTION: Dietary counseling (limit high-phosphate foods), initiate phosphate binders
+    [MODERATE] Progressive CKD (Stage 5, eGFR declining -16.2%)
+        → ACTION: Review medications, optimize BP/DM control, ensure nephrology follow-up
+
+--------------------------------------------------------------------------------
+
+George Scott (MRN035)
+  Age/Gender: 74yo Male
+  CKD Stage: 5, eGFR: 9.0 mL/min (trend: down, -19.0%)
+  Comorbidities: Diabetes, Hypertension, CHF
+  SEVERITY SCORE: 57 points
+  ALERTS (8):
+    [CRITICAL] Rapid eGFR decline (-19.0%)
+        → ACTION: Urgent nephrology referral, investigate reversible causes (AKI, medications, obstruction)
+    [CRITICAL] Severe hyperkalemia (K+ 6.6 mEq/L)
+        → ACTION: IMMEDIATE evaluation - cardiac monitoring, stop K+-sparing agents, consider dialysis
+    [CRITICAL] Severe anemia (Hb 8.0 g/dL)
+        → ACTION: Urgent investigation: iron studies, B12/folate, GI evaluation; consider ESA therapy
+    [CRITICAL] Nephrotic-range proteinuria (uACR 950.0 mg/g) with declining eGFR
+        → ACTION: Urgent nephrology referral - consider kidney biopsy, exclude glomerulonephritis
+    [HIGH] Uncontrolled hypertension (174/106 mmHg)
+        → ACTION: Intensify antihypertensive therapy - target <130/80 in CKD with proteinuria
+    [HIGH] Uncontrolled diabetes (HbA1c 9.2%)
+        → ACTION: Optimize glycemic control - target HbA1c <7%, strongly consider SGLT2i
+    [HIGH] Elevated phosphorus (7.5 mg/dL)
+        → ACTION: Dietary counseling (limit high-phosphate foods), initiate phosphate binders
+    [MODERATE] Progressive CKD (Stage 5, eGFR declining -19.0%)
+        → ACTION: Review medications, optimize BP/DM control, ensure nephrology follow-up
+
+--------------------------------------------------------------------------------
+
+John Anderson (MRN001)
+  Age/Gender: 67yo Male
+  CKD Stage: 4, eGFR: 28.5 mL/min (trend: down, -8.5%)
+  Comorbidities: Diabetes, Hypertension
+  SEVERITY SCORE: 56 points
+  ALERTS (11):
+    [CRITICAL] Stage 4 CKD without nephrologist
+        → ACTION: IMMEDIATE nephrology referral - dialysis planning may be needed
+    [CRITICAL] Nephrotic-range proteinuria (uACR 450.0 mg/g) with declining eGFR
+        → ACTION: Urgent nephrology referral - consider kidney biopsy, exclude glomerulonephritis
+    [HIGH] Uncontrolled hypertension (152/94 mmHg)
+        → ACTION: Intensify antihypertensive therapy - target <130/80 in CKD with proteinuria
+    [HIGH] Uncontrolled diabetes (HbA1c 7.8%)
+        → ACTION: Optimize glycemic control - target HbA1c <7%, strongly consider SGLT2i
+    [HIGH] Elevated phosphorus (5.2 mg/dL)
+        → ACTION: Dietary counseling (limit high-phosphate foods), initiate phosphate binders
+    [HIGH] Nephrotoxic medications with declining kidney function
+        → ACTION: URGENT medication review - discontinue/substitute NSAIDs, aminoglycosides, etc.
+    [HIGH] Moderate anemia (Hb 10.2 g/dL)
+        → ACTION: Iron studies, address iron deficiency, monitor for progression
+    [HIGH] Moderate hyperkalemia (K+ 5.8 mEq/L)
+        → ACTION: Dietary counseling, review medications, consider K+ binder if persistent
+    [MODERATE] Diabetic CKD without SGLT2 inhibitor
+        → ACTION: Consider SGLT2i (empagliflozin/dapagliflozin) - proven renoprotection
+    [MODERATE] Obesity (BMI 31.2 kg/m²)
+        → ACTION: Weight management program - target 5-10% weight loss, dietary counseling
+    [MODERATE] Progressive CKD (Stage 4, eGFR declining -8.5%)
+        → ACTION: Review medications, optimize BP/DM control, ensure nephrology follow-up
+
+--------------------------------------------------------------------------------
+
+David Martinez (MRN007)
+  Age/Gender: 71yo Male
+  CKD Stage: 4, eGFR: 25.0 mL/min (trend: down, -10.5%)
+  Comorbidities: Diabetes, Hypertension, CVD
+  SEVERITY SCORE: 56 points
+  ALERTS (11):
+    [CRITICAL] Rapid eGFR decline (-10.5%)
+        → ACTION: Urgent nephrology referral, investigate reversible causes (AKI, medications, obstruction)
+    [CRITICAL] Nephrotic-range proteinuria (uACR 520.0 mg/g) with declining eGFR
+        → ACTION: Urgent nephrology referral - consider kidney biopsy, exclude glomerulonephritis
+    [HIGH] Uncontrolled hypertension (158/96 mmHg)
+        → ACTION: Intensify antihypertensive therapy - target <130/80 in CKD with proteinuria
+    [HIGH] Uncontrolled diabetes (HbA1c 8.2%)
+        → ACTION: Optimize glycemic control - target HbA1c <7%, strongly consider SGLT2i
+    [HIGH] Elevated phosphorus (5.5 mg/dL)
+        → ACTION: Dietary counseling (limit high-phosphate foods), initiate phosphate binders
+    [HIGH] Nephrotoxic medications with declining kidney function
+        → ACTION: URGENT medication review - discontinue/substitute NSAIDs, aminoglycosides, etc.
+    [HIGH] Moderate anemia (Hb 9.8 g/dL)
+        → ACTION: Iron studies, address iron deficiency, monitor for progression
+    [HIGH] Moderate hyperkalemia (K+ 5.6 mEq/L)
+        → ACTION: Dietary counseling, review medications, consider K+ binder if persistent
+    [MODERATE] Diabetic CKD without SGLT2 inhibitor
+        → ACTION: Consider SGLT2i (empagliflozin/dapagliflozin) - proven renoprotection
+    [MODERATE] Active smoker - accelerates CKD progression
+        → ACTION: Smoking cessation counseling, pharmacotherapy (varenicline, bupropion)
+    [MODERATE] Progressive CKD (Stage 4, eGFR declining -10.5%)
+        → ACTION: Review medications, optimize BP/DM control, ensure nephrology follow-up
+
+--------------------------------------------------------------------------------
+
+Christopher Wilson (MRN013)
+  Age/Gender: 62yo Male
+  CKD Stage: 4, eGFR: 22.0 mL/min (trend: down, -12.3%)
+  Comorbidities: Diabetes, Hypertension
+  SEVERITY SCORE: 56 points
+  ALERTS (11):
+    [CRITICAL] Rapid eGFR decline (-12.3%)
+        → ACTION: Urgent nephrology referral, investigate reversible causes (AKI, medications, obstruction)
+    [CRITICAL] Nephrotic-range proteinuria (uACR 580.0 mg/g) with declining eGFR
+        → ACTION: Urgent nephrology referral - consider kidney biopsy, exclude glomerulonephritis
+    [HIGH] Uncontrolled hypertension (162/98 mmHg)
+        → ACTION: Intensify antihypertensive therapy - target <130/80 in CKD with proteinuria
+    [HIGH] Uncontrolled diabetes (HbA1c 8.7%)
+        → ACTION: Optimize glycemic control - target HbA1c <7%, strongly consider SGLT2i
+    [HIGH] Elevated phosphorus (5.8 mg/dL)
+        → ACTION: Dietary counseling (limit high-phosphate foods), initiate phosphate binders
+    [HIGH] Nephrotoxic medications with declining kidney function
+        → ACTION: URGENT medication review - discontinue/substitute NSAIDs, aminoglycosides, etc.
+    [HIGH] Moderate anemia (Hb 9.5 g/dL)
+        → ACTION: Iron studies, address iron deficiency, monitor for progression
+    [HIGH] Moderate hyperkalemia (K+ 5.9 mEq/L)
+        → ACTION: Dietary counseling, review medications, consider K+ binder if persistent
+    [MODERATE] Obesity (BMI 30.8 kg/m²)
+        → ACTION: Weight management program - target 5-10% weight loss, dietary counseling
+    [MODERATE] Active smoker - accelerates CKD progression
+        → ACTION: Smoking cessation counseling, pharmacotherapy (varenicline, bupropion)
+    [MODERATE] Progressive CKD (Stage 4, eGFR declining -12.3%)
+        → ACTION: Review medications, optimize BP/DM control, ensure nephrology follow-up
+
+--------------------------------------------------------------------------------
+
+Brian King (MRN031)
+  Age/Gender: 66yo Male
+  CKD Stage: 4, eGFR: 26.0 mL/min (trend: down, -10.0%)
+  Comorbidities: Diabetes, Hypertension
+  SEVERITY SCORE: 56 points
+  ALERTS (11):
+    [CRITICAL] Rapid eGFR decline (-10.0%)
+        → ACTION: Urgent nephrology referral, investigate reversible causes (AKI, medications, obstruction)
+    [CRITICAL] Nephrotic-range proteinuria (uACR 510.0 mg/g) with declining eGFR
+        → ACTION: Urgent nephrology referral - consider kidney biopsy, exclude glomerulonephritis
+    [HIGH] Uncontrolled hypertension (156/96 mmHg)
+        → ACTION: Intensify antihypertensive therapy - target <130/80 in CKD with proteinuria
+    [HIGH] Uncontrolled diabetes (HbA1c 8.0%)
+        → ACTION: Optimize glycemic control - target HbA1c <7%, strongly consider SGLT2i
+    [HIGH] Elevated phosphorus (5.3 mg/dL)
+        → ACTION: Dietary counseling (limit high-phosphate foods), initiate phosphate binders
+    [HIGH] Nephrotoxic medications with declining kidney function
+        → ACTION: URGENT medication review - discontinue/substitute NSAIDs, aminoglycosides, etc.
+    [HIGH] Moderate anemia (Hb 10.1 g/dL)
+        → ACTION: Iron studies, address iron deficiency, monitor for progression
+    [HIGH] Moderate hyperkalemia (K+ 5.7 mEq/L)
+        → ACTION: Dietary counseling, review medications, consider K+ binder if persistent
+    [MODERATE] Diabetic CKD without SGLT2 inhibitor
+        → ACTION: Consider SGLT2i (empagliflozin/dapagliflozin) - proven renoprotection
+    [MODERATE] Active smoker - accelerates CKD progression
+        → ACTION: Smoking cessation counseling, pharmacotherapy (varenicline, bupropion)
+    [MODERATE] Progressive CKD (Stage 4, eGFR declining -10.0%)
+        → ACTION: Review medications, optimize BP/DM control, ensure nephrology follow-up
+
+--------------------------------------------------------------------------------
+
+Caroline Freeman (MRN113)
+  Age/Gender: 65yo Female
+  CKD Stage: 4, eGFR: 24.13 mL/min (trend: down, -16.9%)
+  Comorbidities: Hypertension, Diabetes
+  SEVERITY SCORE: 56 points
+  ALERTS (10):
+    [CRITICAL] Rapid eGFR decline (-16.9%)
+        → ACTION: Urgent nephrology referral, investigate reversible causes (AKI, medications, obstruction)
+    [CRITICAL] Severe hyperkalemia (K+ 6.3 mEq/L)
+        → ACTION: IMMEDIATE evaluation - cardiac monitoring, stop K+-sparing agents, consider dialysis
+    [CRITICAL] Nephrotic-range proteinuria (uACR 588.97 mg/g) with declining eGFR
+        → ACTION: Urgent nephrology referral - consider kidney biopsy, exclude glomerulonephritis
+    [HIGH] Uncontrolled hypertension (149/110 mmHg)
+        → ACTION: Intensify antihypertensive therapy - target <130/80 in CKD with proteinuria
+    [HIGH] Uncontrolled diabetes (HbA1c 7.9%)
+        → ACTION: Optimize glycemic control - target HbA1c <7%, strongly consider SGLT2i
+    [HIGH] Elevated phosphorus (7.2 mg/dL)
+        → ACTION: Dietary counseling (limit high-phosphate foods), initiate phosphate binders
+    [HIGH] Moderate anemia (Hb 9.9 g/dL)
+        → ACTION: Iron studies, address iron deficiency, monitor for progression
+    [MODERATE] Proteinuria without RAS inhibitor therapy
+        → ACTION: Initiate ACE inhibitor or ARB (first-line for proteinuric CKD)
+    [MODERATE] Diabetic CKD without SGLT2 inhibitor
+        → ACTION: Consider SGLT2i (empagliflozin/dapagliflozin) - proven renoprotection
+    [MODERATE] Progressive CKD (Stage 4, eGFR declining -16.9%)
+        → ACTION: Review medications, optimize BP/DM control, ensure nephrology follow-up
+
+--------------------------------------------------------------------------------
+
+Diana Boyd (MRN140)
+  Age/Gender: 74yo Female
+  CKD Stage: 4, eGFR: 26.68 mL/min (trend: down, -19.4%)
+  Comorbidities: None
+  SEVERITY SCORE: 56 points
+  ALERTS (9):
+    [CRITICAL] Rapid eGFR decline (-19.4%)
+        → ACTION: Urgent nephrology referral, investigate reversible causes (AKI, medications, obstruction)
+    [CRITICAL] Severe hyperkalemia (K+ 6.2 mEq/L)
+        → ACTION: IMMEDIATE evaluation - cardiac monitoring, stop K+-sparing agents, consider dialysis
+    [CRITICAL] Severe anemia (Hb 8.5 g/dL)
+        → ACTION: Urgent investigation: iron studies, B12/folate, GI evaluation; consider ESA therapy
+    [CRITICAL] Nephrotic-range proteinuria (uACR 674.24 mg/g) with declining eGFR
+        → ACTION: Urgent nephrology referral - consider kidney biopsy, exclude glomerulonephritis
+    [HIGH] Uncontrolled hypertension (149/97 mmHg)
+        → ACTION: Intensify antihypertensive therapy - target <130/80 in CKD with proteinuria
+    [HIGH] Elevated phosphorus (4.9 mg/dL)
+        → ACTION: Dietary counseling (limit high-phosphate foods), initiate phosphate binders
+    [MODERATE] Proteinuria without RAS inhibitor therapy
+        → ACTION: Initiate ACE inhibitor or ARB (first-line for proteinuric CKD)
+    [MODERATE] Obesity (BMI 32.2 kg/m²)
+        → ACTION: Weight management program - target 5-10% weight loss, dietary counseling
+    [MODERATE] Progressive CKD (Stage 4, eGFR declining -19.4%)
+        → ACTION: Review medications, optimize BP/DM control, ensure nephrology follow-up
+
+--------------------------------------------------------------------------------
+
+Steven Jackson (MRN019)
+  Age/Gender: 65yo Male
+  CKD Stage: 4, eGFR: 27.0 mL/min (trend: down, -9.2%)
+  Comorbidities: Diabetes, Hypertension
+  SEVERITY SCORE: 54 points
+  ALERTS (10):
+    [CRITICAL] Stage 4 CKD without nephrologist
+        → ACTION: IMMEDIATE nephrology referral - dialysis planning may be needed
+    [CRITICAL] Nephrotic-range proteinuria (uACR 490.0 mg/g) with declining eGFR
+        → ACTION: Urgent nephrology referral - consider kidney biopsy, exclude glomerulonephritis
+    [HIGH] Uncontrolled hypertension (155/95 mmHg)
+        → ACTION: Intensify antihypertensive therapy - target <130/80 in CKD with proteinuria
+    [HIGH] Uncontrolled diabetes (HbA1c 7.9%)
+        → ACTION: Optimize glycemic control - target HbA1c <7%, strongly consider SGLT2i
+    [HIGH] Elevated phosphorus (5.4 mg/dL)
+        → ACTION: Dietary counseling (limit high-phosphate foods), initiate phosphate binders
+    [HIGH] Nephrotoxic medications with declining kidney function
+        → ACTION: URGENT medication review - discontinue/substitute NSAIDs, aminoglycosides, etc.
+    [HIGH] Moderate anemia (Hb 10.0 g/dL)
+        → ACTION: Iron studies, address iron deficiency, monitor for progression
+    [HIGH] Moderate hyperkalemia (K+ 5.7 mEq/L)
+        → ACTION: Dietary counseling, review medications, consider K+ binder if persistent
+    [MODERATE] Diabetic CKD without SGLT2 inhibitor
+        → ACTION: Consider SGLT2i (empagliflozin/dapagliflozin) - proven renoprotection
+    [MODERATE] Progressive CKD (Stage 4, eGFR declining -9.2%)
+        → ACTION: Review medications, optimize BP/DM control, ensure nephrology follow-up
+
+--------------------------------------------------------------------------------
+
+Kevin Lewis (MRN025)
+  Age/Gender: 64yo Male
+  CKD Stage: 4, eGFR: 24.0 mL/min (trend: down, -11.5%)
+  Comorbidities: Diabetes, Hypertension, CVD
+  SEVERITY SCORE: 54 points
+  ALERTS (10):
+    [CRITICAL] Rapid eGFR decline (-11.5%)
+        → ACTION: Urgent nephrology referral, investigate reversible causes (AKI, medications, obstruction)
+    [CRITICAL] Nephrotic-range proteinuria (uACR 550.0 mg/g) with declining eGFR
+        → ACTION: Urgent nephrology referral - consider kidney biopsy, exclude glomerulonephritis
+    [HIGH] Uncontrolled hypertension (160/97 mmHg)
+        → ACTION: Intensify antihypertensive therapy - target <130/80 in CKD with proteinuria
+    [HIGH] Uncontrolled diabetes (HbA1c 8.4%)
+        → ACTION: Optimize glycemic control - target HbA1c <7%, strongly consider SGLT2i
+    [HIGH] Elevated phosphorus (5.6 mg/dL)
+        → ACTION: Dietary counseling (limit high-phosphate foods), initiate phosphate binders
+    [HIGH] Nephrotoxic medications with declining kidney function
+        → ACTION: URGENT medication review - discontinue/substitute NSAIDs, aminoglycosides, etc.
+    [HIGH] Moderate anemia (Hb 9.6 g/dL)
+        → ACTION: Iron studies, address iron deficiency, monitor for progression
+    [HIGH] Moderate hyperkalemia (K+ 5.8 mEq/L)
+        → ACTION: Dietary counseling, review medications, consider K+ binder if persistent
+    [MODERATE] Obesity (BMI 30.2 kg/m²)
+        → ACTION: Weight management program - target 5-10% weight loss, dietary counseling
+    [MODERATE] Progressive CKD (Stage 4, eGFR declining -11.5%)
+        → ACTION: Review medications, optimize BP/DM control, ensure nephrology follow-up
+
+--------------------------------------------------------------------------------
+
+Paul Anderson (MRN017)
+  Age/Gender: 70yo Male
+  CKD Stage: 5, eGFR: 14.0 mL/min (trend: down, -16.8%)
+  Comorbidities: Diabetes, Hypertension, CHF
+  SEVERITY SCORE: 52 points
+  ALERTS (8):
+    [CRITICAL] Rapid eGFR decline (-16.8%)
+        → ACTION: Urgent nephrology referral, investigate reversible causes (AKI, medications, obstruction)
+    [CRITICAL] Severe anemia (Hb 8.8 g/dL)
+        → ACTION: Urgent investigation: iron studies, B12/folate, GI evaluation; consider ESA therapy
+    [CRITICAL] Nephrotic-range proteinuria (uACR 780.0 mg/g) with declining eGFR
+        → ACTION: Urgent nephrology referral - consider kidney biopsy, exclude glomerulonephritis
+    [HIGH] Uncontrolled hypertension (165/100 mmHg)
+        → ACTION: Intensify antihypertensive therapy - target <130/80 in CKD with proteinuria
+    [HIGH] Uncontrolled diabetes (HbA1c 8.9%)
+        → ACTION: Optimize glycemic control - target HbA1c <7%, strongly consider SGLT2i
+    [HIGH] Elevated phosphorus (6.5 mg/dL)
+        → ACTION: Dietary counseling (limit high-phosphate foods), initiate phosphate binders
+    [HIGH] Moderate hyperkalemia (K+ 6.0 mEq/L)
+        → ACTION: Dietary counseling, review medications, consider K+ binder if persistent
+    [MODERATE] Progressive CKD (Stage 5, eGFR declining -16.8%)
+        → ACTION: Review medications, optimize BP/DM control, ensure nephrology follow-up
+
+--------------------------------------------------------------------------------
+
+Alan Bradley (MRN177)
+  Age/Gender: 76yo Male
+  CKD Stage: 5, eGFR: 12.0 mL/min (trend: down, -16.0%)
+  Comorbidities: CHF
+  SEVERITY SCORE: 51 points
+  ALERTS (9):
+    [CRITICAL] Rapid eGFR decline (-16.0%)
+        → ACTION: Urgent nephrology referral, investigate reversible causes (AKI, medications, obstruction)
+    [CRITICAL] Severe anemia (Hb 8.5 g/dL)
+        → ACTION: Urgent investigation: iron studies, B12/folate, GI evaluation; consider ESA therapy
+    [CRITICAL] Nephrotic-range proteinuria (uACR 924.66 mg/g) with declining eGFR
+        → ACTION: Urgent nephrology referral - consider kidney biopsy, exclude glomerulonephritis
+    [HIGH] Uncontrolled hypertension (180/107 mmHg)
+        → ACTION: Intensify antihypertensive therapy - target <130/80 in CKD with proteinuria
+    [HIGH] Elevated phosphorus (5.0 mg/dL)
+        → ACTION: Dietary counseling (limit high-phosphate foods), initiate phosphate binders
+    [HIGH] Moderate hyperkalemia (K+ 6.0 mEq/L)
+        → ACTION: Dietary counseling, review medications, consider K+ binder if persistent
+    [MODERATE] Obesity (BMI 33.7 kg/m²)
+        → ACTION: Weight management program - target 5-10% weight loss, dietary counseling
+    [MODERATE] Active smoker - accelerates CKD progression
+        → ACTION: Smoking cessation counseling, pharmacotherapy (varenicline, bupropion)
+    [MODERATE] Progressive CKD (Stage 5, eGFR declining -16.0%)
+        → ACTION: Review medications, optimize BP/DM control, ensure nephrology follow-up
+
+--------------------------------------------------------------------------------
+
+Jason Baker (MRN037)
+  Age/Gender: 61yo Male
+  CKD Stage: 4, eGFR: 29.0 mL/min (trend: down, -8.8%)
+  Comorbidities: Diabetes, Hypertension
+  SEVERITY SCORE: 49 points
+  ALERTS (9):
+    [CRITICAL] Stage 4 CKD without nephrologist
+        → ACTION: IMMEDIATE nephrology referral - dialysis planning may be needed
+    [CRITICAL] Nephrotic-range proteinuria (uACR 470.0 mg/g) with declining eGFR
+        → ACTION: Urgent nephrology referral - consider kidney biopsy, exclude glomerulonephritis
+    [HIGH] Uncontrolled hypertension (153/94 mmHg)
+        → ACTION: Intensify antihypertensive therapy - target <130/80 in CKD with proteinuria
+    [HIGH] Uncontrolled diabetes (HbA1c 7.7%)
+        → ACTION: Optimize glycemic control - target HbA1c <7%, strongly consider SGLT2i
+    [HIGH] Elevated phosphorus (5.1 mg/dL)
+        → ACTION: Dietary counseling (limit high-phosphate foods), initiate phosphate binders
+    [HIGH] Moderate anemia (Hb 10.3 g/dL)
+        → ACTION: Iron studies, address iron deficiency, monitor for progression
+    [HIGH] Moderate hyperkalemia (K+ 5.6 mEq/L)
+        → ACTION: Dietary counseling, review medications, consider K+ binder if persistent
+    [MODERATE] Obesity (BMI 30.7 kg/m²)
+        → ACTION: Weight management program - target 5-10% weight loss, dietary counseling
+    [MODERATE] Progressive CKD (Stage 4, eGFR declining -8.8%)
+        → ACTION: Review medications, optimize BP/DM control, ensure nephrology follow-up
+
+--------------------------------------------------------------------------------
+
+Rachel Spencer (MRN051)
+  Age/Gender: 73yo Female
+  CKD Stage: 4, eGFR: 21.68 mL/min (trend: down, -12.6%)
+  Comorbidities: Hypertension, Diabetes, CVD
+  SEVERITY SCORE: 49 points
+  ALERTS (8):
+    [CRITICAL] Rapid eGFR decline (-12.6%)
+        → ACTION: Urgent nephrology referral, investigate reversible causes (AKI, medications, obstruction)
+    [CRITICAL] Severe anemia (Hb 8.5 g/dL)
+        → ACTION: Urgent investigation: iron studies, B12/folate, GI evaluation; consider ESA therapy
+    [CRITICAL] Nephrotic-range proteinuria (uACR 767.16 mg/g) with declining eGFR
+        → ACTION: Urgent nephrology referral - consider kidney biopsy, exclude glomerulonephritis
+    [HIGH] Uncontrolled hypertension (158/93 mmHg)
+        → ACTION: Intensify antihypertensive therapy - target <130/80 in CKD with proteinuria
+    [HIGH] Elevated phosphorus (5.8 mg/dL)
+        → ACTION: Dietary counseling (limit high-phosphate foods), initiate phosphate binders
+    [HIGH] Moderate hyperkalemia (K+ 5.9 mEq/L)
+        → ACTION: Dietary counseling, review medications, consider K+ binder if persistent
+    [MODERATE] Proteinuria without RAS inhibitor therapy
+        → ACTION: Initiate ACE inhibitor or ARB (first-line for proteinuric CKD)
+    [MODERATE] Progressive CKD (Stage 4, eGFR declining -12.6%)
+        → ACTION: Review medications, optimize BP/DM control, ensure nephrology follow-up
+
+--------------------------------------------------------------------------------
+
+Walter Brooks (MRN052)
+  Age/Gender: 70yo Male
+  CKD Stage: 5, eGFR: 7.75 mL/min (trend: down, -15.8%)
+  Comorbidities: Hypertension, CVD, CHF
+  SEVERITY SCORE: 49 points
+  ALERTS (8):
+    [CRITICAL] Rapid eGFR decline (-15.8%)
+        → ACTION: Urgent nephrology referral, investigate reversible causes (AKI, medications, obstruction)
+    [CRITICAL] Severe hyperkalemia (K+ 6.2 mEq/L)
+        → ACTION: IMMEDIATE evaluation - cardiac monitoring, stop K+-sparing agents, consider dialysis
+    [CRITICAL] Nephrotic-range proteinuria (uACR 488.42 mg/g) with declining eGFR
+        → ACTION: Urgent nephrology referral - consider kidney biopsy, exclude glomerulonephritis
+    [HIGH] Uncontrolled hypertension (166/99 mmHg)
+        → ACTION: Intensify antihypertensive therapy - target <130/80 in CKD with proteinuria
+    [HIGH] Elevated phosphorus (4.9 mg/dL)
+        → ACTION: Dietary counseling (limit high-phosphate foods), initiate phosphate binders
+    [HIGH] Moderate anemia (Hb 9.4 g/dL)
+        → ACTION: Iron studies, address iron deficiency, monitor for progression
+    [MODERATE] Active smoker - accelerates CKD progression
+        → ACTION: Smoking cessation counseling, pharmacotherapy (varenicline, bupropion)
+    [MODERATE] Progressive CKD (Stage 5, eGFR declining -15.8%)
+        → ACTION: Review medications, optimize BP/DM control, ensure nephrology follow-up
+
+--------------------------------------------------------------------------------
+
+Jacob Shaw (MRN079)
+  Age/Gender: 61yo Male
+  CKD Stage: 4, eGFR: 25.93 mL/min (trend: down, -13.9%)
+  Comorbidities: Hypertension
+  SEVERITY SCORE: 49 points
+  ALERTS (9):
+    [CRITICAL] Rapid eGFR decline (-13.9%)
+        → ACTION: Urgent nephrology referral, investigate reversible causes (AKI, medications, obstruction)
+    [CRITICAL] Nephrotic-range proteinuria (uACR 610.04 mg/g) with declining eGFR
+        → ACTION: Urgent nephrology referral - consider kidney biopsy, exclude glomerulonephritis
+    [HIGH] Uncontrolled hypertension (145/93 mmHg)
+        → ACTION: Intensify antihypertensive therapy - target <130/80 in CKD with proteinuria
+    [HIGH] Elevated phosphorus (6.0 mg/dL)
+        → ACTION: Dietary counseling (limit high-phosphate foods), initiate phosphate binders
+    [HIGH] Nephrotoxic medications with declining kidney function
+        → ACTION: URGENT medication review - discontinue/substitute NSAIDs, aminoglycosides, etc.
+    [HIGH] Moderate anemia (Hb 9.3 g/dL)
+        → ACTION: Iron studies, address iron deficiency, monitor for progression
+    [HIGH] Moderate hyperkalemia (K+ 5.9 mEq/L)
+        → ACTION: Dietary counseling, review medications, consider K+ binder if persistent
+    [MODERATE] Obesity (BMI 33.8 kg/m²)
+        → ACTION: Weight management program - target 5-10% weight loss, dietary counseling
+    [MODERATE] Progressive CKD (Stage 4, eGFR declining -13.9%)
+        → ACTION: Review medications, optimize BP/DM control, ensure nephrology follow-up
+
+--------------------------------------------------------------------------------
+
+William Robertson (MRN111)
+  Age/Gender: 73yo Male
+  CKD Stage: 5, eGFR: 10.22 mL/min (trend: down, -14.7%)
+  Comorbidities: CVD
+  SEVERITY SCORE: 49 points
+  ALERTS (8):
+    [CRITICAL] Rapid eGFR decline (-14.7%)
+        → ACTION: Urgent nephrology referral, investigate reversible causes (AKI, medications, obstruction)
+    [CRITICAL] Severe anemia (Hb 8.1 g/dL)
+        → ACTION: Urgent investigation: iron studies, B12/folate, GI evaluation; consider ESA therapy
+    [CRITICAL] Nephrotic-range proteinuria (uACR 831.88 mg/g) with declining eGFR
+        → ACTION: Urgent nephrology referral - consider kidney biopsy, exclude glomerulonephritis
+    [HIGH] Uncontrolled hypertension (180/102 mmHg)
+        → ACTION: Intensify antihypertensive therapy - target <130/80 in CKD with proteinuria
+    [HIGH] Elevated phosphorus (4.7 mg/dL)
+        → ACTION: Dietary counseling (limit high-phosphate foods), initiate phosphate binders
+    [HIGH] Moderate hyperkalemia (K+ 6.0 mEq/L)
+        → ACTION: Dietary counseling, review medications, consider K+ binder if persistent
+    [MODERATE] Obesity (BMI 38.3 kg/m²)
+        → ACTION: Weight management program - target 5-10% weight loss, dietary counseling
+    [MODERATE] Progressive CKD (Stage 5, eGFR declining -14.7%)
+        → ACTION: Review medications, optimize BP/DM control, ensure nephrology follow-up
+
+--------------------------------------------------------------------------------
+
+Clara Holmes (MRN141)
+  Age/Gender: 64yo Female
+  CKD Stage: 4, eGFR: 22.37 mL/min (trend: down, -18.9%)
+  Comorbidities: Hypertension, Diabetes
+  SEVERITY SCORE: 49 points
+  ALERTS (9):
+    [CRITICAL] Rapid eGFR decline (-18.9%)
+        → ACTION: Urgent nephrology referral, investigate reversible causes (AKI, medications, obstruction)
+    [CRITICAL] Nephrotic-range proteinuria (uACR 432.43 mg/g) with declining eGFR
+        → ACTION: Urgent nephrology referral - consider kidney biopsy, exclude glomerulonephritis
+    [HIGH] Uncontrolled hypertension (162/97 mmHg)
+        → ACTION: Intensify antihypertensive therapy - target <130/80 in CKD with proteinuria
+    [HIGH] Uncontrolled diabetes (HbA1c 9.1%)
+        → ACTION: Optimize glycemic control - target HbA1c <7%, strongly consider SGLT2i
+    [HIGH] Elevated phosphorus (7.4 mg/dL)
+        → ACTION: Dietary counseling (limit high-phosphate foods), initiate phosphate binders
+    [HIGH] Moderate anemia (Hb 9.1 g/dL)
+        → ACTION: Iron studies, address iron deficiency, monitor for progression
+    [HIGH] Moderate hyperkalemia (K+ 5.9 mEq/L)
+        → ACTION: Dietary counseling, review medications, consider K+ binder if persistent
+    [MODERATE] Proteinuria without RAS inhibitor therapy
+        → ACTION: Initiate ACE inhibitor or ARB (first-line for proteinuric CKD)
+    [MODERATE] Progressive CKD (Stage 4, eGFR declining -18.9%)
+        → ACTION: Review medications, optimize BP/DM control, ensure nephrology follow-up
+
+--------------------------------------------------------------------------------
+
+Olivia Powell (MRN167)
+  Age/Gender: 63yo Female
+  CKD Stage: 4, eGFR: 18.62 mL/min (trend: down, -13.9%)
+  Comorbidities: CVD
+  SEVERITY SCORE: 49 points
+  ALERTS (9):
+    [CRITICAL] Rapid eGFR decline (-13.9%)
+        → ACTION: Urgent nephrology referral, investigate reversible causes (AKI, medications, obstruction)
+    [CRITICAL] Nephrotic-range proteinuria (uACR 689.06 mg/g) with declining eGFR
+        → ACTION: Urgent nephrology referral - consider kidney biopsy, exclude glomerulonephritis
+    [HIGH] Uncontrolled hypertension (179/90 mmHg)
+        → ACTION: Intensify antihypertensive therapy - target <130/80 in CKD with proteinuria
+    [HIGH] Elevated phosphorus (5.1 mg/dL)
+        → ACTION: Dietary counseling (limit high-phosphate foods), initiate phosphate binders
+    [HIGH] Nephrotoxic medications with declining kidney function
+        → ACTION: URGENT medication review - discontinue/substitute NSAIDs, aminoglycosides, etc.
+    [HIGH] Moderate anemia (Hb 9.0 g/dL)
+        → ACTION: Iron studies, address iron deficiency, monitor for progression
+    [HIGH] Moderate hyperkalemia (K+ 6.0 mEq/L)
+        → ACTION: Dietary counseling, review medications, consider K+ binder if persistent
+    [MODERATE] Obesity (BMI 36.3 kg/m²)
+        → ACTION: Weight management program - target 5-10% weight loss, dietary counseling
+    [MODERATE] Progressive CKD (Stage 4, eGFR declining -13.9%)
+        → ACTION: Review medications, optimize BP/DM control, ensure nephrology follow-up
+
+--------------------------------------------------------------------------------
+
+Clara Watkins (MRN198)
+  Age/Gender: 62yo Female
+  CKD Stage: 5, eGFR: 13.82 mL/min (trend: down, -8.8%)
+  Comorbidities: Hypertension, Diabetes, CVD
+  SEVERITY SCORE: 49 points
+  ALERTS (9):
+    [CRITICAL] Severe anemia (Hb 8.5 g/dL)
+        → ACTION: Urgent investigation: iron studies, B12/folate, GI evaluation; consider ESA therapy
+    [CRITICAL] Nephrotic-range proteinuria (uACR 429.73 mg/g) with declining eGFR
+        → ACTION: Urgent nephrology referral - consider kidney biopsy, exclude glomerulonephritis
+    [HIGH] Uncontrolled hypertension (160/95 mmHg)
+        → ACTION: Intensify antihypertensive therapy - target <130/80 in CKD with proteinuria
+    [HIGH] Uncontrolled diabetes (HbA1c 8.0%)
+        → ACTION: Optimize glycemic control - target HbA1c <7%, strongly consider SGLT2i
+    [HIGH] Elevated phosphorus (5.9 mg/dL)
+        → ACTION: Dietary counseling (limit high-phosphate foods), initiate phosphate binders
+    [HIGH] Nephrotoxic medications with declining kidney function
+        → ACTION: URGENT medication review - discontinue/substitute NSAIDs, aminoglycosides, etc.
+    [HIGH] Moderate hyperkalemia (K+ 5.7 mEq/L)
+        → ACTION: Dietary counseling, review medications, consider K+ binder if persistent
+    [MODERATE] Obesity (BMI 30.0 kg/m²)
+        → ACTION: Weight management program - target 5-10% weight loss, dietary counseling
+    [MODERATE] Progressive CKD (Stage 5, eGFR declining -8.8%)
+        → ACTION: Review medications, optimize BP/DM control, ensure nephrology follow-up
+
+--------------------------------------------------------------------------------
+
+Stella Hamilton (MRN150)
+  Age/Gender: 77yo Female
+  CKD Stage: 5, eGFR: 9.55 mL/min (trend: down, -19.8%)
+  Comorbidities: Hypertension
+  SEVERITY SCORE: 47 points
+  ALERTS (8):
+    [CRITICAL] Rapid eGFR decline (-19.8%)
+        → ACTION: Urgent nephrology referral, investigate reversible causes (AKI, medications, obstruction)
+    [CRITICAL] Nephrotic-range proteinuria (uACR 822.97 mg/g) with declining eGFR
+        → ACTION: Urgent nephrology referral - consider kidney biopsy, exclude glomerulonephritis
+    [HIGH] Uncontrolled hypertension (171/91 mmHg)
+        → ACTION: Intensify antihypertensive therapy - target <130/80 in CKD with proteinuria
+    [HIGH] Elevated phosphorus (6.8 mg/dL)
+        → ACTION: Dietary counseling (limit high-phosphate foods), initiate phosphate binders
+    [HIGH] Nephrotoxic medications with declining kidney function
+        → ACTION: URGENT medication review - discontinue/substitute NSAIDs, aminoglycosides, etc.
+    [HIGH] Moderate anemia (Hb 9.4 g/dL)
+        → ACTION: Iron studies, address iron deficiency, monitor for progression
+    [HIGH] Moderate hyperkalemia (K+ 5.8 mEq/L)
+        → ACTION: Dietary counseling, review medications, consider K+ binder if persistent
+    [MODERATE] Progressive CKD (Stage 5, eGFR declining -19.8%)
+        → ACTION: Review medications, optimize BP/DM control, ensure nephrology follow-up
+
+--------------------------------------------------------------------------------
+
+Gerald Ferguson (MRN159)
+  Age/Gender: 69yo Male
+  CKD Stage: 5, eGFR: 13.8 mL/min (trend: down, -18.2%)
+  Comorbidities: None
+  SEVERITY SCORE: 46 points
+  ALERTS (8):
+    [CRITICAL] Rapid eGFR decline (-18.2%)
+        → ACTION: Urgent nephrology referral, investigate reversible causes (AKI, medications, obstruction)
+    [CRITICAL] Severe hyperkalemia (K+ 6.3 mEq/L)
+        → ACTION: IMMEDIATE evaluation - cardiac monitoring, stop K+-sparing agents, consider dialysis
+    [CRITICAL] Nephrotic-range proteinuria (uACR 995.18 mg/g) with declining eGFR
+        → ACTION: Urgent nephrology referral - consider kidney biopsy, exclude glomerulonephritis
+    [HIGH] Uncontrolled hypertension (165/110 mmHg)
+        → ACTION: Intensify antihypertensive therapy - target <130/80 in CKD with proteinuria
+    [HIGH] Elevated phosphorus (6.6 mg/dL)
+        → ACTION: Dietary counseling (limit high-phosphate foods), initiate phosphate binders
+    [MODERATE] Proteinuria without RAS inhibitor therapy
+        → ACTION: Initiate ACE inhibitor or ARB (first-line for proteinuric CKD)
+    [MODERATE] Obesity (BMI 36.5 kg/m²)
+        → ACTION: Weight management program - target 5-10% weight loss, dietary counseling
+    [MODERATE] Progressive CKD (Stage 5, eGFR declining -18.2%)
+        → ACTION: Review medications, optimize BP/DM control, ensure nephrology follow-up
+
+--------------------------------------------------------------------------------
+
+Laura Cole (MRN082)
+  Age/Gender: 67yo Female
+  CKD Stage: 4, eGFR: 27.75 mL/min (trend: down, -6.4%)
+  Comorbidities: Hypertension
+  SEVERITY SCORE: 44 points
+  ALERTS (7):
+    [CRITICAL] Severe hyperkalemia (K+ 6.2 mEq/L)
+        → ACTION: IMMEDIATE evaluation - cardiac monitoring, stop K+-sparing agents, consider dialysis
+    [CRITICAL] Severe anemia (Hb 8.5 g/dL)
+        → ACTION: Urgent investigation: iron studies, B12/folate, GI evaluation; consider ESA therapy
+    [CRITICAL] Nephrotic-range proteinuria (uACR 513.41 mg/g) with declining eGFR
+        → ACTION: Urgent nephrology referral - consider kidney biopsy, exclude glomerulonephritis
+    [HIGH] Uncontrolled hypertension (147/96 mmHg)
+        → ACTION: Intensify antihypertensive therapy - target <130/80 in CKD with proteinuria
+    [HIGH] Elevated phosphorus (7.3 mg/dL)
+        → ACTION: Dietary counseling (limit high-phosphate foods), initiate phosphate binders
+    [MODERATE] Obesity (BMI 31.6 kg/m²)
+        → ACTION: Weight management program - target 5-10% weight loss, dietary counseling
+    [MODERATE] Progressive CKD (Stage 4, eGFR declining -6.4%)
+        → ACTION: Review medications, optimize BP/DM control, ensure nephrology follow-up
+
+--------------------------------------------------------------------------------
+
+Jacob Stewart (MRN194)
+  Age/Gender: 72yo Male
+  CKD Stage: 4, eGFR: 23.45 mL/min (trend: down, -5.9%)
+  Comorbidities: CVD
+  SEVERITY SCORE: 44 points
+  ALERTS (7):
+    [CRITICAL] Severe hyperkalemia (K+ 6.8 mEq/L)
+        → ACTION: IMMEDIATE evaluation - cardiac monitoring, stop K+-sparing agents, consider dialysis
+    [CRITICAL] Severe anemia (Hb 8.6 g/dL)
+        → ACTION: Urgent investigation: iron studies, B12/folate, GI evaluation; consider ESA therapy
+    [CRITICAL] Nephrotic-range proteinuria (uACR 304.79 mg/g) with declining eGFR
+        → ACTION: Urgent nephrology referral - consider kidney biopsy, exclude glomerulonephritis
+    [HIGH] Uncontrolled hypertension (147/93 mmHg)
+        → ACTION: Intensify antihypertensive therapy - target <130/80 in CKD with proteinuria
+    [HIGH] Elevated phosphorus (4.9 mg/dL)
+        → ACTION: Dietary counseling (limit high-phosphate foods), initiate phosphate binders
+    [MODERATE] Obesity (BMI 34.8 kg/m²)
+        → ACTION: Weight management program - target 5-10% weight loss, dietary counseling
+    [MODERATE] Progressive CKD (Stage 4, eGFR declining -5.9%)
+        → ACTION: Review medications, optimize BP/DM control, ensure nephrology follow-up
+
+--------------------------------------------------------------------------------
+
+Terry Berry (MRN203)
+  Age/Gender: 78yo Male
+  CKD Stage: 5, eGFR: 7.51 mL/min (trend: down, -17.3%)
+  Comorbidities: Hypertension, Diabetes
+  SEVERITY SCORE: 44 points
+  ALERTS (8):
+    [CRITICAL] Rapid eGFR decline (-17.3%)
+        → ACTION: Urgent nephrology referral, investigate reversible causes (AKI, medications, obstruction)
+    [CRITICAL] Nephrotic-range proteinuria (uACR 820.42 mg/g) with declining eGFR
+        → ACTION: Urgent nephrology referral - consider kidney biopsy, exclude glomerulonephritis
+    [HIGH] Uncontrolled hypertension (171/100 mmHg)
+        → ACTION: Intensify antihypertensive therapy - target <130/80 in CKD with proteinuria
+    [HIGH] Uncontrolled diabetes (HbA1c 9.5%)
+        → ACTION: Optimize glycemic control - target HbA1c <7%, strongly consider SGLT2i
+    [HIGH] Elevated phosphorus (5.7 mg/dL)
+        → ACTION: Dietary counseling (limit high-phosphate foods), initiate phosphate binders
+    [HIGH] Nephrotoxic medications with declining kidney function
+        → ACTION: URGENT medication review - discontinue/substitute NSAIDs, aminoglycosides, etc.
+    [MODERATE] Obesity (BMI 35.8 kg/m²)
+        → ACTION: Weight management program - target 5-10% weight loss, dietary counseling
+    [MODERATE] Progressive CKD (Stage 5, eGFR declining -17.3%)
+        → ACTION: Review medications, optimize BP/DM control, ensure nephrology follow-up
+
+--------------------------------------------------------------------------------
+
+Kathleen Mitchell (MRN069)
+  Age/Gender: 70yo Female
+  CKD Stage: 4, eGFR: 22.63 mL/min (trend: down, -10.1%)
+  Comorbidities: Hypertension
+  SEVERITY SCORE: 42 points
+  ALERTS (7):
+    [CRITICAL] Rapid eGFR decline (-10.1%)
+        → ACTION: Urgent nephrology referral, investigate reversible causes (AKI, medications, obstruction)
+    [CRITICAL] Severe anemia (Hb 8.2 g/dL)
+        → ACTION: Urgent investigation: iron studies, B12/folate, GI evaluation; consider ESA therapy
+    [HIGH] Heavy proteinuria (A3, uACR 264.22 mg/g)
+        → ACTION: Optimize RAS inhibition (ACE-I/ARB), add SGLT2i if diabetic
+    [HIGH] Uncontrolled hypertension (156/101 mmHg)
+        → ACTION: Intensify antihypertensive therapy - target <130/80 in CKD with proteinuria
+    [HIGH] Elevated phosphorus (5.4 mg/dL)
+        → ACTION: Dietary counseling (limit high-phosphate foods), initiate phosphate binders
+    [HIGH] Nephrotoxic medications with declining kidney function
+        → ACTION: URGENT medication review - discontinue/substitute NSAIDs, aminoglycosides, etc.
+    [MODERATE] Progressive CKD (Stage 4, eGFR declining -10.1%)
+        → ACTION: Review medications, optimize BP/DM control, ensure nephrology follow-up
+
+--------------------------------------------------------------------------------
+
+Julie Black (MRN073)
+  Age/Gender: 69yo Female
+  CKD Stage: 4, eGFR: 21.25 mL/min (trend: down, -18.7%)
+  Comorbidities: Hypertension, Diabetes
+  SEVERITY SCORE: 42 points
+  ALERTS (7):
+    [CRITICAL] Rapid eGFR decline (-18.7%)
+        → ACTION: Urgent nephrology referral, investigate reversible causes (AKI, medications, obstruction)
+    [CRITICAL] Nephrotic-range proteinuria (uACR 312.33 mg/g) with declining eGFR
+        → ACTION: Urgent nephrology referral - consider kidney biopsy, exclude glomerulonephritis
+    [HIGH] Uncontrolled hypertension (167/104 mmHg)
+        → ACTION: Intensify antihypertensive therapy - target <130/80 in CKD with proteinuria
+    [HIGH] Uncontrolled diabetes (HbA1c 8.0%)
+        → ACTION: Optimize glycemic control - target HbA1c <7%, strongly consider SGLT2i
+    [HIGH] Elevated phosphorus (4.7 mg/dL)
+        → ACTION: Dietary counseling (limit high-phosphate foods), initiate phosphate binders
+    [HIGH] Moderate anemia (Hb 9.3 g/dL)
+        → ACTION: Iron studies, address iron deficiency, monitor for progression
+    [MODERATE] Progressive CKD (Stage 4, eGFR declining -18.7%)
+        → ACTION: Review medications, optimize BP/DM control, ensure nephrology follow-up
+
+--------------------------------------------------------------------------------
+
+Wayne Cook (MRN086)
+  Age/Gender: 63yo Male
+  CKD Stage: 4, eGFR: 24.6 mL/min (trend: down, -11.9%)
+  Comorbidities: None
+  SEVERITY SCORE: 42 points
+  ALERTS (6):
+    [CRITICAL] Rapid eGFR decline (-11.9%)
+        → ACTION: Urgent nephrology referral, investigate reversible causes (AKI, medications, obstruction)
+    [CRITICAL] Severe anemia (Hb 8.9 g/dL)
+        → ACTION: Urgent investigation: iron studies, B12/folate, GI evaluation; consider ESA therapy
+    [CRITICAL] Nephrotic-range proteinuria (uACR 661.22 mg/g) with declining eGFR
+        → ACTION: Urgent nephrology referral - consider kidney biopsy, exclude glomerulonephritis
+    [HIGH] Uncontrolled hypertension (151/109 mmHg)
+        → ACTION: Intensify antihypertensive therapy - target <130/80 in CKD with proteinuria
+    [HIGH] Elevated phosphorus (7.1 mg/dL)
+        → ACTION: Dietary counseling (limit high-phosphate foods), initiate phosphate binders
+    [MODERATE] Progressive CKD (Stage 4, eGFR declining -11.9%)
+        → ACTION: Review medications, optimize BP/DM control, ensure nephrology follow-up
+
+--------------------------------------------------------------------------------
+
+Rebecca Patterson (MRN108)
+  Age/Gender: 61yo Female
+  CKD Stage: 4, eGFR: 24.78 mL/min (trend: down, -19.9%)
+  Comorbidities: CVD
+  SEVERITY SCORE: 42 points
+  ALERTS (6):
+    [CRITICAL] Rapid eGFR decline (-19.9%)
+        → ACTION: Urgent nephrology referral, investigate reversible causes (AKI, medications, obstruction)
+    [CRITICAL] Severe anemia (Hb 8.7 g/dL)
+        → ACTION: Urgent investigation: iron studies, B12/folate, GI evaluation; consider ESA therapy
+    [CRITICAL] Nephrotic-range proteinuria (uACR 780.48 mg/g) with declining eGFR
+        → ACTION: Urgent nephrology referral - consider kidney biopsy, exclude glomerulonephritis
+    [HIGH] Uncontrolled hypertension (180/95 mmHg)
+        → ACTION: Intensify antihypertensive therapy - target <130/80 in CKD with proteinuria
+    [HIGH] Elevated phosphorus (7.1 mg/dL)
+        → ACTION: Dietary counseling (limit high-phosphate foods), initiate phosphate binders
+    [MODERATE] Progressive CKD (Stage 4, eGFR declining -19.9%)
+        → ACTION: Review medications, optimize BP/DM control, ensure nephrology follow-up
+
+--------------------------------------------------------------------------------
+
+Ruth Berry (MRN165)
+  Age/Gender: 75yo Female
+  CKD Stage: 4, eGFR: 24.55 mL/min (trend: down, -6.3%)
+  Comorbidities: None
+  SEVERITY SCORE: 42 points
+  ALERTS (6):
+    [CRITICAL] Severe hyperkalemia (K+ 6.1 mEq/L)
+        → ACTION: IMMEDIATE evaluation - cardiac monitoring, stop K+-sparing agents, consider dialysis
+    [CRITICAL] Severe anemia (Hb 8.8 g/dL)
+        → ACTION: Urgent investigation: iron studies, B12/folate, GI evaluation; consider ESA therapy
+    [CRITICAL] Nephrotic-range proteinuria (uACR 674.0 mg/g) with declining eGFR
+        → ACTION: Urgent nephrology referral - consider kidney biopsy, exclude glomerulonephritis
+    [HIGH] Uncontrolled hypertension (163/106 mmHg)
+        → ACTION: Intensify antihypertensive therapy - target <130/80 in CKD with proteinuria
+    [HIGH] Elevated phosphorus (6.6 mg/dL)
+        → ACTION: Dietary counseling (limit high-phosphate foods), initiate phosphate binders
+    [MODERATE] Progressive CKD (Stage 4, eGFR declining -6.3%)
+        → ACTION: Review medications, optimize BP/DM control, ensure nephrology follow-up
+
+--------------------------------------------------------------------------------
+
+Eva Long (MRN200)
+  Age/Gender: 73yo Female
+  CKD Stage: 5, eGFR: 6.77 mL/min (trend: down, -7.0%)
+  Comorbidities: Hypertension
+  SEVERITY SCORE: 42 points
+  ALERTS (7):
+    [CRITICAL] Severe hyperkalemia (K+ 6.1 mEq/L)
+        → ACTION: IMMEDIATE evaluation - cardiac monitoring, stop K+-sparing agents, consider dialysis
+    [CRITICAL] Nephrotic-range proteinuria (uACR 897.79 mg/g) with declining eGFR
+        → ACTION: Urgent nephrology referral - consider kidney biopsy, exclude glomerulonephritis
+    [HIGH] Uncontrolled hypertension (159/96 mmHg)
+        → ACTION: Intensify antihypertensive therapy - target <130/80 in CKD with proteinuria
+    [HIGH] Elevated phosphorus (6.2 mg/dL)
+        → ACTION: Dietary counseling (limit high-phosphate foods), initiate phosphate binders
+    [HIGH] Nephrotoxic medications with declining kidney function
+        → ACTION: URGENT medication review - discontinue/substitute NSAIDs, aminoglycosides, etc.
+    [HIGH] Moderate anemia (Hb 9.2 g/dL)
+        → ACTION: Iron studies, address iron deficiency, monitor for progression
+    [MODERATE] Progressive CKD (Stage 5, eGFR declining -7.0%)
+        → ACTION: Review medications, optimize BP/DM control, ensure nephrology follow-up
+
+--------------------------------------------------------------------------------
+
+Allison Hudson (MRN088)
+  Age/Gender: 68yo Female
+  CKD Stage: 4, eGFR: 18.04 mL/min (trend: down, -17.3%)
+  Comorbidities: None
+  SEVERITY SCORE: 41 points
+  ALERTS (8):
+    [CRITICAL] Rapid eGFR decline (-17.3%)
+        → ACTION: Urgent nephrology referral, investigate reversible causes (AKI, medications, obstruction)
+    [CRITICAL] Nephrotic-range proteinuria (uACR 709.72 mg/g) with declining eGFR
+        → ACTION: Urgent nephrology referral - consider kidney biopsy, exclude glomerulonephritis
+    [HIGH] Uncontrolled hypertension (145/101 mmHg)
+        → ACTION: Intensify antihypertensive therapy - target <130/80 in CKD with proteinuria
+    [HIGH] Elevated phosphorus (7.1 mg/dL)
+        → ACTION: Dietary counseling (limit high-phosphate foods), initiate phosphate binders
+    [HIGH] Moderate hyperkalemia (K+ 5.8 mEq/L)
+        → ACTION: Dietary counseling, review medications, consider K+ binder if persistent
+    [MODERATE] Proteinuria without RAS inhibitor therapy
+        → ACTION: Initiate ACE inhibitor or ARB (first-line for proteinuric CKD)
+    [MODERATE] Obesity (BMI 30.9 kg/m²)
+        → ACTION: Weight management program - target 5-10% weight loss, dietary counseling
+    [MODERATE] Progressive CKD (Stage 4, eGFR declining -17.3%)
+        → ACTION: Review medications, optimize BP/DM control, ensure nephrology follow-up
+
+--------------------------------------------------------------------------------
+
+Louis Duncan (MRN126)
+  Age/Gender: 59yo Male
+  CKD Stage: 4, eGFR: 27.02 mL/min (trend: down, -9.7%)
+  Comorbidities: Diabetes
+  SEVERITY SCORE: 41 points
+  ALERTS (8):
+    [CRITICAL] Severe anemia (Hb 8.3 g/dL)
+        → ACTION: Urgent investigation: iron studies, B12/folate, GI evaluation; consider ESA therapy
+    [CRITICAL] Nephrotic-range proteinuria (uACR 620.3 mg/g) with declining eGFR
+        → ACTION: Urgent nephrology referral - consider kidney biopsy, exclude glomerulonephritis
+    [HIGH] Uncontrolled hypertension (166/92 mmHg)
+        → ACTION: Intensify antihypertensive therapy - target <130/80 in CKD with proteinuria
+    [HIGH] Uncontrolled diabetes (HbA1c 9.5%)
+        → ACTION: Optimize glycemic control - target HbA1c <7%, strongly consider SGLT2i
+    [HIGH] Elevated phosphorus (7.0 mg/dL)
+        → ACTION: Dietary counseling (limit high-phosphate foods), initiate phosphate binders
+    [MODERATE] Proteinuria without RAS inhibitor therapy
+        → ACTION: Initiate ACE inhibitor or ARB (first-line for proteinuric CKD)
+    [MODERATE] Diabetic CKD without SGLT2 inhibitor
+        → ACTION: Consider SGLT2i (empagliflozin/dapagliflozin) - proven renoprotection
+    [MODERATE] Progressive CKD (Stage 4, eGFR declining -9.7%)
+        → ACTION: Review medications, optimize BP/DM control, ensure nephrology follow-up
+
+--------------------------------------------------------------------------------
+
+Charles Peters (MRN192)
+  Age/Gender: 65yo Male
+  CKD Stage: 5, eGFR: 10.66 mL/min (trend: down, -5.7%)
+  Comorbidities: Hypertension, CVD
+  SEVERITY SCORE: 41 points
+  ALERTS (9):
+    [CRITICAL] Nephrotic-range proteinuria (uACR 323.49 mg/g) with declining eGFR
+        → ACTION: Urgent nephrology referral - consider kidney biopsy, exclude glomerulonephritis
+    [HIGH] Uncontrolled hypertension (175/108 mmHg)
+        → ACTION: Intensify antihypertensive therapy - target <130/80 in CKD with proteinuria
+    [HIGH] Elevated phosphorus (7.1 mg/dL)
+        → ACTION: Dietary counseling (limit high-phosphate foods), initiate phosphate binders
+    [HIGH] Nephrotoxic medications with declining kidney function
+        → ACTION: URGENT medication review - discontinue/substitute NSAIDs, aminoglycosides, etc.
+    [HIGH] Moderate anemia (Hb 9.2 g/dL)
+        → ACTION: Iron studies, address iron deficiency, monitor for progression
+    [HIGH] Moderate hyperkalemia (K+ 6.0 mEq/L)
+        → ACTION: Dietary counseling, review medications, consider K+ binder if persistent
+    [MODERATE] Proteinuria without RAS inhibitor therapy
+        → ACTION: Initiate ACE inhibitor or ARB (first-line for proteinuric CKD)
+    [MODERATE] Obesity (BMI 33.6 kg/m²)
+        → ACTION: Weight management program - target 5-10% weight loss, dietary counseling
+    [MODERATE] Progressive CKD (Stage 5, eGFR declining -5.7%)
+        → ACTION: Review medications, optimize BP/DM control, ensure nephrology follow-up
+
+--------------------------------------------------------------------------------
+
+Matthew Chavez (MRN145)
+  Age/Gender: 71yo Male
+  CKD Stage: 4, eGFR: 21.75 mL/min (trend: down, -19.2%)
+  Comorbidities: Diabetes, CVD
+  SEVERITY SCORE: 39 points
+  ALERTS (7):
+    [CRITICAL] Rapid eGFR decline (-19.2%)
+        → ACTION: Urgent nephrology referral, investigate reversible causes (AKI, medications, obstruction)
+    [CRITICAL] Nephrotic-range proteinuria (uACR 533.03 mg/g) with declining eGFR
+        → ACTION: Urgent nephrology referral - consider kidney biopsy, exclude glomerulonephritis
+    [HIGH] Uncontrolled hypertension (170/101 mmHg)
+        → ACTION: Intensify antihypertensive therapy - target <130/80 in CKD with proteinuria
+    [HIGH] Elevated phosphorus (5.0 mg/dL)
+        → ACTION: Dietary counseling (limit high-phosphate foods), initiate phosphate binders
+    [HIGH] Moderate anemia (Hb 10.7 g/dL)
+        → ACTION: Iron studies, address iron deficiency, monitor for progression
+    [MODERATE] Obesity (BMI 32.0 kg/m²)
+        → ACTION: Weight management program - target 5-10% weight loss, dietary counseling
+    [MODERATE] Progressive CKD (Stage 4, eGFR declining -19.2%)
+        → ACTION: Review medications, optimize BP/DM control, ensure nephrology follow-up
+
+--------------------------------------------------------------------------------
+
+Stephanie Robertson (MRN186)
+  Age/Gender: 66yo Female
+  CKD Stage: 4, eGFR: 21.15 mL/min (trend: down, -5.2%)
+  Comorbidities: Hypertension, CVD
+  SEVERITY SCORE: 39 points
+  ALERTS (7):
+    [CRITICAL] Severe hyperkalemia (K+ 6.3 mEq/L)
+        → ACTION: IMMEDIATE evaluation - cardiac monitoring, stop K+-sparing agents, consider dialysis
+    [CRITICAL] Nephrotic-range proteinuria (uACR 714.98 mg/g) with declining eGFR
+        → ACTION: Urgent nephrology referral - consider kidney biopsy, exclude glomerulonephritis
+    [HIGH] Uncontrolled hypertension (177/109 mmHg)
+        → ACTION: Intensify antihypertensive therapy - target <130/80 in CKD with proteinuria
+    [HIGH] Elevated phosphorus (6.8 mg/dL)
+        → ACTION: Dietary counseling (limit high-phosphate foods), initiate phosphate binders
+    [HIGH] Moderate anemia (Hb 10.6 g/dL)
+        → ACTION: Iron studies, address iron deficiency, monitor for progression
+    [MODERATE] Proteinuria without RAS inhibitor therapy
+        → ACTION: Initiate ACE inhibitor or ARB (first-line for proteinuric CKD)
+    [MODERATE] Progressive CKD (Stage 4, eGFR declining -5.2%)
+        → ACTION: Review medications, optimize BP/DM control, ensure nephrology follow-up
+
+--------------------------------------------------------------------------------
+
+Elizabeth Daniels (MRN063)
+  Age/Gender: 63yo Female
+  CKD Stage: 5, eGFR: 11.26 mL/min (trend: down, -9.2%)
+  Comorbidities: Diabetes, CVD, CHF
+  SEVERITY SCORE: 38 points
+  ALERTS (9):
+    [CRITICAL] Nephrotic-range proteinuria (uACR 447.53 mg/g) with declining eGFR
+        → ACTION: Urgent nephrology referral - consider kidney biopsy, exclude glomerulonephritis
+    [HIGH] Uncontrolled hypertension (160/109 mmHg)
+        → ACTION: Intensify antihypertensive therapy - target <130/80 in CKD with proteinuria
+    [HIGH] Uncontrolled diabetes (HbA1c 8.0%)
+        → ACTION: Optimize glycemic control - target HbA1c <7%, strongly consider SGLT2i
+    [HIGH] Elevated phosphorus (6.2 mg/dL)
+        → ACTION: Dietary counseling (limit high-phosphate foods), initiate phosphate binders
+    [HIGH] Moderate anemia (Hb 10.0 g/dL)
+        → ACTION: Iron studies, address iron deficiency, monitor for progression
+    [MODERATE] Proteinuria without RAS inhibitor therapy
+        → ACTION: Initiate ACE inhibitor or ARB (first-line for proteinuric CKD)
+    [MODERATE] Obesity (BMI 41.1 kg/m²)
+        → ACTION: Weight management program - target 5-10% weight loss, dietary counseling
+    [MODERATE] Active smoker - accelerates CKD progression
+        → ACTION: Smoking cessation counseling, pharmacotherapy (varenicline, bupropion)
+    [MODERATE] Progressive CKD (Stage 5, eGFR declining -9.2%)
+        → ACTION: Review medications, optimize BP/DM control, ensure nephrology follow-up
+
+--------------------------------------------------------------------------------
+
+Sean Bennett (MRN071)
+  Age/Gender: 70yo Male
+  CKD Stage: 4, eGFR: 15.22 mL/min (trend: down, -5.0%)
+  Comorbidities: Hypertension
+  SEVERITY SCORE: 35 points
+  ALERTS (5):
+    [CRITICAL] Severe anemia (Hb 8.5 g/dL)
+        → ACTION: Urgent investigation: iron studies, B12/folate, GI evaluation; consider ESA therapy
+    [CRITICAL] Nephrotic-range proteinuria (uACR 639.71 mg/g) with declining eGFR
+        → ACTION: Urgent nephrology referral - consider kidney biopsy, exclude glomerulonephritis
+    [HIGH] Uncontrolled hypertension (180/94 mmHg)
+        → ACTION: Intensify antihypertensive therapy - target <130/80 in CKD with proteinuria
+    [HIGH] Elevated phosphorus (5.8 mg/dL)
+        → ACTION: Dietary counseling (limit high-phosphate foods), initiate phosphate binders
+    [HIGH] Moderate hyperkalemia (K+ 5.7 mEq/L)
+        → ACTION: Dietary counseling, review medications, consider K+ binder if persistent
+
+--------------------------------------------------------------------------------
+
+Gerald Elliott (MRN096)
+  Age/Gender: 72yo Male
+  CKD Stage: 4, eGFR: 26.3 mL/min (trend: down, -7.7%)
+  Comorbidities: Hypertension, CVD
+  SEVERITY SCORE: 34 points
+  ALERTS (7):
+    [CRITICAL] Nephrotic-range proteinuria (uACR 383.52 mg/g) with declining eGFR
+        → ACTION: Urgent nephrology referral - consider kidney biopsy, exclude glomerulonephritis
+    [HIGH] Uncontrolled hypertension (145/99 mmHg)
+        → ACTION: Intensify antihypertensive therapy - target <130/80 in CKD with proteinuria
+    [HIGH] Elevated phosphorus (6.1 mg/dL)
+        → ACTION: Dietary counseling (limit high-phosphate foods), initiate phosphate binders
+    [HIGH] Moderate anemia (Hb 9.2 g/dL)
+        → ACTION: Iron studies, address iron deficiency, monitor for progression
+    [HIGH] Moderate hyperkalemia (K+ 6.0 mEq/L)
+        → ACTION: Dietary counseling, review medications, consider K+ binder if persistent
+    [MODERATE] Obesity (BMI 39.6 kg/m²)
+        → ACTION: Weight management program - target 5-10% weight loss, dietary counseling
+    [MODERATE] Progressive CKD (Stage 4, eGFR declining -7.7%)
+        → ACTION: Review medications, optimize BP/DM control, ensure nephrology follow-up
+
+--------------------------------------------------------------------------------
+
+Mason Daniels (MRN072)
+  Age/Gender: 70yo Male
+  CKD Stage: 5, eGFR: 10.26 mL/min (trend: stable, -17.5%)
+  Comorbidities: Diabetes
+  SEVERITY SCORE: 32 points
+  ALERTS (6):
+    [CRITICAL] Severe hyperkalemia (K+ 6.1 mEq/L)
+        → ACTION: IMMEDIATE evaluation - cardiac monitoring, stop K+-sparing agents, consider dialysis
+    [HIGH] Heavy proteinuria (A3, uACR 247.13 mg/g)
+        → ACTION: Optimize RAS inhibition (ACE-I/ARB), add SGLT2i if diabetic
+    [HIGH] Uncontrolled hypertension (156/106 mmHg)
+        → ACTION: Intensify antihypertensive therapy - target <130/80 in CKD with proteinuria
+    [HIGH] Elevated phosphorus (5.3 mg/dL)
+        → ACTION: Dietary counseling (limit high-phosphate foods), initiate phosphate binders
+    [HIGH] Moderate anemia (Hb 9.1 g/dL)
+        → ACTION: Iron studies, address iron deficiency, monitor for progression
+    [MODERATE] Active smoker - accelerates CKD progression
+        → ACTION: Smoking cessation counseling, pharmacotherapy (varenicline, bupropion)
+
+--------------------------------------------------------------------------------
+
+Sophie Elliott (MRN097)
+  Age/Gender: 77yo Female
+  CKD Stage: 5, eGFR: 11.54 mL/min (trend: down, -14.7%)
+  Comorbidities: Hypertension, Diabetes, CVD
+  SEVERITY SCORE: 32 points
+  ALERTS (5):
+    [CRITICAL] Rapid eGFR decline (-14.7%)
+        → ACTION: Urgent nephrology referral, investigate reversible causes (AKI, medications, obstruction)
+    [CRITICAL] Nephrotic-range proteinuria (uACR 725.04 mg/g) with declining eGFR
+        → ACTION: Urgent nephrology referral - consider kidney biopsy, exclude glomerulonephritis
+    [HIGH] Uncontrolled hypertension (168/103 mmHg)
+        → ACTION: Intensify antihypertensive therapy - target <130/80 in CKD with proteinuria
+    [HIGH] Elevated phosphorus (6.2 mg/dL)
+        → ACTION: Dietary counseling (limit high-phosphate foods), initiate phosphate binders
+    [MODERATE] Progressive CKD (Stage 5, eGFR declining -14.7%)
+        → ACTION: Review medications, optimize BP/DM control, ensure nephrology follow-up
+
+--------------------------------------------------------------------------------
+
+Keith Riley (MRN160)
+  Age/Gender: 67yo Male
+  CKD Stage: 4, eGFR: 26.26 mL/min (trend: down, -8.1%)
+  Comorbidities: None
+  SEVERITY SCORE: 32 points
+  ALERTS (6):
+    [CRITICAL] Severe anemia (Hb 8.1 g/dL)
+        → ACTION: Urgent investigation: iron studies, B12/folate, GI evaluation; consider ESA therapy
+    [HIGH] Heavy proteinuria (A3, uACR 235.86 mg/g)
+        → ACTION: Optimize RAS inhibition (ACE-I/ARB), add SGLT2i if diabetic
+    [HIGH] Uncontrolled hypertension (175/98 mmHg)
+        → ACTION: Intensify antihypertensive therapy - target <130/80 in CKD with proteinuria
+    [HIGH] Elevated phosphorus (4.6 mg/dL)
+        → ACTION: Dietary counseling (limit high-phosphate foods), initiate phosphate binders
+    [HIGH] Moderate hyperkalemia (K+ 5.9 mEq/L)
+        → ACTION: Dietary counseling, review medications, consider K+ binder if persistent
+    [MODERATE] Progressive CKD (Stage 4, eGFR declining -8.1%)
+        → ACTION: Review medications, optimize BP/DM control, ensure nephrology follow-up
+
+--------------------------------------------------------------------------------
+
+Albert Myers (MRN199)
+  Age/Gender: 71yo Male
+  CKD Stage: 5, eGFR: 9.87 mL/min (trend: down, -8.0%)
+  Comorbidities: Hypertension, Diabetes, CHF
+  SEVERITY SCORE: 32 points
+  ALERTS (6):
+    [CRITICAL] Nephrotic-range proteinuria (uACR 537.88 mg/g) with declining eGFR
+        → ACTION: Urgent nephrology referral - consider kidney biopsy, exclude glomerulonephritis
+    [HIGH] Uncontrolled hypertension (153/106 mmHg)
+        → ACTION: Intensify antihypertensive therapy - target <130/80 in CKD with proteinuria
+    [HIGH] Uncontrolled diabetes (HbA1c 8.3%)
+        → ACTION: Optimize glycemic control - target HbA1c <7%, strongly consider SGLT2i
+    [HIGH] Elevated phosphorus (6.0 mg/dL)
+        → ACTION: Dietary counseling (limit high-phosphate foods), initiate phosphate binders
+    [HIGH] Moderate anemia (Hb 10.5 g/dL)
+        → ACTION: Iron studies, address iron deficiency, monitor for progression
+    [MODERATE] Progressive CKD (Stage 5, eGFR declining -8.0%)
+        → ACTION: Review medications, optimize BP/DM control, ensure nephrology follow-up
+
+--------------------------------------------------------------------------------
+
+Natalie James (MRN045)
+  Age/Gender: 60yo Female
+  CKD Stage: 4, eGFR: 22.19 mL/min (trend: down, -7.7%)
+  Comorbidities: Hypertension, Diabetes, CVD
+  SEVERITY SCORE: 29 points
+  ALERTS (6):
+    [CRITICAL] Nephrotic-range proteinuria (uACR 648.72 mg/g) with declining eGFR
+        → ACTION: Urgent nephrology referral - consider kidney biopsy, exclude glomerulonephritis
+    [HIGH] Uncontrolled hypertension (158/94 mmHg)
+        → ACTION: Intensify antihypertensive therapy - target <130/80 in CKD with proteinuria
+    [HIGH] Elevated phosphorus (5.5 mg/dL)
+        → ACTION: Dietary counseling (limit high-phosphate foods), initiate phosphate binders
+    [HIGH] Moderate anemia (Hb 9.8 g/dL)
+        → ACTION: Iron studies, address iron deficiency, monitor for progression
+    [MODERATE] Obesity (BMI 33.4 kg/m²)
+        → ACTION: Weight management program - target 5-10% weight loss, dietary counseling
+    [MODERATE] Progressive CKD (Stage 4, eGFR declining -7.7%)
+        → ACTION: Review medications, optimize BP/DM control, ensure nephrology follow-up
+
+--------------------------------------------------------------------------------
+
+Catherine Arnold (MRN166)
+  Age/Gender: 64yo Female
+  CKD Stage: 4, eGFR: 23.14 mL/min (trend: stable, -16.2%)
+  Comorbidities: Hypertension
+  SEVERITY SCORE: 29 points
+  ALERTS (6):
+    [CRITICAL] Severe anemia (Hb 8.1 g/dL)
+        → ACTION: Urgent investigation: iron studies, B12/folate, GI evaluation; consider ESA therapy
+    [HIGH] Heavy proteinuria (A3, uACR 293.98 mg/g)
+        → ACTION: Optimize RAS inhibition (ACE-I/ARB), add SGLT2i if diabetic
+    [HIGH] Uncontrolled hypertension (180/105 mmHg)
+        → ACTION: Intensify antihypertensive therapy - target <130/80 in CKD with proteinuria
+    [HIGH] Elevated phosphorus (5.7 mg/dL)
+        → ACTION: Dietary counseling (limit high-phosphate foods), initiate phosphate binders
+    [MODERATE] Proteinuria without RAS inhibitor therapy
+        → ACTION: Initiate ACE inhibitor or ARB (first-line for proteinuric CKD)
+    [MODERATE] Active smoker - accelerates CKD progression
+        → ACTION: Smoking cessation counseling, pharmacotherapy (varenicline, bupropion)
+
+--------------------------------------------------------------------------------
+
+Abigail Howard (MRN116)
+  Age/Gender: 65yo Female
+  CKD Stage: 4, eGFR: 20.34 mL/min (trend: stable, -14.2%)
+  Comorbidities: Hypertension, CVD
+  SEVERITY SCORE: 27 points
+  ALERTS (5):
+    [CRITICAL] Severe anemia (Hb 8.8 g/dL)
+        → ACTION: Urgent investigation: iron studies, B12/folate, GI evaluation; consider ESA therapy
+    [HIGH] Uncontrolled hypertension (165/92 mmHg)
+        → ACTION: Intensify antihypertensive therapy - target <130/80 in CKD with proteinuria
+    [HIGH] Elevated phosphorus (7.3 mg/dL)
+        → ACTION: Dietary counseling (limit high-phosphate foods), initiate phosphate binders
+    [HIGH] Moderate hyperkalemia (K+ 5.6 mEq/L)
+        → ACTION: Dietary counseling, review medications, consider K+ binder if persistent
+    [MODERATE] Proteinuria without RAS inhibitor therapy
+        → ACTION: Initiate ACE inhibitor or ARB (first-line for proteinuric CKD)
+
+--------------------------------------------------------------------------------
+
+Hannah Wood (MRN191)
+  Age/Gender: 68yo Female
+  CKD Stage: 5, eGFR: 6.18 mL/min (trend: stable, -7.1%)
+  Comorbidities: Hypertension, CVD
+  SEVERITY SCORE: 20 points
+  ALERTS (4):
+    [HIGH] Uncontrolled hypertension (161/98 mmHg)
+        → ACTION: Intensify antihypertensive therapy - target <130/80 in CKD with proteinuria
+    [HIGH] Elevated phosphorus (6.3 mg/dL)
+        → ACTION: Dietary counseling (limit high-phosphate foods), initiate phosphate binders
+    [HIGH] Moderate anemia (Hb 9.4 g/dL)
+        → ACTION: Iron studies, address iron deficiency, monitor for progression
+    [HIGH] Moderate hyperkalemia (K+ 5.7 mEq/L)
+        → ACTION: Dietary counseling, review medications, consider K+ binder if persistent
+
+--------------------------------------------------------------------------------
+
+================================================================================
+HIGH PRIORITY PATIENTS (Action Within 1-2 Weeks)
+================================================================================
+
+Isabella Robertson (MRN050) - Stage 3, eGFR 38.86
+  Score: 19 | Alerts: 5
+  • [HIGH] Heavy proteinuria (A3, uACR 161.95 mg/g)
+  • [HIGH] Uncontrolled hypertension (152/91 mmHg)
+  • [HIGH] Uncontrolled diabetes (HbA1c 8.3%)
+  • [MODERATE] Diabetic CKD without SGLT2 inhibitor
+  • [MODERATE] Obesity (BMI 33.0 kg/m²)
+
+Megan Crawford (MRN114) - Stage 4, eGFR 24.79
+  Score: 17 | Alerts: 4
+  • [HIGH] Uncontrolled hypertension (164/103 mmHg)
+  • [HIGH] Elevated phosphorus (6.8 mg/dL)
+  • [HIGH] Moderate anemia (Hb 10.9 g/dL)
+  • [MODERATE] Active smoker - accelerates CKD progression
+
+Charlotte Alexander (MRN161) - Stage 3, eGFR 58.25
+  Score: 17 | Alerts: 4
+  • [HIGH] Heavy proteinuria (A3, uACR 82.59 mg/g)
+  • [HIGH] Uncontrolled hypertension (154/93 mmHg)
+  • [HIGH] Moderate anemia (Hb 10.9 g/dL)
+  • [MODERATE] Diabetic CKD without SGLT2 inhibitor
+
+Margaret Mason (MRN190) - Stage 3, eGFR 45.9
+  Score: 17 | Alerts: 4
+  • [HIGH] Heavy proteinuria (A3, uACR 88.45 mg/g)
+  • [HIGH] Uncontrolled hypertension (151/87 mmHg)
+  • [HIGH] Uncontrolled diabetes (HbA1c 8.2%)
+  • [MODERATE] Obesity (BMI 31.9 kg/m²)
+
+Victoria Rivera (MRN053) - Stage 3, eGFR 52.89
+  Score: 16 | Alerts: 5
+  • [HIGH] Uncontrolled hypertension (131/95 mmHg)
+  • [HIGH] Uncontrolled diabetes (HbA1c 9.3%)
+  • [MODERATE] Proteinuria without RAS inhibitor therapy
+  • [MODERATE] Diabetic CKD without SGLT2 inhibitor
+  • [MODERATE] Obesity (BMI 39.7 kg/m²)
+
+Ralph Ruiz (MRN081) - Stage 3, eGFR 30.87
+  Score: 15 | Alerts: 3
+  • [HIGH] Heavy proteinuria (A3, uACR 187.52 mg/g)
+  • [HIGH] Uncontrolled hypertension (150/90 mmHg)
+  • [HIGH] Nephrotoxic medications with declining kidney function
+
+Adam Sullivan (MRN103) - Stage 3, eGFR 35.51
+  Score: 15 | Alerts: 3
+  • [HIGH] Heavy proteinuria (A3, uACR 194.41 mg/g)
+  • [HIGH] Uncontrolled hypertension (147/81 mmHg)
+  • [HIGH] Uncontrolled diabetes (HbA1c 7.6%)
+
+Ralph Kelley (MRN174) - Stage 3, eGFR 36.04
+  Score: 15 | Alerts: 3
+  • [HIGH] Uncontrolled hypertension (146/88 mmHg)
+  • [HIGH] Nephrotoxic medications with declining kidney function
+  • [HIGH] Moderate anemia (Hb 10.9 g/dL)
+
+Mildred Sanders (MRN057) - Stage 3, eGFR 34.75
+  Score: 14 | Alerts: 4
+  • [HIGH] Uncontrolled hypertension (155/89 mmHg)
+  • [HIGH] Uncontrolled diabetes (HbA1c 7.7%)
+  • [MODERATE] Diabetic CKD without SGLT2 inhibitor
+  • [MODERATE] Obesity (BMI 41.1 kg/m²)
+
+Emma Ellis (MRN132) - Stage 3, eGFR 48.47
+  Score: 14 | Alerts: 4
+  • [HIGH] Uncontrolled hypertension (139/94 mmHg)
+  • [HIGH] Moderate anemia (Hb 10.8 g/dL)
+  • [MODERATE] Diabetic CKD without SGLT2 inhibitor
+  • [MODERATE] Obesity (BMI 30.7 kg/m²)
+
+Victor Gray (MRN091) - Stage 3, eGFR 32.69
+  Score: 12 | Alerts: 3
+  • [HIGH] Uncontrolled hypertension (151/80 mmHg)
+  • [HIGH] Uncontrolled diabetes (HbA1c 8.7%)
+  • [MODERATE] Proteinuria without RAS inhibitor therapy
+
+Emma Cook (MRN092) - Stage 3, eGFR 45.22
+  Score: 12 | Alerts: 3
+  • [HIGH] Uncontrolled hypertension (145/93 mmHg)
+  • [HIGH] Moderate anemia (Hb 10.9 g/dL)
+  • [MODERATE] Active smoker - accelerates CKD progression
+
+Victoria Bradley (MRN109) - Stage 3, eGFR 54.11
+  Score: 12 | Alerts: 3
+  • [HIGH] Uncontrolled hypertension (149/95 mmHg)
+  • [HIGH] Uncontrolled diabetes (HbA1c 8.6%)
+  • [MODERATE] Proteinuria without RAS inhibitor therapy
+
+Isabella Shaw (MRN149) - Stage 3, eGFR 54.97
+  Score: 12 | Alerts: 3
+  • [HIGH] Uncontrolled hypertension (149/84 mmHg)
+  • [HIGH] Nephrotoxic medications with declining kidney function
+  • [MODERATE] Active smoker - accelerates CKD progression
+
+Janet Butler (MRN178) - Stage 3, eGFR 34.97
+  Score: 12 | Alerts: 3
+  • [HIGH] Uncontrolled hypertension (148/81 mmHg)
+  • [HIGH] Moderate anemia (Hb 10.7 g/dL)
+  • [MODERATE] Obesity (BMI 40.4 kg/m²)
+
+Virginia Armstrong (MRN182) - Stage 3, eGFR 54.31
+  Score: 12 | Alerts: 3
+  • [HIGH] Uncontrolled hypertension (143/93 mmHg)
+  • [HIGH] Nephrotoxic medications with declining kidney function
+  • [MODERATE] Proteinuria without RAS inhibitor therapy
+
+Gabriel Lawrence (MRN105) - Stage 2, eGFR 74.36
+  Score: 11 | Alerts: 4
+  • [HIGH] Uncontrolled diabetes (HbA1c 9.4%)
+  • [MODERATE] Proteinuria without RAS inhibitor therapy
+  • [MODERATE] Obesity (BMI 42.6 kg/m²)
+  • [MODERATE] Active smoker - accelerates CKD progression
+
+Diane Lawrence (MRN147) - Stage 3, eGFR 44.9
+  Score: 11 | Alerts: 4
+  • [HIGH] Uncontrolled hypertension (141/84 mmHg)
+  • [MODERATE] Proteinuria without RAS inhibitor therapy
+  • [MODERATE] Obesity (BMI 35.1 kg/m²)
+  • [MODERATE] Active smoker - accelerates CKD progression
+
+Peter Collins (MRN205) - Stage 2, eGFR 64.61
+  Score: 11 | Alerts: 4
+  • [HIGH] Uncontrolled diabetes (HbA1c 9.1%)
+  • [MODERATE] Proteinuria without RAS inhibitor therapy
+  • [MODERATE] Diabetic CKD without SGLT2 inhibitor
+  • [MODERATE] Obesity (BMI 36.9 kg/m²)
+
+Jesse Howard (MRN101) - Stage 3, eGFR 32.37
+  Score: 10 | Alerts: 2
+  • [HIGH] Uncontrolled hypertension (154/94 mmHg)
+  • [HIGH] Uncontrolled diabetes (HbA1c 7.7%)
+
+
+  ... and 3 more high priority patients
+
+================================================================================
+END OF REPORT
+================================================================================

@@ -1,0 +1,9 @@
+{
+  "projectName": "Healthcare AI Clinical Data Analyzer",
+  "projectDescription": "AI-powered clinical data analysis tool for primary care physicians, compliant with GDPR and EU health regulations",
+  "version": "0.1.0",
+  "mainModel": "claude-code/sonnet",
+  "researchModel": "perplexity/sonar-pro",
+  "fallbackModel": "gpt-4",
+  "taskPrefix": "HCAI"
+}

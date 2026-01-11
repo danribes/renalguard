@@ -1,0 +1,9 @@
+{
+  "name": "migration-scripts",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Database migration scripts",
+  "dependencies": {
+    "pg": "^8.11.3"
+  }
+}
