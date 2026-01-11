@@ -619,20 +619,23 @@ Step-by-step deployment guide including:
 - [ ] 2.8 Test local Docker Compose deployment
 
 ### Phase 3: Cloudflare Configuration
-- [ ] 3.1 Create `frontend/wrangler.toml`
-- [ ] 3.2 Create `frontend/public/_headers`
-- [ ] 3.3 Create `frontend/public/_redirects`
-- [ ] 3.4 Create `backend/cloudflare-container.toml`
-- [ ] 3.5 Create `mcp-server/cloudflare-container.toml`
-- [ ] 3.6 Create `infrastructure/cloudflare/hyperdrive.toml`
-- [ ] 3.7 Document environment variables
+- [x] 3.1 Create `frontend/wrangler.toml`
+- [x] 3.2 Create `frontend/public/_headers`
+- [x] 3.3 Create `frontend/public/_redirects`
+- [x] 3.4 Create `backend/cloudflare-container.toml`
+- [x] 3.5 Create `mcp-server/cloudflare-container.toml`
+- [x] 3.6 Create `infrastructure/cloudflare/hyperdrive.toml`
+- [x] 3.7 Document environment variables (updated .env.example)
 
 ### Phase 4: Database Migration
-- [ ] 4.1 Create Neon account and project
-- [ ] 4.2 Configure database and run migrations
-- [ ] 4.3 Set up Cloudflare Hyperdrive
-- [ ] 4.4 Test database connectivity from containers
-- [ ] 4.5 Migrate seed data
+- [x] 4.1 Add Neon MCP server configuration
+- [x] 4.2 Add Supabase MCP server configuration
+- [x] 4.3 Add Cloudflare MCP server configuration
+- [x] 4.4 Create database setup documentation (`docs/DATABASE_SETUP.md`)
+- [ ] 4.5 Create Neon/Supabase account and project (user action required)
+- [ ] 4.6 Configure Cloudflare Hyperdrive (user action required)
+- [ ] 4.7 Run database migrations (user action required)
+- [ ] 4.8 Test database connectivity from containers (user action required)
 
 ### Phase 5: CI/CD Pipeline
 - [ ] 5.1 Create `.github/workflows/cloudflare-deploy.yml`

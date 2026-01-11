@@ -1,0 +1,44 @@
+# Cloudflare Containers Configuration for RENALGUARD MCP Server
+# Documentation: https://developers.cloudflare.com/containers/
+
+[container]
+name = "renalguard-mcp-server"
+image = "renalguard-mcp-server:latest"
+
+# Resource allocation (MCP server is lighter than backend)
+[container.resources]
+memory = "256Mi"
+cpu = "0.25"
+
+# Environment variables (secrets should be configured via Cloudflare dashboard)
+[container.env]
+NODE_ENV = "production"
+MCP_SERVER_PORT = "3001"
+# DATABASE_URL - Set via Cloudflare dashboard (use Hyperdrive connection string)
+# DB_HOST, DB_PORT, DB_NAME, DB_USER, DB_PASSWORD - Alternative to DATABASE_URL
+
+# Health check configuration
+[container.health_check]
+port = 3001
+interval = "30s"
+timeout = "5s"
+healthy_threshold = 2
+unhealthy_threshold = 3
+
+# Port mapping
+[[container.ports]]
+port = 3001
+protocol = "http"
+
+# Scaling configuration
+[container.scaling]
+min_instances = 1
+max_instances = 2
+target_cpu_utilization = 70
+
+# Network configuration
+[container.network]
+# Internal service name for container-to-container communication
+internal_hostname = "renalguard-mcp-server"
+# Only accessible from other containers (not public)
+public = false

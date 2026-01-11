@@ -1,0 +1,45 @@
+# Cloudflare Containers Configuration for RENALGUARD Backend API
+# Documentation: https://developers.cloudflare.com/containers/
+
+[container]
+name = "renalguard-backend"
+image = "renalguard-backend:latest"
+
+# Resource allocation
+[container.resources]
+memory = "512Mi"
+cpu = "0.5"
+
+# Environment variables (secrets should be configured via Cloudflare dashboard)
+[container.env]
+NODE_ENV = "production"
+PORT = "3000"
+# DATABASE_URL - Set via Cloudflare dashboard (use Hyperdrive connection string)
+# ANTHROPIC_API_KEY - Set via Cloudflare dashboard (secret)
+# MCP_SERVER_URL - Set via Cloudflare dashboard
+# CORS_ORIGIN - Set via Cloudflare dashboard
+
+# Health check configuration
+[container.health_check]
+path = "/health"
+port = 3000
+interval = "30s"
+timeout = "5s"
+healthy_threshold = 2
+unhealthy_threshold = 3
+
+# Port mapping
+[[container.ports]]
+port = 3000
+protocol = "http"
+
+# Scaling configuration
+[container.scaling]
+min_instances = 1
+max_instances = 3
+target_cpu_utilization = 70
+
+# Network configuration
+[container.network]
+# Internal service name for container-to-container communication
+internal_hostname = "renalguard-backend"

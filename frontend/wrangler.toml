@@ -1,0 +1,29 @@
+# Cloudflare Pages Configuration for RENALGUARD Frontend
+# Documentation: https://developers.cloudflare.com/pages/configuration/wrangler-configuration/
+
+name = "renalguard-frontend"
+compatibility_date = "2024-01-01"
+
+# Pages-specific configuration
+pages_build_output_dir = "dist"
+
+# Build configuration
+[build]
+command = "npm run build"
+cwd = "."
+
+# Environment variables for build
+[vars]
+ENVIRONMENT = "production"
+
+# Production environment
+[env.production]
+vars = { ENVIRONMENT = "production" }
+
+# Preview environment (for PR previews)
+[env.preview]
+vars = { ENVIRONMENT = "preview" }
+
+# Development environment
+[env.development]
+vars = { ENVIRONMENT = "development" }
