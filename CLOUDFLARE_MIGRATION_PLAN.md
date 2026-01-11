@@ -599,23 +599,23 @@ Step-by-step deployment guide including:
 ## Task Checklist
 
 ### Phase 1: Remove Render Code
-- [ ] 1.1 Delete `render.yaml`
-- [ ] 1.2 Delete `RENDER_DATABASE_INIT.sql`
-- [ ] 1.3 Delete `RENDER_DEPLOY_SUMMARY.txt`
-- [ ] 1.4 Delete `scripts/init-render-db.sh`
-- [ ] 1.5 Delete `scripts/init_render_database.sh`
-- [ ] 1.6 Delete `scripts/run_migration_020_render.sh`
-- [ ] 1.7 Update `README.md` - remove Render references
-- [ ] 1.8 Search and update hardcoded Render URLs
+- [x] 1.1 Delete `render.yaml`
+- [x] 1.2 Delete `RENDER_DATABASE_INIT.sql`
+- [x] 1.3 Delete `RENDER_DEPLOY_SUMMARY.txt`
+- [x] 1.4 Delete `scripts/init-render-db.sh`
+- [x] 1.5 Delete `scripts/init_render_database.sh`
+- [x] 1.6 Delete `scripts/run_migration_020_render.sh`
+- [x] 1.7 Update `README.md` - remove Render references
+- [x] 1.8 Search and update hardcoded Render URLs
 
 ### Phase 2: Containerization
-- [ ] 2.1 Create `mcp-server/Dockerfile`
-- [ ] 2.2 Create `mcp-server/.dockerignore`
-- [ ] 2.3 Update `backend/Dockerfile` for Cloudflare
-- [ ] 2.4 Update root `Dockerfile` for Cloudflare
-- [ ] 2.5 Update `docker-compose.yml` with MCP server service
-- [ ] 2.6 Update `docker-compose.dev.yml` with MCP server
-- [ ] 2.7 Create root `.dockerignore`
+- [x] 2.1 Create `mcp-server/Dockerfile`
+- [x] 2.2 Create `mcp-server/.dockerignore`
+- [x] 2.3 Update `backend/Dockerfile` for Cloudflare
+- [x] 2.4 Update root `Dockerfile` for Cloudflare
+- [x] 2.5 Update `docker-compose.yml` with MCP server service
+- [x] 2.6 Update `docker-compose.dev.yml` with MCP server
+- [x] 2.7 Update root `.dockerignore`
 - [ ] 2.8 Test local Docker Compose deployment
 
 ### Phase 3: Cloudflare Configuration
