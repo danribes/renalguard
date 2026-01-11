@@ -5,13 +5,13 @@
 
 # Documentation
 *.md
-!README.md
 docs/
 
 # CI/CD
 .github/
 .gitlab-ci.yml
 .travis.yml
+Makefile
 
 # IDE
 .vscode/
@@ -27,7 +27,7 @@ docs/
 **/.npm
 **/.yarn
 
-# Build artifacts
+# Build artifacts (we build in container)
 **/dist/
 **/build/
 **/.next/
@@ -49,8 +49,11 @@ docs/
 **/.env.*
 !**/.env.example
 
-# Frontend (not needed in backend image)
+# Frontend (not needed in root backend+MCP image)
 frontend/
+
+# Data files (large, not needed in image)
+data/
 
 # Logs
 **/logs/
@@ -64,3 +67,6 @@ Thumbs.db
 **/tmp/
 **/temp/
 **/.cache/
+
+# Cloudflare migration plan (documentation)
+CLOUDFLARE_MIGRATION_PLAN.md
