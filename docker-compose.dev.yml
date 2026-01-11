@@ -4,6 +4,28 @@ version: '3.8'
 # Usage: docker-compose -f docker-compose.yml -f docker-compose.dev.yml up
 
 services:
+  # MCP Server Development Configuration
+  mcp-server:
+    build:
+      context: ./mcp-server
+      dockerfile: Dockerfile
+      target: builder  # Use builder stage for development
+    command: npm run dev  # Hot reload with tsx
+    environment:
+      NODE_ENV: development
+      MCP_SERVER_PORT: 3001
+    volumes:
+      # Mount source code for hot reload
+      - ./mcp-server/src:/app/src:ro
+      - ./mcp-server/package.json:/app/package.json:ro
+      - ./mcp-server/tsconfig.json:/app/tsconfig.json:ro
+      # Prevent overwriting node_modules
+      - /app/node_modules
+    # Faster startup for development
+    healthcheck:
+      interval: 10s
+      start_period: 15s
+
   # Backend Development Configuration
   backend:
     build:
@@ -14,6 +36,7 @@ services:
     environment:
       NODE_ENV: development
       PORT: 3000
+      MCP_SERVER_URL: http://mcp-server:3001
     volumes:
       # Mount source code for hot reload
       - ./backend/src:/app/src:ro
@@ -58,7 +81,7 @@ services:
       interval: 10s
       start_period: 20s
 
-  # PostgreSQL - Same as production but with exposed ports for local access
+  # PostgreSQL - Same as production but with verbose logging for development
   postgres:
     # Enable logging for development
     command: postgres -c log_statement=all -c log_destination=stderr

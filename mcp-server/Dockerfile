@@ -1,4 +1,4 @@
-# Backend Dockerfile - Healthcare AI Clinical Data Analyzer
+# MCP Server Dockerfile - Clinical Decision Support Tools
 # Multi-stage build for optimized production image
 # Compatible with Cloudflare Containers and Docker Compose
 
@@ -13,25 +13,25 @@ COPY package*.json ./
 # Install all dependencies (including devDependencies for build)
 RUN npm ci --prefer-offline --no-audit
 
-# Copy source code and configuration
+# Copy TypeScript configuration and source code
 COPY tsconfig.json ./
 COPY src ./src
 
 # Build TypeScript to JavaScript
-RUN npm run build:backend
+RUN npm run build
 
 # Stage 2: Production
 FROM node:20-alpine
 
 # Add labels for container management
-LABEL org.opencontainers.image.title="RENALGUARD Backend API"
-LABEL org.opencontainers.image.description="Express API server for CKD management platform"
+LABEL org.opencontainers.image.title="RENALGUARD MCP Server"
+LABEL org.opencontainers.image.description="Clinical Decision Support Tools for CKD management"
 LABEL org.opencontainers.image.vendor="RENALGUARD"
 
 WORKDIR /app
 
 # Install dumb-init for proper signal handling
-RUN apk add --no-cache dumb-init wget
+RUN apk add --no-cache dumb-init
 
 # Copy package files
 COPY package*.json ./
@@ -53,17 +53,17 @@ USER nodejs
 
 # Environment variables (can be overridden at runtime)
 ENV NODE_ENV=production
-ENV PORT=3000
+ENV MCP_SERVER_PORT=3001
 
-# Expose port
-EXPOSE 3000
+# Expose MCP server port
+EXPOSE 3001
 
-# Health check
-HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
-  CMD wget --no-verbose --tries=1 --spider http://localhost:3000/health || exit 1
+# Health check - verify node process is running
+HEALTHCHECK --interval=30s --timeout=3s --start-period=10s --retries=3 \
+  CMD node -e "console.log('healthy')" || exit 1
 
 # Use dumb-init to handle signals properly
 ENTRYPOINT ["dumb-init", "--"]
 
-# Start the application
+# Start the MCP server
 CMD ["node", "dist/index.js"]

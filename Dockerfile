@@ -1,23 +1,24 @@
-# Root Dockerfile - Healthcare AI Backend + MCP Server
+# Root Dockerfile - Healthcare AI Backend + MCP Server (Combined)
 # This Dockerfile builds both the backend API and MCP server together
-# Use this for production deployment to include MCP server functionality
+# Use this for production deployment when running both services in one container
+# Compatible with Cloudflare Containers and Docker Compose
 
 # Stage 1: Build both backend and MCP server
 FROM node:20-alpine AS builder
 
 WORKDIR /app
 
-# Copy MCP server first
+# Copy and install MCP server dependencies first (better layer caching)
 COPY mcp-server/package*.json ./mcp-server/
 COPY mcp-server/tsconfig.json ./mcp-server/
 RUN cd mcp-server && npm ci --prefer-offline --no-audit
 
-# Copy backend
+# Copy and install backend dependencies
 COPY backend/package*.json ./backend/
 COPY backend/tsconfig.json ./backend/
 RUN cd backend && npm ci --prefer-offline --no-audit
 
-# Copy source code for both
+# Copy source code for both services
 COPY mcp-server/src ./mcp-server/src
 COPY backend/src ./backend/src
 
@@ -30,10 +31,15 @@ RUN cd backend && npm run build:backend
 # Stage 2: Production
 FROM node:20-alpine
 
+# Add labels for container management
+LABEL org.opencontainers.image.title="RENALGUARD Backend + MCP Server"
+LABEL org.opencontainers.image.description="Combined Express API and Clinical Decision Support server"
+LABEL org.opencontainers.image.vendor="RENALGUARD"
+
 WORKDIR /app
 
-# Install dumb-init for proper signal handling
-RUN apk add --no-cache dumb-init
+# Install dumb-init for proper signal handling and wget for health checks
+RUN apk add --no-cache dumb-init wget
 
 # Copy backend package files and install production dependencies
 COPY backend/package*.json ./backend/
@@ -64,12 +70,16 @@ USER nodejs
 # Set working directory to backend
 WORKDIR /app/backend
 
+# Environment variables (can be overridden at runtime)
+ENV NODE_ENV=production
+ENV PORT=3000
+
 # Expose port
 EXPOSE 3000
 
-# Health check
-HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
-  CMD node -e "require('http').get('http://localhost:3000/health', (r) => {process.exit(r.statusCode === 200 ? 0 : 1)})"
+# Health check using wget (more reliable than node http check)
+HEALTHCHECK --interval=30s --timeout=5s --start-period=10s --retries=3 \
+  CMD wget --no-verbose --tries=1 --spider http://localhost:3000/health || exit 1
 
 # Use dumb-init to handle signals properly
 ENTRYPOINT ["dumb-init", "--"]
